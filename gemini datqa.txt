@@ -1,0 +1,3687 @@
+﻿[{
+"id": "CS-000001",
+"conversation_id": "CONV-000001",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Design",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Refund",
+"product_area": "Billing",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Refund",
+"difficulty": "Easy",
+"tags": [
+"billing",
+"refund",
+"trial-expired"
+],
+"keywords": [
+"charged",
+"forgot to cancel",
+"money back"
+],
+"related_kb": [
+"KB-045",
+"KB-012"
+],
+"gold_requirements": [
+"Acknowledge the oversight",
+"Process the refund",
+"State refund processing time (3-5 business days)",
+"Confirm subscription cancellation"
+],
+"must_include": [
+"3-5 business days",
+"canceled your subscription"
+],
+"must_not_include": [
+"refuse refund",
+"manager approval needed"
+],
+"incoming_email": "I signed up for the 14-day free trial of the Pro plan and completely forgot to cancel it before the deadline. I just saw a $144 charge on my credit card this morning for an annual plan. I am a freelance designer and cannot afford this right now. I haven't even used the product since the first day. Please refund this immediately and cancel the account.",
+"ground_truth_reply": "Hi there,\n\nI totally understand how easy it is to forget about a trial! Don't worry, I've got you covered.\n\nI have canceled your Pro subscription and issued a full refund of $144.00 to your original payment method. You should see the funds reflected in your account within 3-5 business days, depending on your bank.\n\nYour account has been downgraded to our Free tier, so you won't lose any of the files you uploaded during the trial, but your storage limit is now capped at 5GB.\n\nIf you have any other questions, please let me know.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000002",
+"conversation_id": "CONV-000002",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Technology",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Critical",
+"intent": "Authentication",
+"sub_intent": "SSO",
+"product_area": "Login",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"sso",
+"okta",
+"saml",
+"outage"
+],
+"keywords": [
+"SSO failing",
+"Okta",
+"403 error",
+"SAML response"
+],
+"related_kb": [
+"KB-102",
+"KB-105"
+],
+"gold_requirements": [
+"Acknowledge critical business impact",
+"Provide engineering ticket ID",
+"Ask for SAML trace",
+"Confirm status page update"
+],
+"must_include": [
+"ticket ID",
+"SAML tracer"
+],
+"must_not_include": [
+"did you clear cookies",
+"reset password"
+],
+"incoming_email": "URGENT: No one in our London office can log in to CloudSync via Okta. We are getting a 403 Forbidden error after the SAML redirect. This started happening about 20 minutes ago. It's blocking our entire engineering team from accessing project files. \n\nI've checked our IdP logs and the SAML assertion is being passed successfully. Is there an outage on your end? We need this resolved ASAP.",
+"ground_truth_reply": "Hi there,\n\nThank you for flagging this immediately. I recognize how critical this is since it's blocking your engineering team from accessing CloudSync.\n\nWe are currently investigating a potential degradation with our SSO endpoints affecting a subset of Enterprise customers. I have escalated this directly to our Identity Engineering team under ticket ID ENG-4921.\n\nTo help our engineers pinpoint the exact failure, could you please generate a SAML trace using a browser extension (like SAML Tracer) for one of the failing login attempts and attach it securely here? \n\nWe have also updated our status page at [https://status.cloudsync.com](https://www.google.com/search?q=https://status.cloudsync.com), where you can follow along for live updates. I will reply to this thread as soon as I have an ETA from the engineering team.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000003",
+"conversation_id": "CONV-000003",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Education",
+"country": "Canada",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Share folders",
+"product_area": "File Sharing",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"sharing",
+"permissions",
+"read-only"
+],
+"keywords": [
+"share",
+"students",
+"view only",
+"prevent edit"
+],
+"related_kb": [
+"KB-022"
+],
+"gold_requirements": [
+"Explain how to set read-only permissions",
+"Link to relevant documentation",
+"Ensure polite and helpful tone"
+],
+"must_include": [
+"read-only",
+"share button",
+"link"
+],
+"must_not_include": [
+"upgrade your account"
+],
+"incoming_email": "Hello! I am a high school teacher using CloudSync to share syllabus documents and reading materials with my students. I want to send them a link to a folder, but I need to make absolutely sure they can't delete or edit the files inside. How do I make the link view-only? Thank you so much for your help!",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! It's great to hear you're using CloudSync for your classroom.\n\nYou can easily share a folder with view-only permissions so your students can access the materials without altering the original files. Here is how to do it:\n\n1. Right-click the folder you want to share and select "Share".\n2. In the share menu, click on "Link Settings".\n3. Under "Permissions", change the dropdown from "Can Edit" to "Can View".\n4. Click "Copy Link" and share that link with your students.\n\nAnyone with that specific link will only be able to read and download the files, not modify or delete them. \n\nFor a step-by-step visual guide, you can also check out our documentation here: [https://docs.cloudsync.com/sharing/read-only-links](https://www.google.com/search?q=https://docs.cloudsync.com/sharing/read-only-links)\n\nLet me know if you run into any trouble setting this up!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000004",
+"conversation_id": "CONV-000004",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "Australia",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "Desktop crash",
+"product_area": "Desktop Apps",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"mac",
+"crash",
+"desktop-app",
+"sync"
+],
+"keywords": [
+"crashing",
+"macOS",
+"M1",
+"keeps quitting"
+],
+"related_kb": [
+"KB-078",
+"KB-081"
+],
+"gold_requirements": [
+"Apologize for workflow disruption",
+"Ask for macOS version",
+"Provide clean reinstall instructions",
+"Ask for crash logs if issue persists"
+],
+"must_include": [
+"clean reinstall",
+"crash logs",
+"macOS"
+],
+"must_not_include": [
+"Windows"
+],
+"incoming_email": "Your desktop app on Mac is completely broken. Every time I try to drag a folder larger than 1GB into the CloudSync folder, the app just silently quits. No error message, nothing. When I reopen it, it gets stuck on 'Syncing 1 file...' forever and drains my battery. I'm on a MacBook Pro M1. Fix this. I'm losing hours of work trying to upload assets for a client.",
+"ground_truth_reply": "Hi there,\n\nI am so sorry for the frustration this has caused. I know how disruptive it is when the app crashes in the middle of transferring client assets, especially when it drains your battery in the process.\n\nLet's get this fixed for you. The silent crashing behavior on Apple Silicon (M1) Macs usually points to a corrupted local cache database. \n\nTo resolve this, I recommend performing a clean reinstall of the desktop app:\n\n1. Quit CloudSync from the menu bar.\n2. Open Finder, press Cmd+Shift+G, and paste: `~/Library/Application Support/CloudSync`\n3. Drag the entire `CloudSync` folder to the Trash.\n4. Drag the CloudSync application from your Applications folder to the Trash.\n5. Restart your Mac.\n6. Download the latest Mac version from [https://cloudsync.com/download](https://www.google.com/search?q=https://cloudsync.com/download) and log back in.\n\nDoing this will not delete your files stored in the cloud, but it will force the app to rebuild its local sync index.\n\nIf the app still crashes after doing this, please let me know and we will pull your crash logs to investigate deeper.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000005",
+"conversation_id": "CONV-000005",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "Germany",
+"language": "English",
+"priority": "Medium",
+"intent": "Security & Compliance",
+"sub_intent": "SOC2",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Document Provision",
+"difficulty": "Easy",
+"tags": [
+"soc2",
+"compliance",
+"nda",
+"security"
+],
+"keywords": [
+"SOC2 Type II",
+"audit",
+"vendor assessment",
+"compliance"
+],
+"related_kb": [
+"KB-110"
+],
+"gold_requirements": [
+"Acknowledge the request",
+"Explain the NDA requirement",
+"Provide the link to the trust center or attach NDA"
+],
+"must_include": [
+"NDA",
+"Trust Center",
+"SOC2 Type II"
+],
+"must_not_include": [
+"attach report directly without NDA"
+],
+"incoming_email": "To Whom It May Concern,\n\nI am reaching out from the IT Procurement team at FinServ AG. We are currently conducting our annual vendor security assessments. \n\nPlease provide a copy of your most recent SOC2 Type II audit report, as well as any recent penetration test summaries you have available. \n\nThank you,\nMarcus",
+"ground_truth_reply": "Hi Marcus,\n\nThanks for reaching out. I'd be happy to help with your annual vendor security assessment.\n\nWe do have our latest SOC2 Type II audit report and our annual penetration test executive summary available for Enterprise customers. Because these documents contain sensitive information regarding our infrastructure, we require a signed Non-Disclosure Agreement (NDA) before sharing them.\n\nYou can easily review and sign the NDA, and immediately download the SOC2 report and pen-test summaries, directly through our automated Security Trust Center:\n[https://trust.cloudsync.com](https://www.google.com/search?q=https://trust.cloudsync.com)\n\nAlternatively, if your legal team requires us to sign your company's custom NDA, please attach it to this thread, and I will route it to our Legal team for review (please note that custom NDAs typically take 5-7 business days to process).\n\nLet me know if you need anything else!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000006",
+"conversation_id": "CONV-000006",
+"customer_segment": "Pro",
+"company_size": "11-50",
+"industry": "Software",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Hard",
+"tags": [
+"api",
+"rate-limit",
+"429",
+"webhooks"
+],
+"keywords": [
+"API",
+"429 Too Many Requests",
+"headers",
+"Retry-After"
+],
+"related_kb": [
+"KB-201",
+"KB-205"
+],
+"gold_requirements": [
+"Explain the rate limit thresholds",
+"Point to the Retry-After header",
+"Suggest backoff strategy"
+],
+"must_include": [
+"rate limit",
+"Retry-After",
+"exponential backoff"
+],
+"must_not_include": [
+"we don't support API"
+],
+"incoming_email": "Hey team, we are building a custom integration that syncs files from our internal CMS to CloudSync. We're consistently hitting '429 Too Many Requests' errors during our bulk migration script. \n\nI checked the docs but couldn't find the exact rate limit for the /v2/files/upload endpoint. How many requests per minute are allowed on the Pro plan? \n\nHere is a snippet of the error:\n`HTTP/1.1 429 Too Many Requests`\n`Content-Type: application/json`\n`{\"error\": \"rate_limit_exceeded\"}`",
+"ground_truth_reply": "Hi there,\n\nThanks for writing in! I can definitely help clarify how our API handles rate limiting for bulk uploads.\n\nOn the Pro plan, the `/v2/files/upload` endpoint is rate-limited to 150 requests per minute per user account. Since bulk migrations often exceed this, you're encountering the 429 errors.\n\nTo handle this gracefully, we recommend looking at the `Retry-After` HTTP header that is included in our 429 responses. This header tells you exactly how many seconds your script needs to wait before making the next request.\n\nFor bulk migration scripts, implementing an "exponential backoff" algorithm is the best practice. This means your script should pause, read the `Retry-After` header (or wait 1 second, then 2, then 4), and retry the failed upload rather than continuously hitting the endpoint and extending the rate limit block.\n\nYou can read more about handling our rate limits effectively here: [https://docs.cloudsync.com/api/rate-limits](https://www.google.com/search?q=https://docs.cloudsync.com/api/rate-limits)\n\nLet me know if you have any questions about implementing this!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000007",
+"conversation_id": "CONV-000007",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Media",
+"country": "India",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Folder templates",
+"product_area": "Web App",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": [
+"feature-request",
+"templates",
+"folders"
+],
+"keywords": [
+"folder structure",
+"template",
+"duplicate folder"
+],
+"related_kb": [
+"KB-033"
+],
+"gold_requirements": [
+"Acknowledge the value of the feature",
+"State that it is a feature request",
+"Provide a current workaround"
+],
+"must_include": [
+"feature request",
+"workaround",
+"product team"
+],
+"must_not_include": [
+"promise a release date"
+],
+"incoming_email": "Hi, \nEvery time we onboard a new client, we have to manually create the exact same folder structure for them (Assets, Drafts, Final, Invoices). Is there a way to save a "Folder Template" so we can just click a button and generate the whole tree? If not, please add this.",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! I completely agree that having a "Folder Template" feature would save a ton of time, especially for client onboarding workflows.\n\nRight now, CloudSync doesn't have a native folder templating feature. I have officially logged this as a feature request with our Product team. We track these requests closely to decide what to build next.\n\nIn the meantime, I can suggest a solid workaround that many agencies use: \n\n1. Create a master folder in your account named "_Client Template" and set up your empty subfolders (Assets, Drafts, Final, Invoices) inside it.\n2. When you get a new client, right-click the "_Client Template" folder via the CloudSync Web App and select "Copy".\n3. Rename the newly copied folder to your client's name.\n\nThis will instantly clone the entire empty structure without having to recreate the subfolders manually. \n\nI hope this workaround helps speed things up! Let me know if you need anything else.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000008",
+"conversation_id": "CONV-000008",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Brazil",
+"language": "English",
+"priority": "High",
+"intent": "Account Management",
+"sub_intent": "Locked account",
+"product_area": "Login",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"mfa",
+"locked",
+"lost-phone"
+],
+"keywords": [
+"lost phone",
+"authenticator",
+"cannot login",
+"2FA"
+],
+"related_kb": [
+"KB-019"
+],
+"gold_requirements": [
+"Express empathy for the lost phone",
+"Ask for recovery codes",
+"Explain the identity verification process if codes are lost"
+],
+"must_include": [
+"recovery codes",
+"backup codes",
+"verify your identity"
+],
+"must_not_include": [
+"disable 2FA immediately without verification"
+],
+"incoming_email": "HELP! My phone was stolen yesterday on the train. I am trying to log in to my CloudSync account on my new laptop but it's asking for the 6 digit code from Google Authenticator. I don't have my old phone anymore! How do I bypass this? I need access to my documents.",
+"ground_truth_reply": "Hi there,\n\nI am so sorry to hear that your phone was stolen! I know how stressful that is, and I want to help you get back into your account as quickly as possible.\n\nWhen you first set up Two-Factor Authentication (2FA) for your CloudSync account, you were prompted to download a set of 10 backup recovery codes. Do you happen to have those saved anywhere on your computer or written down? If so, you can use one of those codes in place of the Google Authenticator code when logging in.\n\nIf you do not have those backup codes, we will need to manually disable 2FA on your account. For security reasons, I will need to verify your identity before I can do that.\n\nPlease reply to this email with:\n1. The last 4 digits of the credit card previously used on this account (if you ever had a paid plan).\n2. The exact names of two folders currently stored in your CloudSync account.\n3. The approximate date you created the account.\n\nOnce I can verify this information, I can disable the 2FA requirement so you can log in. \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000009",
+"conversation_id": "CONV-000009",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Real Estate",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Performance Issues",
+"sub_intent": "Upload issue",
+"product_area": "Web App",
+"customer_tone": "Passive Aggressive",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"performance",
+"slow-upload",
+"browser"
+],
+"keywords": [
+"taking forever",
+"slow",
+"uploading",
+"browser"
+],
+"related_kb": [
+"KB-062"
+],
+"gold_requirements": [
+"Acknowledge the slow speed",
+"Suggest using the desktop app for large files",
+"Ask for speed test results"
+],
+"must_include": [
+"desktop app",
+"speed test",
+"browser limits"
+],
+"must_not_include": [
+"blame the customer's internet directly"
+],
+"incoming_email": "Is your service always this slow, or is today special? I am trying to upload a 4GB video tour for a property listing through Chrome and it says it's going to take 8 hours. My internet is gigabit fiber. This is totally unacceptable for a paid service. Fix this or I'm moving to Google Drive.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the sluggish upload speeds you're experiencing today. A 4GB file absolutely should not take 8 hours on a gigabit connection.\n\nWeb browsers like Chrome have built-in memory limitations that can severely bottleneck the transfer speeds of large files like video tours. \n\nFor files larger than 1GB, we highly recommend using the CloudSync Desktop App instead of the web browser. The desktop app utilizes multi-threaded chunking, which bypasses browser limitations and will maximize your gigabit bandwidth. You can download it here: [https://cloudsync.com/download](https://www.google.com/search?q=https://cloudsync.com/download)\n\nIf you install the desktop app and drag the file into your CloudSync folder, it should sync in a matter of minutes. \n\nIf you still see slow speeds via the desktop app, please run a quick speed test (e.g., speedtest.net) and reply with your upload speed so I can investigate if there is a routing issue between your ISP and our servers.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000010",
+"conversation_id": "CONV-000010",
+"customer_segment": "Enterprise",
+"company_size": "201-1000",
+"industry": "Healthcare",
+"country": "Canada",
+"language": "English",
+"priority": "High",
+"intent": "Enterprise Administration",
+"sub_intent": "Audit logs",
+"product_area": "Admin Dashboard",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": true,
+"resolution_type": "Manager Escalation",
+"difficulty": "Medium",
+"tags": [
+"audit-logs",
+"admin",
+"data-leak",
+"escalation"
+],
+"keywords": [
+"export logs",
+"terminated employee",
+"audit trail"
+],
+"related_kb": [
+"KB-091"
+],
+"gold_requirements": [
+"Acknowledge the sensitive nature of the request",
+"Provide instructions for exporting logs",
+"Offer to escalate to a specialized account manager"
+],
+"must_include": [
+"Admin Dashboard",
+"CSV export",
+"Account Manager"
+],
+"must_not_include": [
+"refuse to help"
+],
+"incoming_email": "Hello. We recently terminated an employee and suspect they may have downloaded sensitive patient data before their access was revoked. \n\nI need to export a complete audit log of every file viewed, downloaded, or shared by user ID 84920 over the last 90 days. The admin dashboard only seems to let me view the last 30 days. How do I get the full 90-day report immediately?",
+"ground_truth_reply": "Hi there,\n\nI understand the urgency and sensitive nature of this request. Ensuring you have the data you need for your internal investigation is our top priority.\n\nBy default, the Admin Dashboard UI only displays the last 30 days of activity to ensure quick loading times. However, you can export the full 90-day history as a CSV file.\n\nTo do this:\n1. Navigate to the Admin Dashboard > Audit Logs.\n2. Click the "Export" button in the top right corner.\n3. In the export modal, change the date range to "Custom" and select your 90-day window.\n4. Enter the user email or ID (84920) in the filter field.\n5. Click "Generate CSV".\n\nGiven the circumstances, I am also looping in your dedicated Enterprise Account Manager. They can assist you if you need further forensic data or require extended logs beyond the standard 90 days via our backend systems.\n\nPlease let me know if you run into any issues generating the CSV.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000011",
+"conversation_id": "CONV-000011",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Feature Requests",
+"sub_intent": "Dark mode",
+"product_area": "Web App",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["dark-mode", "ui", "feature-request"],
+"keywords": ["dark theme", "eyes", "night"],
+"related_kb": ["KB-034"],
+"gold_requirements": ["Acknowledge request", "Log feature", "Suggest OS level workaround"],
+"must_include": ["feature request", "product team"],
+"must_not_include": ["promise timeline"],
+"incoming_email": "Hi team! Are there any plans to add a dark mode to the web interface? Staring at the bright white screen late at night is killing my eyes. Thanks!",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! \n\nWe don't currently have a native dark mode for the CloudSync web app, but I completely agree it would be a huge relief for late-night work. I've officially logged this as a feature request with our Product team.\n\nIn the meantime, some of our users use browser extensions like 'Dark Reader' to force a dark theme on the web app. You might also consider using our Desktop App, which respects your operating system's native dark mode settings.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000012",
+"conversation_id": "CONV-000012",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "United Kingdom",
+"language": "English",
+"priority": "High",
+"intent": "Security & Compliance",
+"sub_intent": "DPA",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Document Provision",
+"difficulty": "Medium",
+"tags": ["dpa", "gdpr", "compliance"],
+"keywords": ["Data Processing Agreement", "GDPR", "legal"],
+"related_kb": ["KB-112"],
+"gold_requirements": ["Provide DPA link", "Explain signature process"],
+"must_include": ["Data Processing Agreement", "signature", "legal"],
+"must_not_include": ["refuse standard DPA"],
+"incoming_email": "Hello, our legal team requires a signed Data Processing Agreement (DPA) to comply with GDPR regulations before we can renew our Enterprise contract next month. Where can I find this?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out. I'm happy to help you get the DPA sorted before your renewal.\n\nYou can review and digitally sign our standard Data Processing Agreement directly at [https://trust.cloudsync.com/dpa](https://www.google.com/search?q=https://trust.cloudsync.com/dpa). Once you sign it via our secure portal, a countersigned copy will automatically be emailed to you and your legal team for your records.\n\nIf your legal team requires modifications or a custom DPA, please attach it here and I will escalate it to our Legal department for review.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000013",
+"conversation_id": "CONV-000013",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Freelance",
+"country": "Germany",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "VAT",
+"product_area": "Billing",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Invoice Update",
+"difficulty": "Medium",
+"tags": ["vat", "invoice", "tax"],
+"keywords": ["VAT ID", "tax", "reverse charge"],
+"related_kb": ["KB-051"],
+"gold_requirements": ["Apologize for missing VAT", "Explain how to add VAT", "Offer to reissue invoice"],
+"must_include": ["VAT ID", "reissue", "billing settings"],
+"must_not_include": ["cannot change past invoices"],
+"incoming_email": "My recent invoice #INV-8482 does not have my company VAT ID on it. I need this for my tax returns in Germany. Please add DE123456789 and send me a corrected invoice immediately.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the missing VAT information on your latest invoice. I can certainly help fix this for you.\n\nI have manually updated invoice #INV-8482 to include your VAT ID (DE123456789) and applied the correct zero-rated reverse charge. You can download the updated PDF directly from your Billing Dashboard: [https://app.cloudsync.com/billing](https://www.google.com/search?q=https://app.cloudsync.com/billing)\n\nTo ensure all future invoices include this automatically, please navigate to Settings > Billing and enter your VAT ID in the designated tax field.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000014",
+"conversation_id": "CONV-000014",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Education",
+"country": "India",
+"language": "English",
+"priority": "Low",
+"intent": "Account Management",
+"sub_intent": "Deleted account",
+"product_area": "Account Settings",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["delete", "gdpr", "account"],
+"keywords": ["delete account", "remove data"],
+"related_kb": ["KB-099"],
+"gold_requirements": ["Provide steps to delete", "Mention 30-day GDPR timeline"],
+"must_include": ["delete account", "30 days", "permanently"],
+"must_not_include": ["I will delete it for you"],
+"incoming_email": "how do I delete my free account?",
+"ground_truth_reply": "Hi there,\n\nI'm sorry to see you go! \n\nYou can permanently delete your CloudSync account directly from your settings:\n\n1. Log in to the CloudSync web app.\n2. Go to Settings > Security.\n3. Scroll to the bottom and click "Delete Account".\n\nPlease note that in compliance with GDPR, all your personal data and files will be permanently purged from our servers within 30 days of deletion.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000015",
+"conversation_id": "CONV-000015",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Software",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Version history missing",
+"product_area": "Web App",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["version-history", "missing-data", "restore"],
+"keywords": ["old version", "history", "reverted"],
+"related_kb": ["KB-028"],
+"gold_requirements": ["Explain version history limits", "Help locate the file"],
+"must_include": ["180 days", "version history"],
+"must_not_include": ["data is gone forever immediately"],
+"incoming_email": "We are on the Business plan. A colleague accidentally overwrote a critical architecture diagram last week. When I right-click and go to Version History, it says 'No previous versions available'. Why is the history gone? We need the version from last Tuesday.",
+"ground_truth_reply": "Hi there,\n\nI understand how stressful it is to lose a critical diagram. Let's look into this.\n\nOn the Business plan, CloudSync retains version history for up to 180 days. If the version history says 'No previous versions available', it usually means the file wasn't overwritten, but rather a completely new file with the exact same name was uploaded, or the original file was deleted and replaced.\n\nPlease check your "Deleted Files" bin (accessible from the left sidebar in the web app) to see if the original file from last Tuesday is sitting there. If you find it, you can simply click 'Restore'.\n\nIf you still can't find it, please send me the exact file name and the folder it was located in, and I can check our backend logs.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000016",
+"conversation_id": "CONV-000016",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Retail",
+"country": "France",
+"language": "English",
+"priority": "High",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Impatient",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["api", "500-error", "webhooks"],
+"keywords": ["500 Internal Server Error", "webhooks", "failing"],
+"related_kb": ["KB-210"],
+"gold_requirements": ["Acknowledge 500 error", "Provide ticket ID", "Ask for request payload"],
+"must_include": ["ticket ID", "engineering", "payload"],
+"must_not_include": ["check your internet"],
+"incoming_email": "Our webhook endpoints are receiving continuous 500 Internal Server Errors from your platform when a folder is created. It started today at 08:00 UTC. We haven't changed any code on our end. Request ID: req_99x82jf. Fix this ASAP, it's breaking our automated provisioning.",
+"ground_truth_reply": "Hi there,\n\nThanks for bringing this to our attention. I recognize that automated provisioning is critical for your workflow, and getting 500 errors is definitely not expected behavior.\n\nI've located the failed webhooks using your Request ID (req_99x82jf). I have immediately escalated this to our API Engineering team under ticket ID ENG-5012 for investigation. It appears there may be a regression related to folder creation event payloads.\n\nCould you please provide a sample of the exact payload your system expects, or any error logs from your receiving server? This will help the engineers narrow down the root cause faster.\n\nI will update you as soon as I have an ETA for a fix.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000017",
+"conversation_id": "CONV-000017",
+"customer_segment": "Pro",
+"company_size": "11-50",
+"industry": "Media",
+"country": "Australia",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Restore files",
+"product_area": "Web App",
+"customer_tone": "Happy",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["restore", "deleted-files"],
+"keywords": ["deleted", "trash", "recover"],
+"related_kb": ["KB-029"],
+"gold_requirements": ["Explain how to restore from trash"],
+"must_include": ["Deleted Files", "restore button"],
+"must_not_include": ["we will restore it for you"],
+"incoming_email": "Hey folks! Loving the platform. Quick question, my intern accidentally deleted a subfolder yesterday. Is there a recycle bin somewhere where I can undelete it? Cheers!",
+"ground_truth_reply": "Hi there,\n\nI'm so glad to hear you're loving CloudSync! And don't worry, we can easily fix the intern's mistake.\n\nYes, we have a built-in recycle bin! Here is how you can recover that folder:\n\n1. Log in to the CloudSync Web App.\n2. On the left-hand sidebar, click on "Deleted Files".\n3. Locate the missing subfolder, hover over it, and click the "Restore" button on the right side.\n\nThe folder and all of its contents will immediately be moved back to its original location.\n\nYou can read more about file recovery here: [https://docs.cloudsync.com/files/restore](https://www.google.com/search?q=https://docs.cloudsync.com/files/restore)\n\nLet me know if you need help with anything else!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000018",
+"conversation_id": "CONV-000018",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Desktop Apps",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["windows", "sync-error", "desktop-app"],
+"keywords": ["red x", "not syncing", "Windows 11"],
+"related_kb": ["KB-071"],
+"gold_requirements": ["Identify Windows sync issue", "Explain icon overlays", "Provide troubleshooting step"],
+"must_include": ["Windows 11", "restart the app", "red X"],
+"must_not_include": ["reinstall windows"],
+"incoming_email": "WHY IS MY SYNC NOT WORKING. There is a red X on all my folders in Windows 11. I saved a word doc an hour ago and it's not showing up on my phone. THIS IS USELESS.",
+"ground_truth_reply": "Hi there,\n\nI am very sorry for the frustration. I know how annoying it is when files don't sync across your devices when you need them to.\n\nThe "Red X" icon overlay in Windows 11 usually indicates that the CloudSync desktop app has encountered a locked file or has lost its connection to our servers.\n\nLet's try a quick reset of the syncing process:\n1. Click the CloudSync icon in your Windows system tray (near the clock).\n2. Click the Gear icon, then select "Quit CloudSync".\n3. Open your Start Menu, search for CloudSync, and open it again.\n\nAllow the app a few minutes to scan your files. The red X should change to a blue syncing arrow, and then to a green checkmark. \n\nIf the red X remains, please let me know, and we can investigate if a specific file name contains an invalid character blocking the sync.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000019",
+"conversation_id": "CONV-000019",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Construction",
+"country": "Canada",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Email change",
+"product_area": "Account Settings",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["email-change", "profile"],
+"keywords": ["change email", "new address", "domain"],
+"related_kb": ["KB-015"],
+"gold_requirements": ["Provide steps to change email", "Mention verification email"],
+"must_include": ["Settings", "verify", "email address"],
+"must_not_include": ["I can change it for you"],
+"incoming_email": "Good morning. Our company recently rebranded and we are moving to a new domain name. How do I update my CloudSync login email from john@oldbuilder.com to john@newbuilder.com without losing my files?",
+"ground_truth_reply": "Hi John,\n\nGood morning! Congrats on the rebrand. You can easily update your login email without losing any of your files or folder permissions.\n\nHere are the steps to update it:\n1. Log in to CloudSync using your current email (john@oldbuilder.com).\n2. Click your profile picture in the top right and go to Settings > Profile.\n3. Under the "Email Address" section, click "Edit".\n4. Enter john@newbuilder.com and your current password to confirm.\n\nWe will send a verification link to john@newbuilder.com. Once you click that link, your login email will be officially updated!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000020",
+"conversation_id": "CONV-000020",
+"customer_segment": "Enterprise",
+"company_size": "201-1000",
+"industry": "Legal",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "OCR",
+"product_area": "Search",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["ocr", "search", "feature-request"],
+"keywords": ["search inside PDF", "scanned documents", "OCR"],
+"related_kb": ["KB-035"],
+"gold_requirements": ["Log feature request", "Clarify current search capabilities"],
+"must_include": ["OCR", "feature request", "text-based"],
+"must_not_include": ["promise it will be built"],
+"incoming_email": "We upload thousands of scanned legal PDFs every week. When I search for keywords, it only checks the file names. Does CloudSync support OCR (Optical Character Recognition) to search inside scanned images and PDFs? If not, please add this.",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! \n\nCurrently, CloudSync's search functionality indexes file names and the text within native text-based documents (like Word docs, text files, and digitally created PDFs). However, we do not currently support OCR to scan and index text inside flattened images or scanned PDFs.\n\nI can absolutely see how critical OCR would be for a legal team managing thousands of scanned documents. I have submitted this as a formal feature request to our Product and AI teams for consideration on our future roadmap.\n\nLet me know if you have any other questions!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000021",
+"conversation_id": "CONV-000021",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Technology",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Billing",
+"sub_intent": "Downgrade",
+"product_area": "Billing",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["downgrade", "billing", "cancel"],
+"keywords": ["downgrade to free", "cancel pro", "billing cycle"],
+"related_kb": ["KB-047"],
+"gold_requirements": ["Provide steps to downgrade", "Explain data retention on free tier"],
+"must_include": ["downgrade", "end of your billing cycle", "5GB limit"],
+"must_not_include": ["offer a discount to stay"],
+"incoming_email": "Hi, I won't be needing the Pro features anymore after this current project ends. How do I downgrade my account back to the free tier?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out. I can certainly help you with that.\n\nYou can schedule your account to downgrade to the Free tier directly from your billing dashboard:\n\n1. Go to Settings > Billing.\n2. Scroll down to your plan details and click "Change Plan".\n3. Select "Downgrade to Free".\n\nYour Pro features will remain active until the end of your current billing cycle. After that, your account will transition to the Free tier, which has a 5GB storage limit. Please note that if you are over the 5GB limit when the downgrade occurs, your files will remain safe, but you will not be able to upload any new files until you free up space.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000022",
+"conversation_id": "CONV-000022",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Design",
+"country": "Spain",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "File corruption",
+"product_area": "Web App",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["corruption", "photoshop", "sync-error"],
+"keywords": ["corrupted", "0 bytes", "PSD"],
+"related_kb": ["KB-083"],
+"gold_requirements": ["Acknowledge data integrity issue", "Provide ticket ID", "Ask for file details"],
+"must_include": ["ticket ID", "engineering", "file names"],
+"must_not_include": ["blame Adobe"],
+"incoming_email": "Urgent!! Several of our Photoshop (PSD) files that were synced yesterday are now showing as 0 bytes when we try to download them from the web interface. They are completely corrupted. This is weeks of client work. We need these files restored immediately.",
+"ground_truth_reply": "Hi there,\n\nI completely understand how critical this is. Data integrity is our highest priority, and files showing as 0 bytes is a serious issue that we need to address immediately.\n\nI have escalated this directly to our Storage Engineering team under ticket ID ENG-5104. \n\nTo help them locate the exact uncorrupted chunks on our backend servers, please reply with:\n1. The exact file names of the affected PSDs.\n2. The folder path where they are stored.\n3. The approximate time (and your time zone) they were last successfully saved.\n\nWhile engineering investigates, please DO NOT delete or attempt to overwrite the 0-byte files in your account, as this can complicate the recovery process.\n\nI will update you as soon as I hear back from the engineering team.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000023",
+"conversation_id": "CONV-000023",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Healthcare",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Enterprise Administration",
+"sub_intent": "SAML",
+"product_area": "Admin Dashboard",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["saml", "azure-ad", "admin"],
+"keywords": ["Azure AD", "SAML", "attributes", "mapping"],
+"related_kb": ["KB-103"],
+"gold_requirements": ["Provide required SAML attributes", "Link to Azure AD guide"],
+"must_include": ["Azure AD", "SAML attributes", "emailaddress"],
+"must_not_include": ["use Okta instead"],
+"incoming_email": "We are migrating from Okta to Azure AD next weekend. I am setting up the new SAML application for CloudSync in Azure. Can you confirm the exact SAML claim attributes required for Just-In-Time (JIT) provisioning to work correctly?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! I can certainly help ensure your Azure AD migration goes smoothly.\n\nFor Just-In-Time (JIT) provisioning to work correctly with CloudSync, your Azure AD SAML application must pass the following claim attributes exactly as formatted:\n\n*   `[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress](http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress)` (Used for the CloudSync username)\n*   `[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname](http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname)` (Used for First Name)\n*   `[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname](http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname)` (Used for Last Name)\n\nPlease note that CloudSync uses the email address as the primary unique identifier.\n\nWe have a complete step-by-step guide for configuring Azure AD available here: [https://docs.cloudsync.com/enterprise/azure-ad-saml](https://www.google.com/search?q=https://docs.cloudsync.com/enterprise/azure-ad-saml)\n\nLet me know if you run into any issues during your migration weekend!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000024",
+"conversation_id": "CONV-000024",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Brazil",
+"language": "English",
+"priority": "Low",
+"intent": "Authentication",
+"sub_intent": "Google login",
+"product_area": "Login",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["google-sso", "login-error"],
+"keywords": ["Sign in with Google", "create new account", "email exists"],
+"related_kb": ["KB-018"],
+"gold_requirements": ["Explain email match requirement", "Provide workaround"],
+"must_include": ["Sign in with Google", "password", "link accounts"],
+"must_not_include": ["we deleted your account"],
+"incoming_email": "I usually log in with a password. Today I clicked 'Sign in with Google' because I was feeling lazy, but it gave me an error saying 'An account with this email already exists'. Why didn't it just log me in?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! This is a common point of confusion, but it's an easy fix.\n\nFor security reasons, CloudSync does not automatically link a "Sign in with Google" attempt to an existing password-based account unless you have specifically enabled Google SSO in your profile settings first. \n\nTo fix this and use Google login going forward:\n1. Log in normally using your email and password.\n2. Go to Settings > Profile > Connected Accounts.\n3. Click "Connect Google Account" and follow the prompts.\n\nOnce linked, you can use the "Sign in with Google" button whenever you're feeling lazy! \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000025",
+"conversation_id": "CONV-000025",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Consulting",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Payment failure",
+"product_area": "Billing",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["payment-failed", "credit-card", "locked"],
+"keywords": ["card declined", "locked out", "update payment"],
+"related_kb": ["KB-053"],
+"gold_requirements": ["Provide link to update card", "Reassure data is safe"],
+"must_include": ["update your payment method", "grace period", "files are safe"],
+"must_not_include": ["your account is deleted"],
+"incoming_email": "I just got an email saying my payment failed and my account will be locked. My credit card expired last week and the bank sent me a new one. I need to update it but I can't find where. Please don't delete my files, I need them for work tomorrow!",
+"ground_truth_reply": "Hi there,\n\nDon't panic! Your files are completely safe. \n\nWhen a payment fails, we provide a 14-day grace period before your account is temporarily downgraded to the Free tier, and we never delete your files due to a failed payment.\n\nYou can easily update your credit card information by following these steps:\n1. Log in to the web app.\n2. Navigate to Settings > Billing.\n3. Under "Payment Methods", click "Update Card".\n\nOnce you enter the new card details, our system will automatically attempt to process the outstanding balance within 24 hours. \n\nLet me know if you run into any trouble!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000026",
+"conversation_id": "CONV-000026",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Invite teammates",
+"product_area": "Admin Dashboard",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["invite", "seats", "admin"],
+"keywords": ["add users", "invite", "new hires"],
+"related_kb": ["KB-025"],
+"gold_requirements": ["Explain how to invite", "Mention pro-rated billing for new seats"],
+"must_include": ["Admin Dashboard", "Invite Users", "pro-rated"],
+"must_not_include": ["new seats are free"],
+"incoming_email": "Hi Support, we just hired three new designers starting next week. How do I send them invitations to join our company CloudSync account?",
+"ground_truth_reply": "Hi there,\n\nCongratulations on expanding your team!\n\nAs a Business plan admin, you can easily invite new teammates directly from your Admin Dashboard:\n\n1. Log in and click on "Admin Dashboard" in the left sidebar.\n2. Navigate to the "Users" tab.\n3. Click the blue "Invite Users" button in the top right.\n4. Enter their email addresses and assign their initial permissions, then click "Send Invites".\n\nPlease note that adding new users will add new paid seats to your subscription. You will be charged a pro-rated amount for these three seats on your next invoice.\n\nYou can find more details about managing users here: [https://docs.cloudsync.com/admin/invite-users](https://www.google.com/search?q=https://docs.cloudsync.com/admin/invite-users)\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000027",
+"conversation_id": "CONV-000027",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "Switzerland",
+"language": "English",
+"priority": "High",
+"intent": "Security & Compliance",
+"sub_intent": "Security questionnaire",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": true,
+"resolution_type": "Manager Escalation",
+"difficulty": "Medium",
+"tags": ["questionnaire", "security", "vendor-assessment"],
+"keywords": ["security questionnaire", "excel", "vendor", "fill out"],
+"related_kb": ["KB-111"],
+"gold_requirements": ["Acknowledge receipt", "Provide Trust Center link", "Escalate for manual completion if needed"],
+"must_include": ["Security Trust Center", "Account Manager", "SLA"],
+"must_not_include": ["I will fill this out today"],
+"incoming_email": "Attached is our annual IT vendor security questionnaire (Excel format, 150 questions). Please have your security team fill this out and return it by Friday. It covers encryption, data residency, and physical security controls.",
+"ground_truth_reply": "Hi there,\n\nThank you for reaching out. \n\nTo expedite your vendor assessment, we have pre-filled standard industry questionnaires (such as CAIQ and SIG Core) available for immediate download in our Security Trust Center at [https://trust.cloudsync.com](https://www.google.com/search?q=https://trust.cloudsync.com). These documents cover all aspects of our encryption, data residency, and physical security controls, and often satisfy standard compliance requirements.\n\nIf your compliance team strictly requires your custom Excel questionnaire to be completed, I will need to route this to your dedicated Enterprise Account Manager and our Security team. Please note that custom questionnaires typically have a 10-14 business day SLA for completion.\n\nI have copied your Account Manager on this thread so they can coordinate the next steps with you.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000028",
+"conversation_id": "CONV-000028",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Student",
+"country": "Australia",
+"language": "English",
+"priority": "Low",
+"intent": "Feature Requests",
+"sub_intent": "Calendar integration",
+"product_area": "Integrations",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["google-calendar", "integration", "feature-request"],
+"keywords": ["Google Calendar", "dates", "reminders"],
+"related_kb": ["KB-036"],
+"gold_requirements": ["Acknowledge suggestion", "Log feature request", "Suggest Zapier workaround"],
+"must_include": ["feature request", "Zapier"],
+"must_not_include": ["we are building this now"],
+"incoming_email": "would be cool if we could link folders to google calendar events so the files are automatically shared on the date of a meeting. is this a thing?",
+"ground_truth_reply": "Hi there,\n\nThat is a really creative idea! \n\nCurrently, CloudSync doesn't have a native integration with Google Calendar to automatically share folders based on meeting dates. I have logged this as a feature request with our Product team because it sounds incredibly useful for meeting preparation.\n\nIn the meantime, you might be able to achieve a similar workflow using our Zapier integration. You can set up a "Zap" where a new Google Calendar event triggers an action in CloudSync to generate a share link and email it to attendees. \n\nYou can explore our Zapier integrations here: [https://zapier.com/apps/cloudsync](https://www.google.com/search?q=https://zapier.com/apps/cloudsync)\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000029",
+"conversation_id": "CONV-000029",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Real Estate",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Merge accounts",
+"product_area": "Account Settings",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["merge", "billing", "accounts"],
+"keywords": ["two accounts", "combine", "merge"],
+"related_kb": ["KB-017"],
+"gold_requirements": ["Explain no native merge", "Provide manual migration steps"],
+"must_include": ["manual", "download", "invite"],
+"must_not_include": ["click the merge button"],
+"incoming_email": "I accidentally created a second CloudSync account using my personal email when I signed up for the Business plan. Now I have files scattered between my work email and my personal email. How do I merge them into one?",
+"ground_truth_reply": "Hi there,\n\nI can certainly help you get your files consolidated! \n\nCurrently, CloudSync does not have an automated "Merge" button to combine two distinct accounts. However, you can easily consolidate them manually using this method:\n\n1. Log in to your personal account.\n2. Put all the files you want to keep into one master folder.\n3. Share that master folder with your work email, granting "Can Edit" permissions.\n4. Log out, then log in to your Business account (work email).\n5. Locate the shared folder, select all the files inside it, and "Copy" them into your main Business directory.\n\nOnce copied, you can safely delete the personal account. \n\nLet me know if you need help with any of those steps!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000030",
+"conversation_id": "CONV-000030",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Photography",
+"country": "Canada",
+"language": "English",
+"priority": "High",
+"intent": "Performance Issues",
+"sub_intent": "Download issue",
+"product_area": "Web App",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["download", "zip-error", "performance"],
+"keywords": ["zip file", "failing", "download", "large folder"],
+"related_kb": ["KB-063"],
+"gold_requirements": ["Acknowledge frustration", "Explain ZIP limits", "Suggest Desktop App"],
+"must_include": ["ZIP", "desktop app", "size limit"],
+"must_not_include": ["blame internet"],
+"incoming_email": "Every time I try to download a client folder containing raw photos (approx 25GB), it zips it up, gets to 99%, and then says 'Network Error'. I have tried on Firefox and Safari. Same thing. My clients are waiting for these photos. FIX IT.",
+"ground_truth_reply": "Hi there,\n\nI am so sorry for the hassle. I know how stressful it is when clients are waiting on deliverables and the technology isn't cooperating.\n\nWhen downloading massive folders (over 10GB) via the web browser, the browser attempts to compress them into a ZIP file on the fly. Due to browser memory limits, this often times out or fails at 99%, resulting in a 'Network Error'.\n\nTo bypass this completely, please use the CloudSync Desktop App. The desktop app does not need to ZIP the files; it will download them folder-by-folder directly to your hard drive, which is much faster and completely reliable for 25GB payloads.\n\nYou can download it here: [https://cloudsync.com/download](https://www.google.com/search?q=https://cloudsync.com/download). Once installed, simply log in and right-click the folder, then select "Make available offline".\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000031",
+"conversation_id": "CONV-000031",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Government",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Security & Compliance",
+"sub_intent": "Compliance",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": true,
+"resolution_type": "Manager Escalation",
+"difficulty": "Medium",
+"tags": ["fedramp", "compliance", "government"],
+"keywords": ["FedRAMP", "government", "agency"],
+"related_kb": ["KB-113"],
+"gold_requirements": ["State current compliance level", "Escalate to GovCloud team"],
+"must_include": ["FedRAMP", "Account Manager", "GovCloud"],
+"must_not_include": ["we are FedRAMP authorized (if false)"],
+"incoming_email": "Our agency is evaluating CloudSync for document collaboration. We require solutions to be FedRAMP Moderate authorized at minimum. Can you confirm your FedRAMP status and provide a link to your package on the FedRAMP Marketplace?",
+"ground_truth_reply": "Hi there,\n\nThank you for reaching out regarding CloudSync for your agency.\n\nOur standard Enterprise commercial environment is currently SOC2 Type II and ISO 27001 certified, but it is not FedRAMP authorized. \n\nHowever, we do offer a specialized deployment called CloudSync GovCloud, which is currently "In Process" for FedRAMP Moderate authorization. \n\nBecause government evaluations involve specific architecture requirements, I am escalating this ticket directly to our dedicated Public Sector Account Team. They will follow up with you shortly to provide our FedRAMP package details and discuss if GovCloud meets your agency's timeline.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000032",
+"conversation_id": "CONV-000032",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Mexico",
+"language": "English",
+"priority": "Low",
+"intent": "Account Management",
+"sub_intent": "Password reset",
+"product_area": "Login",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["password", "reset", "login"],
+"keywords": ["forgot password", "reset link", "cannot login"],
+"related_kb": ["KB-014"],
+"gold_requirements": ["Provide password reset steps", "Mention spam folder"],
+"must_include": ["reset link", "spam folder", "login page"],
+"must_not_include": ["your new password is"],
+"incoming_email": "Hello, I haven't used my account in a few months and I completely forgot my password. How can I reset it?",
+"ground_truth_reply": "Hi there,\n\nWelcome back! I can help you get back into your account.\n\nYou can trigger a password reset by going to our login page ([https://app.cloudsync.com/login](https://www.google.com/search?q=https://app.cloudsync.com/login)) and clicking the "Forgot Password?" link below the sign-in button.\n\nEnter your email address, and we will email you a secure link to create a new password. If you don't see the email arrive within a few minutes, please be sure to check your Spam or Junk folder.\n\nLet me know if you run into any issues!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000033",
+"conversation_id": "CONV-000033",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Manufacturing",
+"country": "Germany",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Search bug",
+"product_area": "Search",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Hard",
+"tags": ["search", "indexing", "bug"],
+"keywords": ["search not working", "can't find files", "indexing"],
+"related_kb": ["KB-085"],
+"gold_requirements": ["Acknowledge search issue", "Reindex account", "Ask for examples"],
+"must_include": ["reindexing", "cache", "exact file name"],
+"must_not_include": ["search is perfect"],
+"incoming_email": "The search bar is totally broken. I am searching for "Project_Alpha_Blueprint" and it says 0 results, but if I manually click into the Engineering folder, the file is literally right there. This makes the platform impossible to use.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the frustration. It sounds like the search index for your account has fallen out of sync with your actual folder directory.\n\nI have just triggered a manual reindexing of your account on our backend servers. This process essentially rebuilds your search cache from scratch. Please allow about 15-20 minutes for this process to complete.\n\nAfter 20 minutes, please try searching for "Project_Alpha_Blueprint" again. If it still doesn't appear, please let me know and provide the exact spelling of 2-3 other files that are missing from search so our Engineering team can investigate deeper.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000034",
+"conversation_id": "CONV-000034",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Software",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Admin settings",
+"product_area": "Admin Dashboard",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["admin", "transfer-ownership", "pro"],
+"keywords": ["transfer admin", "new owner", "leave company"],
+"related_kb": ["KB-027"],
+"gold_requirements": ["Explain how to transfer ownership", "Note billing implications"],
+"must_include": ["Admin Dashboard", "Transfer Ownership", "billing"],
+"must_not_include": ["email us to do it"],
+"incoming_email": "I am leaving my freelance agency next week and I need to transfer the "Admin" rights of our Pro account to my partner, Sarah. How do I make her the owner?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! Transferring ownership is a quick process.\n\nBefore you leave, you can transfer the Admin rights to Sarah by following these steps:\n1. Log in to the CloudSync web app and go to the Admin Dashboard.\n2. Navigate to the "Users" tab.\n3. Ensure Sarah is invited and fully active on the account.\n4. Click the three dots next to your name (the current owner) and select "Transfer Ownership".\n5. Select Sarah from the dropdown list and confirm.\n\nPlease note that Sarah will now be responsible for the billing details. She may want to update the credit card on file once she takes over.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000035",
+"conversation_id": "CONV-000035",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Telecommunications",
+"country": "Japan",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "Permission bug",
+"product_area": "File Sharing",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["permissions", "bug", "access-control"],
+"keywords": ["can't access", "denied", "admin rights", "broken"],
+"related_kb": ["KB-087"],
+"gold_requirements": ["Acknowledge severity", "Ask for user IDs", "Escalate to engineering"],
+"must_include": ["ticket ID", "engineering", "user IDs"],
+"must_not_include": ["did you check the settings"],
+"incoming_email": "We have a major issue. I am the Super Admin for our Enterprise account. I created a top-level folder "Q3_Financials" and set it to "Private". Today, three users from the marketing team reported they could see and download files from this folder. This is a massive security breach for us. WHY is this happening?",
+"ground_truth_reply": "Hi there,\n\nI treat any report regarding permission discrepancies with the utmost urgency, especially concerning private financial data.\n\nI have immediately escalated this to our Security Engineering team under ticket ID ENG-5201 to audit the access logs for the "Q3_Financials" folder.\n\nTo expedite the investigation, could you please provide:\n1. The exact email addresses of the three marketing users who accessed the folder.\n2. Whether this folder was ever briefly shared or if it inherited permissions from a parent folder.\n\nIn the meantime, I highly recommend verifying the "Link Settings" on that folder to ensure "Link Sharing" was not accidentally toggled on by another admin. \n\nI will monitor this ticket closely and reply as soon as engineering has pulled the audit logs.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000036",
+"conversation_id": "CONV-000036",
+"customer_segment": "Pro",
+"company_size": "11-50",
+"industry": "Design",
+"country": "Italy",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Linux client",
+"product_area": "Desktop Apps",
+"customer_tone": "Passive Aggressive",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["linux", "desktop-app", "feature-request"],
+"keywords": ["Ubuntu", "Linux", "desktop client", "sync"],
+"related_kb": ["KB-038"],
+"gold_requirements": ["Acknowledge lack of Linux support", "Suggest web or API workaround"],
+"must_include": ["Linux", "feature request", "web app"],
+"must_not_include": ["coming next month"],
+"incoming_email": "It is 2026 and you still don't have a native desktop client for Ubuntu. Half our developers use Linux and they have to upload everything manually through the browser like it's 2010. Are you ever going to release a Linux client?",
+"ground_truth_reply": "Hi there,\n\nI hear you loud and clear. \n\nWe currently offer native desktop apps for Windows and macOS, but we do not have an official Linux client. I know relying on the web browser isn't ideal for developers, and I have added your vote to our internal feature request tracker for a native Ubuntu/Linux client.\n\nWhile I don't have a timeline for a release, some of our more technical teams use our public API to build basic CLI sync scripts for their Linux environments. You can check out our API documentation here: [https://docs.cloudsync.com/api](https://www.google.com/search?q=https://docs.cloudsync.com/api) \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000037",
+"conversation_id": "CONV-000037",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "India",
+"language": "English",
+"priority": "Medium",
+"intent": "Authentication",
+"sub_intent": "MFA reset",
+"product_area": "Login",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["mfa", "authenticator", "reset"],
+"keywords": ["new phone", "authenticator", "lost 2FA"],
+"related_kb": ["KB-019"],
+"gold_requirements": ["Ask for backup codes", "Explain manual verification process"],
+"must_include": ["backup codes", "verify", "security"],
+"must_not_include": ["turned it off immediately"],
+"incoming_email": "Hello sir, I bought a new iPhone yesterday and I forgot to transfer my Google Authenticator app. I can no longer log in to CloudSync. Please turn off 2FA for me so I can log in. Thank you.",
+"ground_truth_reply": "Hi there,\n\nCongratulations on the new phone! I can certainly help you get back into your account.\n\nBecause Two-Factor Authentication (2FA) is a critical security feature, I cannot simply turn it off without verification. \n\nWhen you originally set up 2FA, you were given a list of 10 backup recovery codes. If you have those codes, you can enter one of them on the login screen instead of the Authenticator code.\n\nIf you do not have those backup codes, we will need to manually verify your identity before I can disable 2FA. Please reply to this email with:\n1. The approximate date you created the account.\n2. The names of two folders currently stored in your account.\n\nOnce verified, I will disable 2FA so you can log in and set it up on your new phone.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000038",
+"conversation_id": "CONV-000038",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Logistics",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Duplicate charge",
+"product_area": "Billing",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Refund",
+"difficulty": "Easy",
+"tags": ["duplicate", "charge", "refund"],
+"keywords": ["charged twice", "two charges", "credit card"],
+"related_kb": ["KB-041"],
+"gold_requirements": ["Acknowledge duplicate charge", "Process refund", "Explain timeline"],
+"must_include": ["refunded", "3-5 business days", "duplicate"],
+"must_not_include": ["dispute with your bank"],
+"incoming_email": "I just checked my corporate credit card statement and I was charged $499 twice on the same day (Oct 1st) by CloudSync. I only have one Business account. Reverse the extra charge right now.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the confusion and the duplicate charge. \n\nI looked into your billing history and it appears our payment processor accidentally triggered your renewal twice due to a timeout error on October 1st.\n\nI have immediately refunded the duplicate $499.00 charge. You will see this credit reflected on your corporate card statement within 3-5 business days, depending on your bank's processing times.\n\nYour account remains active and your correct annual subscription is fully paid.\n\nLet me know if you need anything else!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000039",
+"conversation_id": "CONV-000039",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Energy",
+"country": "Norway",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Medium",
+"tags": ["api", "pagination", "developer"],
+"keywords": ["API", "list files", "limit 100", "cursor"],
+"related_kb": ["KB-203"],
+"gold_requirements": ["Explain API pagination", "Provide code concept or parameter name"],
+"must_include": ["pagination", "cursor", "limit"],
+"must_not_include": ["we don't support API"],
+"incoming_email": "We are querying the /v2/folders/list endpoint. The folder has 450 files, but the API response only returns an array of 100 items. How do we retrieve the rest of the files via the API?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! \n\nOur API uses pagination to ensure fast response times and prevent timeouts on large directories. By default, the `/v2/folders/list` endpoint limits responses to 100 items per request.\n\nTo retrieve the remaining files, you'll need to use the `cursor` parameter. At the bottom of your initial JSON response, you will see a field called `has_more: true` along with a `next_cursor` string.\n\nFor your subsequent API call, pass that string in your request as `?cursor={your_next_cursor}`. This will return the next batch of 100 files. Keep looping this process until `has_more` returns `false`.\n\nYou can find full examples of handling pagination in our docs: [https://docs.cloudsync.com/api/pagination](https://www.google.com/search?q=https://docs.cloudsync.com/api/pagination)\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000040",
+"conversation_id": "CONV-000040",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Media",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Performance Issues",
+"sub_intent": "Slow performance",
+"product_area": "Desktop Apps",
+"customer_tone": "Annoyed",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["performance", "cpu", "mac"],
+"keywords": ["CPU", "fan", "battery", "MacBook"],
+"related_kb": ["KB-073"],
+"gold_requirements": ["Acknowledge CPU issue", "Explain initial indexing", "Offer troubleshooting"],
+"must_include": ["indexing", "CPU", "Activity Monitor"],
+"must_not_include": ["buy a faster computer"],
+"incoming_email": "Since I installed the Mac desktop app yesterday, my MacBook's fans have been running constantly and Activity Monitor says CloudSync is using 95% of my CPU. It's draining my battery in like two hours. Is this a known bug?",
+"ground_truth_reply": "Hi there,\n\nI'm sorry about the battery drain! That is definitely frustrating.\n\nBecause you just installed the app yesterday, what you are likely experiencing is the initial "indexing" phase. During the first sync, the desktop app has to scan every file in your CloudSync account and build a local database cache. If you have thousands of files, this can temporarily consume high CPU.\n\nOnce the initial sync says "Up to date," the CPU usage should drop down to less than 1% in the background.\n\nIf it has been stuck indexing for over 24 hours, or if it continues to use 95% CPU after saying it is "Up to date," please let me know. We can clear the cache and restart the process to clear out any hung threads.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000041",
+"conversation_id": "CONV-000041",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Real Estate",
+"country": "United States",
+"language": "English",
+"priority": "High",
+"intent": "Account Management",
+"sub_intent": "Deleted account",
+"product_area": "Admin Dashboard",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Hard",
+"tags": ["deleted-account", "recovery", "admin"],
+"keywords": ["accidentally deleted", "restore user", "urgent"],
+"related_kb": ["KB-098"],
+"gold_requirements": ["Acknowledge urgency", "Explain 30-day grace period", "Request engineering restoration"],
+"must_include": ["grace period", "engineering", "ticket ID"],
+"must_not_include": ["data is permanently gone immediately"],
+"incoming_email": "URGENT. I am the admin for our account. I was trying to remove access for a former employee and I accidentally deleted the account of our active CFO, Michael (michael@realtygroup.com). All his folders disappeared from our shared drive. Can you restore his account and data? This happened 10 minutes ago.",
+"ground_truth_reply": "Hi there,\n\nPlease take a deep breathâ€”I have good news! Michael's data is not permanently gone.\n\nWhen an admin deletes a user on the Business plan, the data is held in a secure "soft-deleted" state for a 30-day grace period precisely to prevent accidental data loss. \n\nBecause reversing a user deletion requires backend access, I have escalated this to our Data Recovery Engineering team under ticket ID ENG-5332. They will restore Michael's account and re-link his folders to your shared drive. This usually takes about 2-4 hours.\n\nI will monitor the ticket and notify you the moment his account is fully restored.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000042",
+"conversation_id": "CONV-000042",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Consulting",
+"country": "Australia",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Subscription cancellation",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["cancel", "subscription", "billing"],
+"keywords": ["cancel my plan", "stop renewing", "turn off auto-renew"],
+"related_kb": ["KB-049"],
+"gold_requirements": ["Provide cancellation steps", "Mention cycle end date"],
+"must_include": ["cancel subscription", "billing settings", "current cycle"],
+"must_not_include": ["offer a refund"],
+"incoming_email": "Hello team, I am wrapping up my business and won't need CloudSync Pro after this year. How do I turn off auto-renew so I don't get charged again next January?",
+"ground_truth_reply": "Hi there,\n\nI can certainly help you turn off auto-renewal for your Pro subscription.\n\nYou can easily cancel your subscription directly from your account settings:\n1. Log in to the CloudSync web app.\n2. Navigate to Settings > Billing.\n3. Scroll down and click "Cancel Subscription".\n4. Follow the on-screen prompts to confirm.\n\nOnce canceled, your account will remain on the Pro tier until the end of your current billing cycle in January. After that, it will not renew and will automatically downgrade to the Free tier.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000043",
+"conversation_id": "CONV-000043",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Low",
+"intent": "Feature Requests",
+"sub_intent": "AI Search",
+"product_area": "Search",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["ai", "search", "feature-request"],
+"keywords": ["AI", "natural language", "search inside images"],
+"related_kb": ["KB-039"],
+"gold_requirements": ["Log feature request", "Clarify current capability"],
+"must_include": ["feature request", "AI team", "metadata"],
+"must_not_include": ["we have AI search"],
+"incoming_email": "Are you guys adding any AI features? It would be awesome if I could just type "pictures of my dog from last summer" and it finds them without me having to name the files properly.",
+"ground_truth_reply": "Hi there,\n\nThat is a fantastic idea! Natural language AI search is becoming incredibly popular.\n\nCurrently, CloudSync's search engine relies on file names, tags, and standard metadata. We don't yet have an AI image recognition feature that can identify the content of your photos automatically.\n\nI have logged your idea as a formal feature request with our AI & Product teams. They are actively exploring ways to make our search smarter, and feedback like yours helps shape that roadmap.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000044",
+"conversation_id": "CONV-000044",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "United States",
+"language": "English",
+"priority": "Critical",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Desktop Apps",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": true,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["sync-failure", "enterprise", "windows"],
+"keywords": ["entire department", "Windows 10", "not syncing", "network drive"],
+"related_kb": ["KB-075"],
+"gold_requirements": ["Acknowledge critical impact", "Provide engineering ticket ID", "Ask for logs", "Escalate to manager"],
+"must_include": ["ticket ID", "engineering", "Account Manager", "diagnostic logs"],
+"must_not_include": ["reinstall the app"],
+"incoming_email": "Your Windows 10 desktop client has stopped syncing for our entire accounting department (approx 60 users). It seems to have broken after we mapped our local network drives through GPO this morning. No files are uploading to CloudSync. We are at a standstill.",
+"ground_truth_reply": "Hi there,\n\nI recognize the critical nature of this issueâ€”having 60 accounting users unable to sync files is highly disruptive. \n\nSince this issue coincides with mapping network drives via GPO, it is likely a conflict with how the CloudSync client traverses mapped volume paths. I have immediately escalated this to our Desktop Engineering team under ticket ID ENG-5401.\n\nTo help them diagnose the exact GPO conflict, could you please run the CloudSync Diagnostic Tool on one of the affected machines and securely attach the resulting .zip log file here?\n\nI am also looping in your Enterprise Account Manager so they can track this critical incident closely with you. We will update you as soon as engineering analyzes the logs.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000045",
+"conversation_id": "CONV-000045",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Healthcare",
+"country": "Canada",
+"language": "English",
+"priority": "Medium",
+"intent": "Enterprise Administration",
+"sub_intent": "SCIM",
+"product_area": "Admin Dashboard",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["scim", "provisioning", "okta"],
+"keywords": ["SCIM", "Okta", "deprovision", "not removing"],
+"related_kb": ["KB-106"],
+"gold_requirements": ["Identify SCIM sync issue", "Explain token refresh", "Link to Okta guide"],
+"must_include": ["SCIM token", "Okta", "deprovisioning"],
+"must_not_include": ["manually delete them"],
+"incoming_email": "We use Okta SCIM to manage CloudSync users. Provisioning works fine, but when we deactivate a user in Okta, they are not being deprovisioned or removed from the CloudSync admin dashboard. Why is the sync failing on deletion?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out. I can help you get your SCIM deprovisioning working smoothly again.\n\nTypically, when Okta SCIM provisions successfully but fails to deprovision, it means the API bearer token used for the integration lacks the specific "Delete User" permission scope, or the token has partially expired.\n\nI recommend generating a fresh SCIM bearer token in your CloudSync Admin Dashboard (Admin > Integrations > SCIM) ensuring all scopes are checked. Then, update the API credentials within your Okta CloudSync app settings.\n\nAfter saving, try manually pushing a group update in Okta to force a sync. You can review our full Okta SCIM troubleshooting guide here: https://docs.cloudsync.com/enterprise/okta-scim\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000046",
+"conversation_id": "CONV-000046",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Photography",
+"country": "France",
+"language": "English",
+"priority": "High",
+"intent": "Billing",
+"sub_intent": "Upgrade",
+"product_area": "Billing",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["upgrade", "storage-full", "billing-error"],
+"keywords": ["storage full", "trying to upgrade", "error processing card"],
+"related_kb": ["KB-043"],
+"gold_requirements": ["Acknowledge urgency", "Identify bank block", "Suggest calling bank"],
+"must_include": ["storage limit", "bank", "declined"],
+"must_not_include": ["your card is fake"],
+"incoming_email": "My account hit the 2TB storage limit in the middle of a wedding upload. I am trying to upgrade to the 5TB Pro plan, but every time I click submit, it says 'Error processing payment'. I have tried two different credit cards. Please help, I need to upload these photos tonight!",
+"ground_truth_reply": "Hi there,\n\nI completely understand the panic of hitting a storage limit during a crucial upload, and I'm sorry you're running into payment errors.\n\nI checked our billing logs, and both of your upgrade attempts were declined by your bank with a "Do Not Honor" code. This usually happens when a bank's automated fraud system flags an unexpected international or online software subscription charge.\n\nTo resolve this immediately, you will need to call the customer service number on the back of your credit card, inform them you are trying to make a purchase at CloudSync, and ask them to authorize the charge. \n\nOnce they whitelist it, you can try clicking "Upgrade" again in your billing dashboard, and it should go through instantly.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000047",
+"conversation_id": "CONV-000047",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Student",
+"country": "Germany",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Export data",
+"product_area": "Web App",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["export", "download-all", "backup"],
+"keywords": ["download everything", "backup my files", "export"],
+"related_kb": ["KB-030"],
+"gold_requirements": ["Provide steps to download bulk", "Mention Desktop App for large accounts"],
+"must_include": ["download", "desktop app", "ZIP"],
+"must_not_include": ["we don't allow exporting"],
+"incoming_email": "Hi, I am finishing university and want to download a backup of every single file in my CloudSync account to my external hard drive. What is the fastest way to do this?",
+"ground_truth_reply": "Hi there,\n\nCongratulations on finishing university! I'd be happy to help you back up your files.\n\nThe fastest and most reliable way to download your entire account is by using the CloudSync Desktop App, rather than the web browser.\n\n1. Download and install the app from https://cloudsync.com/download.\n2. Sign in to your account.\n3. The app will create a 'CloudSync' folder on your computer. \n4. Simply open that folder, copy all the contents, and paste them directly onto your external hard drive.\n\nIf you only have a few files and prefer not to install the app, you can log in to the web interface, select all your folders, and click "Download" to receive them as a compressed ZIP file.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000048",
+"conversation_id": "CONV-000048",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Media",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Hard",
+"tags": ["api", "oauth", "developer"],
+"keywords": ["OAuth 2.0", "refresh token", "expiring", "unauthorized"],
+"related_kb": ["KB-208"],
+"gold_requirements": ["Explain refresh token lifecycle", "Ask for code snippet"],
+"must_include": ["OAuth 2.0", "refresh token", "access token", "401"],
+"must_not_include": ["use basic auth instead"],
+"incoming_email": "Our custom integration uses OAuth 2.0. We are successfully retrieving the initial access token, but our refresh token requests keep failing with a 401 Unauthorized error after 24 hours. Are refresh tokens single-use on your platform?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! OAuth flow issues can definitely be tricky to debug, but I can clarify how our refresh tokens work.\n\nYes, CloudSync implements strict token rotation. This means our refresh tokens are indeed single-use. When you use a refresh token to request a new access token, the API response will include both a new access token and a brand new refresh token. \n\nIf your application attempts to use the old refresh token a second time, it will trigger a 401 Unauthorized error, and for security reasons, it will revoke the entire token family, forcing the user to re-authenticate.\n\nPlease ensure your database is overwriting the old refresh token with the newly issued one upon every refresh request. \n\nIf you are already doing this and still seeing 401s, please share a snippet of your refresh request headers (redacting the actual token) so our API engineers can take a closer look.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000049",
+"conversation_id": "CONV-000049",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Legal",
+"country": "United Kingdom",
+"language": "English",
+"priority": "High",
+"intent": "Security & Compliance",
+"sub_intent": "Audit logs",
+"product_area": "Admin Dashboard",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": true,
+"resolution_type": "Manager Escalation",
+"difficulty": "Medium",
+"tags": ["audit-logs", "ip-address", "security-breach"],
+"keywords": ["IP address", "login history", "unauthorized access"],
+"related_kb": ["KB-092"],
+"gold_requirements": ["Acknowledge security concern", "Explain how to view login IPs", "Offer manager escalation"],
+"must_include": ["Admin Dashboard", "IP address", "Security team"],
+"must_not_include": ["ignore the login alert"],
+"incoming_email": "One of our partners received a 'New Login from unrecognized device' email this morning, but they are on vacation and did not log in. We suspect their account may have been compromised. Where in the Admin console can I see the exact IP address and location of that specific login attempt?",
+"ground_truth_reply": "Hi there,\n\nI understand how concerning a potential unauthorized login is. Let's get you that information immediately so you can secure the account.\n\nAs a Business Admin, you can view detailed login history, including IP addresses and geolocations, right from your dashboard:\n1. Go to Admin Dashboard > Audit Logs.\n2. Under the "Event Type" filter, select "Logins".\n3. In the "User" filter, enter your partner's email address.\n4. Click on the specific login event to expand the details pane, which will display the IP address.\n\nAs a precaution, I highly recommend going to the "Users" tab, selecting your partner's profile, and clicking "Force Password Reset" and "Revoke All Sessions".\n\nI am also looping in your Account Manager in case you need our Security team to run a deeper forensic analysis on what files were accessed during that session.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000050",
+"conversation_id": "CONV-000050",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Design",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Upload issue",
+"product_area": "Web App",
+"customer_tone": "Passive Aggressive",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": ["upload-error", "file-type", "web-app"],
+"keywords": ["won't upload", "unsupported", "svg"],
+"related_kb": ["KB-065"],
+"gold_requirements": ["Identify file type restriction", "Provide workaround"],
+"must_include": ["SVG", "security", "ZIP"],
+"must_not_include": ["we will support it soon"],
+"incoming_email": "Why does your system refuse to let me upload an .SVG file? It gives me a weird 'Security Policy Violation' error. It is literally just a vector graphic for a website logo. Did I pay for Pro just to be told what files I'm allowed to upload?",
+"ground_truth_reply": "Hi there,\n\nI understand the frustration. SVG files are standard in the design world, and getting an error when uploading one is certainly annoying.\n\nThe "Security Policy Violation" error occurs because CloudSync's web upload scanner blocks native .svg files by default. SVGs are essentially XML code, and they can sometimes be used to embed malicious JavaScript payloads (Cross-Site Scripting). \n\nHowever, you can still store and share your SVGs on CloudSync using this quick workaround: \nSimply place the .svg file into a .zip folder, or use our Desktop App to upload it. The Desktop App utilizes a different secure sync protocol that does not flag SVG files.\n\nI apologize for the extra step, but this policy helps keep all our users' accounts secure.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000051",
+"conversation_id": "CONV-000051",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Canada",
+"language": "English",
+"priority": "Low",
+"intent": "Account Management",
+"sub_intent": "Email change",
+"product_area": "Account Settings",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["email-change", "error", "conflict"],
+"keywords": ["already in use", "change email", "can't update"],
+"related_kb": ["KB-016"],
+"gold_requirements": ["Identify email conflict", "Provide steps to free up the email"],
+"must_include": ["already exists", "delete", "alias"],
+"must_not_include": ["I will merge them"],
+"incoming_email": "I am trying to change my account email from my old college address to my personal gmail. But when I enter my gmail in the settings, it says 'Email already in use'. I don't remember making an account with my gmail. How do I fix this?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! I can help clear this up.\n\nThat error means there is already a CloudSync account associated with your Gmail address. You likely clicked "Sign in with Google" at some point in the past, which automatically generated a blank Free account.\n\nTo free up your Gmail address so you can use it for your main account, follow these steps:\n1. Log out of your college account.\n2. Log in using your Gmail address (use the "Forgot Password" link if needed).\n3. Go to Settings > Security and click "Delete Account".\n4. Once the Gmail account is deleted, log back into your college account.\n5. You will now be able to successfully update your email to your Gmail address!\n\nLet me know if you run into any issues during the process.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000052",
+"conversation_id": "CONV-000052",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Technology",
+"country": "Japan",
+"language": "English",
+"priority": "Medium",
+"intent": "How-To",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Medium",
+"tags": ["api", "webhooks", "signature"],
+"keywords": ["webhook signature", "verify", "HMAC"],
+"related_kb": ["KB-206"],
+"gold_requirements": ["Explain webhook verification", "Mention HMAC-SHA256"],
+"must_include": ["X-CloudSync-Signature", "HMAC-SHA256", "webhook secret"],
+"must_not_include": ["ignore the signature"],
+"incoming_email": "We are setting up an endpoint to receive CloudSync webhooks for file creation events. To ensure the requests are actually coming from your servers, how do we verify the payload signature?",
+"ground_truth_reply": "Hi there,\n\nExcellent question. Verifying webhooks is a crucial security best practice.\n\nCloudSync signs every webhook payload using HMAC-SHA256. When we send a webhook to your endpoint, we include an X-CloudSync-Signature header in the HTTP request.\n\nTo verify the request:\n1. Retrieve your unique "Webhook Secret" from the Developer Dashboard.\n2. Compute the HMAC-SHA256 hash of the raw request body using your Webhook Secret as the key.\n3. Compare your computed hash to the value provided in the X-CloudSync-Signature header.\n\nIf they match exactly, you can be 100% certain the webhook originated from CloudSync and the payload was not altered in transit. \n\nYou can find code snippets for this process in Node.js, Python, and Go in our developer docs: https://docs.cloudsync.com/api/webhooks/security\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000053",
+"conversation_id": "CONV-000053",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "Australia",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Public API improvements",
+"product_area": "API",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": ["api", "feature-request", "watermark"],
+"keywords": ["API", "watermark", "images"],
+"related_kb": ["KB-040"],
+"gold_requirements": ["Log request", "Clarify current limitations"],
+"must_include": ["feature request", "API endpoints", "watermark"],
+"must_not_include": ["we will build it"],
+"incoming_email": "Does your API have an endpoint to automatically apply a watermark to images as they are uploaded? We want to protect our agency's assets before sharing them with third-party vendors.",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! \n\nCurrently, our API does not have an endpoint or native parameter to automatically apply watermarks to image uploads. The API strictly handles the storage and retrieval of the raw files as they are provided.\n\nI can definitely see how automated watermarking would be highly valuable for agencies protecting their assets. I have logged this as a feature request with our Developer Platform team.\n\nIn the meantime, the best workaround is to have your internal server apply the watermark to the image programmatically (using a library like ImageMagick) just before making the POST request to our upload endpoint.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000054",
+"conversation_id": "CONV-000054",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Freelance",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Billing",
+"sub_intent": "Discount request",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Discount Applied",
+"difficulty": "Easy",
+"tags": ["discount", "non-profit", "billing"],
+"keywords": ["discount", "non-profit", "cheaper"],
+"related_kb": ["KB-055"],
+"gold_requirements": ["Acknowledge non-profit status", "Explain requirements", "Offer discount"],
+"must_include": ["501(c)(3)", "non-profit discount", "tax-exempt"],
+"must_not_include": ["we don't offer discounts"],
+"incoming_email": "Hello, I am setting up CloudSync for a small registered animal rescue charity. The Pro plan is a bit out of our tight budget. Do you offer any discounts for non-profits?",
+"ground_truth_reply": "Hi there,\n\nThank you for the amazing work you do with the animal rescue! We love supporting organizations like yours.\n\nWe absolutely offer a non-profit discount. We provide a 50% lifetime discount on our Pro and Business plans for registered charitable organizations.\n\nTo apply this to your account, please reply to this email with a copy of your official 501(c)(3) determination letter (or your country's equivalent tax-exempt documentation).\n\nOnce I receive that, I will manually upgrade your account and apply the discount so you can get started right away!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000055",
+"conversation_id": "CONV-000055",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Brazil",
+"language": "English",
+"priority": "High",
+"intent": "Authentication",
+"sub_intent": "MFA reset",
+"product_area": "Login",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["sms", "mfa", "not-receiving"],
+"keywords": ["SMS", "text message", "not getting code"],
+"related_kb": ["KB-020"],
+"gold_requirements": ["Empathize with frustration", "Suggest carrier issues", "Offer manual bypass verification"],
+"must_include": ["SMS delivery", "verify your identity", "carrier"],
+"must_not_include": ["turn off MFA immediately"],
+"incoming_email": "I am trying to log in but I am not receiving the text message with the 6 digit code. I have clicked 'resend' 5 times. My phone signal is fine. Let me into my account!",
+"ground_truth_reply": "Hi there,\n\nI apologize for the delay! It is incredibly frustrating when SMS codes get lost in the ether.\n\nSometimes, SMS delivery can be delayed or blocked by cellular carriers due to automated spam filters, even if your signal is strong. \n\nIf you still haven't received the codes, we can manually disable the SMS requirement so you can log in, but I will need to verify your identity first.\n\nPlease reply to this email with:\n1. The approximate date you created your CloudSync account.\n2. The names of two folders or files currently stored in your account.\n\nOnce verified, I will disable the SMS prompt. Going forward, I highly recommend switching your 2FA method to an Authenticator App (like Authy or Google Authenticator), which generates codes locally and doesn't rely on cell networks.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000056",
+"conversation_id": "CONV-000056",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Healthcare",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "How-To",
+"sub_intent": "Set permissions",
+"product_area": "File Sharing",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["permissions", "subfolders", "inheritance"],
+"keywords": ["break inheritance", "subfolder", "hide"],
+"related_kb": ["KB-023"],
+"gold_requirements": ["Explain folder inheritance", "Provide steps to restrict access"],
+"must_include": ["inheritance", "restrict access", "permissions"],
+"must_not_include": ["you cannot do this"],
+"incoming_email": "We have a top-level shared folder called 'HR_Docs' that all employees can see. Inside it, I want to create a subfolder called 'Exec_Comp' that only the HR directors can see. How do I break the permission inheritance?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out. Managing folder permissions accurately is crucial, especially for HR documentation.\n\nBy default, all subfolders inherit the permissions of their parent folder. However, you can restrict access to specific subfolders using these steps:\n\n1. Create the 'Exec_Comp' subfolder inside 'HR_Docs'.\n2. Right-click 'Exec_Comp' and select "Manage Access".\n3. In the permissions window, toggle the switch that says "Inherit permissions from parent".\n4. You will be prompted to either copy existing users or remove them. Select "Remove all standard users".\n5. Now, manually type in the email addresses of the HR directors to grant them exclusive access.\n\nStandard employees will no longer see the 'Exec_Comp' folder when they browse 'HR_Docs'.\n\nYou can read more about permission inheritance here: https://docs.cloudsync.com/sharing/folder-permissions\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000057",
+"conversation_id": "CONV-000057",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Manufacturing",
+"country": "Germany",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "Desktop crash",
+"product_area": "Desktop Apps",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["windows", "blue-screen", "crash"],
+"keywords": ["BSOD", "blue screen", "crashing PC", "Windows 11"],
+"related_kb": ["KB-080"],
+"gold_requirements": ["Acknowledge severity of BSOD", "Escalate to engineering", "Ask for dump files"],
+"must_include": ["BSOD", "minidump", "engineering", "ticket ID"],
+"must_not_include": ["it's a Microsoft problem"],
+"incoming_email": "Your recent update to the Windows desktop app is causing Blue Screen of Death (BSOD) crashes on my machine. It happens every time I try to "Free up space" on a large folder. Error code is PAGE_FAULT_IN_NONPAGED_AREA. This is completely unacceptable for business software.",
+"ground_truth_reply": "Hi there,\n\nI am incredibly sorry that the desktop app update is causing BSOD crashes on your machine. I know how disruptive and alarming a hard system crash is.\n\nA PAGE_FAULT error when utilizing the "Free up space" feature suggests a deep conflict between our virtual file system driver and your Windows OS kernel. I have immediately escalated this to our Core Windows Engineering team under ticket ID ENG-5510.\n\nTo help our developers pinpoint the exact driver failure, could you please provide the Windows minidump file from the crash? \n1. Navigate to C:\\Windows\\Minidump\n2. Locate the most recent .dmp file.\n3. Zip the file and attach it securely to this email thread.\n\nIn the meantime, I recommend pausing CloudSync syncing or uninstalling the client to prevent further crashes while we investigate.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000058",
+"conversation_id": "CONV-000058",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Education",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Account Management",
+"sub_intent": "Merge accounts",
+"product_area": "Account Settings",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": ["transfer", "files", "merge"],
+"keywords": ["move files", "another account", "transfer ownership"],
+"related_kb": ["KB-017"],
+"gold_requirements": ["Explain sharing method", "Explain transfer ownership"],
+"must_include": ["share", "transfer ownership", "copy"],
+"must_not_include": ["we can migrate it on the backend"],
+"incoming_email": "I have been using a Free account for years, but my school just gave me a Pro account. How do I move all my folders from my Free account into my new Pro account without having to download and re-upload gigabytes of data?",
+"ground_truth_reply": "Hi there,\n\nCongrats on getting the Pro account! You can absolutely move your files over without having to download and re-upload anything.\n\nHere is the fastest way to do it via the web app:\n1. Log in to your old Free account.\n2. Create a new master folder and move all your files into it.\n3. Share that master folder with your new Pro school email address, granting "Can Edit" permissions.\n4. Log out, and log in to your new Pro account.\n5. Open the shared master folder, select all the files inside, and click "Copy" to move them into your main Pro directory.\n\nAlternatively, from the Free account, you can select the folders, click "Share", and choose "Transfer Ownership" to directly assign them to your Pro email.\n\nLet me know if you run into any snags!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000059",
+"conversation_id": "CONV-000059",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Retail",
+"country": "United Kingdom",
+"language": "English",
+"priority": "High",
+"intent": "Performance Issues",
+"sub_intent": "Slow performance",
+"product_area": "Web App",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": ["latency", "web-app", "enterprise"],
+"keywords": ["timeout", "loading spinner", "504 Gateway Timeout"],
+"related_kb": ["KB-067"],
+"gold_requirements": ["Acknowledge latency", "Provide ticket ID", "Ask for HAR file"],
+"must_include": ["504 Gateway Timeout", "HAR file", "engineering", "ticket ID"],
+"must_not_include": ["clear your cache"],
+"incoming_email": "The web interface is crawling today. Clicking into any folder with more than 50 files results in an endless loading spinner, and eventually throws a '504 Gateway Timeout' error. This is happening across multiple offices in the UK, so it is not our internet. Look into this.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the severe latency you are experiencing. If this is happening across multiple offices and resulting in 504 timeouts, it strongly points to a backend routing or database indexing issue in our European data region.\n\nI have immediately escalated this to our Infrastructure team under ticket ID ENG-5602 for urgent investigation.\n\nTo help them pinpoint exactly where the latency is occurring in the network hop, could your IT team generate a .HAR (HTTP Archive) file from the browser network tab during one of the slow folder loads? Attaching that file here will drastically speed up their debugging process.\n\nI will keep you updated as soon as the infrastructure team responds.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000060",
+"conversation_id": "CONV-000060",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Consulting",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Billing",
+"sub_intent": "Invoice",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": ["invoice", "receipt", "billing"],
+"keywords": ["copy of invoice", "receipt", "where to find"],
+"related_kb": ["KB-050"],
+"gold_requirements": ["Provide steps to download invoice"],
+"must_include": ["Billing page", "PDF", "download"],
+"must_not_include": ["I have attached it"],
+"incoming_email": "Hi team, our accounting department needs a PDF copy of our most recent annual receipt. Where can I download this?",
+"ground_truth_reply": "Hi there,\n\nI'd be happy to point you in the right direction!\n\nAs an admin, you can view and download all past invoices and receipts directly from your account:\n\n1. Log in to the CloudSync web app.\n2. Go to Settings > Billing.\n3. Scroll down to the "Billing History" section.\n4. Click the "Download PDF" icon next to the most recent invoice date.\n\nIf your accounting department needs these automatically sent to them in the future, you can also add their email to the "Billing Contacts" field on that same page.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000061",
+"conversation_id": "CONV-000061",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Design",
+"country": "Italy",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Trial expired",
+"product_area": "Billing",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Refund",
+"difficulty": "Easy",
+"tags": [
+"billing",
+"refund",
+"trial"
+],
+"keywords": [
+"trial ended",
+"did not mean to buy",
+"charged"
+],
+"related_kb": [
+"KB-045"
+],
+"gold_requirements": [
+"Acknowledge trial expiration",
+"Process refund",
+"Downgrade to free"
+],
+"must_include": [
+"refunded",
+"3-5 business days",
+"downgraded"
+],
+"must_not_include": [
+"refuse refund"
+],
+"incoming_email": "Hi, I signed up for a trial to test the file sharing, but I didn't realize it would auto-upgrade to the annual Pro plan. I just got a receipt for $144. I am a student and cannot afford this. Can you please cancel and refund me?",
+"ground_truth_reply": "Hi there,\n\nI completely understand, it is easy to lose track of trial dates! I can certainly help you with this.\n\nI have canceled your Pro subscription and processed a full refund of $144.00 to your original payment method. Depending on your bank, it usually takes 3-5 business days for the funds to appear on your statement.\n\nYour account has been safely downgraded to our Free tier, which includes 5GB of storage. You will not lose any files currently in your account.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000062",
+"conversation_id": "CONV-000062",
+"customer_segment": "Business",
+"company_size": "11-50",
+"industry": "Software",
+"country": "United States",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "Download issue",
+"product_area": "Desktop Apps",
+"customer_tone": "Angry",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"mac",
+"download",
+"error-403"
+],
+"keywords": [
+"cannot download",
+"403 Forbidden",
+"macOS"
+],
+"related_kb": [
+"KB-078"
+],
+"gold_requirements": [
+"Acknowledge download failure",
+"Explain 403 error context",
+"Provide reset instructions"
+],
+"must_include": [
+"re-authenticate",
+"403 error",
+"Desktop App"
+],
+"must_not_include": [
+"reinstall OS"
+],
+"incoming_email": "My Mac desktop app is completely failing to download files shared by my CEO. It just shows a '403 Forbidden' error in the sync queue. I am logged in and I definitely have permission to view these files. This is holding up a major release.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the roadblock! A 403 Forbidden error in the desktop app usually means the local authentication token has expired or become corrupted, causing the server to reject the download request despite your account having the correct permissions.\n\nLet's force the app to fetch a fresh token:\n1. Click the CloudSync icon in your Mac menu bar.\n2. Click the Gear icon and select "Preferences".\n3. Go to the "Account" tab and click "Unlink This Mac".\n4. The app will restart and prompt you to log in again.\n\nOnce you re-authenticate, it will re-index (without deleting any local data) and the 403 error should clear, allowing the CEO's files to download.\n\nLet me know if the error persists after relinking!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000063",
+"conversation_id": "CONV-000063",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Canada",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Import data",
+"product_area": "Web App",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"import",
+"migration",
+"google-drive"
+],
+"keywords": [
+"move from Google Drive",
+"import files",
+"transfer"
+],
+"related_kb": [
+"KB-031"
+],
+"gold_requirements": [
+"Explain migration tools",
+"Suggest Desktop app for large transfers"
+],
+"must_include": [
+"Desktop App",
+"drag and drop",
+"import"
+],
+"must_not_include": [
+"we have a one-click button"
+],
+"incoming_email": "I'm trying to move all my personal files from Google Drive over to CloudSync. Do you have a tool that just copies them over automatically?",
+"ground_truth_reply": "Hi there,\n\nWelcome to CloudSync! We're thrilled to have you.\n\nCurrently, we don't have a direct server-to-server integration tool to pull files automatically from Google Drive into a Free account. \n\nThe easiest and most reliable way to migrate your data is using your computer:\n1. Download your files from Google Drive to your local hard drive.\n2. Install the CloudSync Desktop App (https://cloudsync.com/download).\n3. Simply drag and drop those downloaded folders into your new local CloudSync folder.\n\nThe desktop app will then safely sync everything up to our servers in the background. \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000064",
+"conversation_id": "CONV-000064",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Audit logs",
+"product_area": "Admin Dashboard",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": [
+"audit-logs",
+"splunk",
+"integration"
+],
+"keywords": [
+"Splunk",
+"export logs automatically",
+"SIEM"
+],
+"related_kb": [
+"KB-093"
+],
+"gold_requirements": [
+"Acknowledge SIEM requirement",
+"Log feature request",
+"Suggest API workaround"
+],
+"must_include": [
+"feature request",
+"API",
+"SIEM"
+],
+"must_not_include": [
+"we support Splunk natively"
+],
+"incoming_email": "Our InfoSec team requires all SaaS audit logs to be ingested directly into our Splunk SIEM. Does CloudSync offer a native Splunk integration to forward audit events in real time? If not, this is a formal feature request.",
+"ground_truth_reply": "Hi there,\n\nThank you for reaching out. I can confirm that we do not currently offer a native, plug-and-play integration for Splunk or other SIEM providers to stream audit events.\n\nI have logged this as a formal feature request for our Enterprise Product team, as we know direct SIEM ingestion is a major requirement for InfoSec teams.\n\nIn the meantime, the standard workaround used by our Enterprise customers is to write a lightweight script that queries our /v2/admin/audit_logs API endpoint on a cron schedule and forwards the JSON payloads into Splunk via HTTP Event Collector (HEC).\n\nYou can find the documentation for the audit log API endpoint here: https://docs.cloudsync.com/api/admin/audit-logs\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000065",
+"conversation_id": "CONV-000065",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Legal",
+"country": "Australia",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Merge accounts",
+"product_area": "Account Settings",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"domain-capture",
+"merge",
+"admin"
+],
+"keywords": [
+"capture user",
+"rogue account",
+"merge"
+],
+"related_kb": [
+"KB-017",
+"KB-026"
+],
+"gold_requirements": [
+"Explain domain capture",
+"Provide steps to invite the user"
+],
+"must_include": [
+"Domain Capture",
+"invite",
+"personal files"
+],
+"must_not_include": [
+"force delete their data"
+],
+"incoming_email": "We have an employee who created a Free CloudSync account using their corporate email address BEFORE we set up our Business plan. Now I cannot invite them to our team; it says they already exist. How do we merge their rogue account into our corporate umbrella?",
+"ground_truth_reply": "Hi there,\n\nThis is a very common scenario when rolling out a new Business plan! \n\nWhen you attempt to invite an employee who already has a Free account tied to your corporate domain, our system initiates a process called "Domain Capture".\n\nHere is what you need to do:\n1. Go to your Admin Dashboard > Users.\n2. Click "Invite Users" and enter their corporate email.\n3. The system will send them a special invitation email.\n4. When the employee clicks the link in that email, they will be prompted to either migrate their existing files into your Business team or change their email address to a personal one (if those files were private).\n\nOnce they accept and choose to migrate, their account will be converted to a managed seat and their files will be safely merged into your Business environment.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000066",
+"conversation_id": "CONV-000066",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Marketing",
+"country": "Germany",
+"language": "English",
+"priority": "Medium",
+"intent": "Authentication",
+"sub_intent": "Microsoft login",
+"product_area": "Login",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"microsoft-sso",
+"login-error",
+"azure"
+],
+"keywords": [
+"Microsoft sign in",
+"AADSTS50105",
+"blocked"
+],
+"related_kb": [
+"KB-018"
+],
+"gold_requirements": [
+"Identify Azure AD error",
+"Direct user to their IT admin"
+],
+"must_include": [
+"Azure AD",
+"IT admin",
+"Enterprise Application"
+],
+"must_not_include": [
+"reset password"
+],
+"incoming_email": "I use the 'Sign in with Microsoft' button to access CloudSync. Today it is failing with an error: 'AADSTS50105: The signed in user is not assigned to a role for the application'. What did you guys change? Let me in.",
+"ground_truth_reply": "Hi there,\n\nI understand the frustration of being locked out abruptly. \n\nThe error code AADSTS50105 is actually generated by your company's Microsoft Azure AD environment, not CloudSync. It indicates that your company's IT administrator has restricted access to the CloudSync OAuth app on the Microsoft side, and your specific user profile has not been assigned permission to use it.\n\nBecause this block is enforced by Microsoft, we cannot bypass it on our end. You will need to contact your IT department and ask them to assign your user account to the "CloudSync" Enterprise Application in their Azure AD portal.\n\nOnce they grant you access, the Microsoft login button will work perfectly again.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000067",
+"conversation_id": "CONV-000067",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Healthcare",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Security & Compliance",
+"sub_intent": "Compliance",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": true,
+"resolution_type": "Document Provision",
+"difficulty": "Medium",
+"tags": [
+"hipaa",
+"baa",
+"compliance"
+],
+"keywords": [
+"HIPAA",
+"BAA",
+"Business Associate Agreement"
+],
+"related_kb": [
+"KB-114"
+],
+"gold_requirements": [
+"Confirm HIPAA compliance capability",
+"Provide steps to sign BAA"
+],
+"must_include": [
+"HIPAA",
+"Business Associate Agreement",
+"BAA"
+],
+"must_not_include": [
+"we are fully HIPAA compliant out of the box"
+],
+"incoming_email": "We are a regional hospital network upgrading to the Enterprise tier. We will be storing Protected Health Information (PHI) on your servers. Do you sign Business Associate Agreements (BAAs) for HIPAA compliance?",
+"ground_truth_reply": "Hi there,\n\nThank you for reaching out. Yes, CloudSync Enterprise can be configured to support HIPAA compliance, and we absolutely sign Business Associate Agreements (BAAs) with our healthcare customers.\n\nPlease note that CloudSync is not configured for HIPAA compliance "out of the box." Signing the BAA is a required step before any PHI is uploaded to our platform.\n\nYou can review and digitally sign our standard BAA via our Security Trust Center at https://trust.cloudsync.com/hipaa.\n\nIf your compliance team prefers to use your organization's custom BAA, please reply and attach it here. I will escalate it to your dedicated Account Manager and our Legal team for review.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000068",
+"conversation_id": "CONV-000068",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Education",
+"country": "Spain",
+"language": "English",
+"priority": "Medium",
+"intent": "Performance Issues",
+"sub_intent": "Upload issue",
+"product_area": "Mobile Apps",
+"customer_tone": "Impatient",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"mobile",
+"ios",
+"background-upload"
+],
+"keywords": [
+"iPhone",
+"stops uploading",
+"screen turns off"
+],
+"related_kb": [
+"KB-068"
+],
+"gold_requirements": [
+"Identify iOS background restriction",
+"Provide instructions to enable background refresh"
+],
+"must_include": [
+"iOS",
+"Background App Refresh",
+"open"
+],
+"must_not_include": [
+"android"
+],
+"incoming_email": "I'm trying to backup my camera roll using the iPhone app. But every time my phone screen goes to sleep, the upload completely stops. I have to leave the screen on and stare at it to make it upload. Fix your app.",
+"ground_truth_reply": "Hi there,\n\nI understand how annoying it is to have to keep your screen awake just to back up your photos!\n\nThis is actually a strict memory limitation built into iOS by Apple, rather than a bug in the CloudSync app. When an app is sent to the background (or the screen locks), iOS suspends its network activity to save battery.\n\nTo allow CloudSync to upload in the background, you need to enable two settings on your iPhone:\n1. Go to your iPhone Settings > General > Background App Refresh, and ensure it is toggled ON for CloudSync.\n2. Open the CloudSync app, go to Settings > Camera Uploads, and enable "Background Uploading". (Note: iOS will only allow this to run when your phone detects a significant location change).\n\nFor massive initial backups, we still recommend keeping the phone plugged into power and leaving the app open on the screen until it finishes.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000069",
+"conversation_id": "CONV-000069",
+"customer_segment": "Pro",
+"company_size": "11-50",
+"industry": "Media",
+"country": "Japan",
+"language": "English",
+"priority": "Medium",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"api",
+"upload",
+"multipart"
+],
+"keywords": [
+"API upload",
+"multipart/form-data",
+"corrupted"
+],
+"related_kb": [
+"KB-204"
+],
+"gold_requirements": [
+"Clarify upload content-type",
+"Provide correct endpoint usage"
+],
+"must_include": [
+"application/octet-stream",
+"multipart/form-data",
+"binary"
+],
+"must_not_include": [
+"we don't support large files via API"
+],
+"incoming_email": "We are trying to upload video files via the API using the /v2/files/upload endpoint. We are sending the request as multipart/form-data. The file uploads successfully, but when we download it, the video is unplayable and slightly larger than the original. What are we doing wrong?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! It sounds like you are very close to getting this working.\n\nThe issue lies in the Content-Type of your request. Our /v2/files/upload endpoint does not support multipart/form-data uploads. When you send it this way, the API writes the raw multipart boundary headers into the file itself, which corrupts the video and increases the file size.\n\nTo fix this, you must send the raw binary file contents in the request body, and set the header to Content-Type: application/octet-stream.\n\nYou pass the file metadata (like the target folder path and file name) via a custom header called CloudSync-API-Arg formatted as a JSON string.\n\nYou can find a complete cURL example of a correct binary upload here: https://docs.cloudsync.com/api/files/upload\n\nLet me know if you get it working!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000070",
+"conversation_id": "CONV-000070",
+"customer_segment": "Enterprise",
+"company_size": "201-1000",
+"industry": "Government",
+"country": "Canada",
+"language": "English",
+"priority": "High",
+"intent": "Enterprise Administration",
+"sub_intent": "SAML",
+"product_area": "Admin Dashboard",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"saml",
+"certificate",
+"expired"
+],
+"keywords": [
+"SAML certificate",
+"expired",
+"cannot log in"
+],
+"related_kb": [
+"KB-104"
+],
+"gold_requirements": [
+"Acknowledge critical SAML failure",
+"Provide steps to update x509 cert"
+],
+"must_include": [
+"x.509 certificate",
+"IdP",
+"Admin Dashboard"
+],
+"must_not_include": [
+"wait 24 hours"
+],
+"incoming_email": "No one can log in this morning. We are getting a 'SAML Signature Validation Failed' error. We checked our PingIdentity IdP and our signing certificate expired at midnight, so we generated a new one. But we can't get into CloudSync to update the certificate in your Admin panel because SSO is broken! Catch-22. Help.",
+"ground_truth_reply": "Hi there,\n\nI understand the panic! Being locked out due to an expired SAML certificate is a frustrating Catch-22, but we can resolve this quickly.\n\nAs an Enterprise Admin, you have an emergency bypass link that allows you to bypass SSO and log in using your original email and password. \n\nPlease go to: https://app.cloudsync.com/login?sso_bypass=true\n\nOnce you authenticate with your password, you will be able to access the Admin Dashboard.\n1. Navigate to Admin > Security > SSO Settings.\n2. Paste your newly generated x.509 public certificate from PingIdentity into the "IdP Certificate" field.\n3. Click Save.\n\nSSO logins should resume working immediately for your team. Let me know if you run into any issues with the bypass link!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000071",
+"conversation_id": "CONV-000071",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Student",
+"country": "India",
+"language": "English",
+"priority": "Low",
+"intent": "Billing",
+"sub_intent": "Discount request",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"discount",
+"student",
+"education"
+],
+"keywords": [
+"student discount",
+"university",
+"cheaper"
+],
+"related_kb": [
+"KB-056"
+],
+"gold_requirements": [
+"Confirm student discount policy",
+"Provide steps to verify .edu email"
+],
+"must_include": [
+"student discount",
+"50%",
+"university email"
+],
+"must_not_include": [
+"we don't have a student tier"
+],
+"incoming_email": "Hello! I am a university student and my 5GB free tier is completely full of lectures. Does CloudSync offer a cheaper Pro plan for students?",
+"ground_truth_reply": "Hi there,\n\nWe absolutely do! We want to make sure students have all the storage they need for their coursework.\n\nCloudSync offers a 50% discount on the Pro plan for all active students and educators. \n\nTo claim the discount:\n1. Log in to your account and go to Settings > Profile.\n2. Ensure your account email is registered to a valid university domain (e.g., .edu, .ac.uk, .edu.in).\n3. Go to the Billing page and click "Upgrade".\n4. The 50% education discount will be automatically applied at checkout.\n\nIf your university does not use a standard educational domain, just reply to this email with a photo of your current student ID, and I can manually apply the discount code for you.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000072",
+"conversation_id": "CONV-000072",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Real Estate",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Desktop Apps",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"sync-error",
+"invalid-characters",
+"windows"
+],
+"keywords": [
+"skipping file",
+"will not sync",
+"Windows"
+],
+"related_kb": [
+"KB-076"
+],
+"gold_requirements": [
+"Identify invalid character issue",
+"Provide OS specific rules"
+],
+"must_include": [
+"invalid characters",
+"Windows",
+"rename"
+],
+"must_not_include": [
+"reinstall the app"
+],
+"incoming_email": "I created a folder called "Contracts / Q3" on my Mac. It synced fine to the web. But my assistant, who uses Windows 10, cannot see the folder on his desktop app. His app says '1 file skipped'. Why isn't it syncing to his computer?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! This is a classic cross-platform quirk, but it's very easy to fix.\n\nThe issue is caused by the forward slash (/) in your folder name "Contracts / Q3". macOS allows forward slashes in file names, but the Windows operating system strictly prohibits certain special characters in file paths (including / \\ < > : \" | ? *).\n\nWhen the CloudSync Windows app encounters a file or folder with an invalid Windows character, it skips it to prevent OS errors.\n\nTo fix this, simply rename the folder on your Mac or via the Web App to remove the slash (for example, "Contracts_Q3" or "Contracts - Q3"). Once you rename it, it will immediately sync down to your assistant's Windows computer.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000073",
+"conversation_id": "CONV-000073",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Consulting",
+"country": "Canada",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Configure MFA",
+"product_area": "Security",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"mfa",
+"security",
+"setup"
+],
+"keywords": [
+"setup 2FA",
+"authenticator",
+"secure account"
+],
+"related_kb": [
+"KB-021"
+],
+"gold_requirements": [
+"Provide steps to enable MFA",
+"Mention backup codes"
+],
+"must_include": [
+"Settings",
+"Authenticator app",
+"backup codes"
+],
+"must_not_include": [
+"I enabled it for you"
+],
+"incoming_email": "I want to add some extra security to my account. Can you tell me how to set up Two-Factor Authentication using Google Authenticator?",
+"ground_truth_reply": "Hi there,\n\nThat's a great decision! Securing your account with Two-Factor Authentication (2FA) is highly recommended.\n\nYou can easily set this up from your dashboard:\n1. Log in to the CloudSync web app.\n2. Click your profile icon and go to Settings > Security.\n3. Under Two-Factor Authentication, click "Enable".\n4. Select "Authenticator App" as your method.\n5. Open Google Authenticator on your phone and scan the QR code displayed on your screen.\n6. Enter the 6-digit code to verify.\n\nCrucially, you will be presented with a list of 10 backup codes. Please download or print these and keep them somewhere safe! They are your only way back into your account if you ever lose your phone.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000074",
+"conversation_id": "CONV-000074",
+"customer_segment": "Enterprise",
+"company_size": "201-1000",
+"industry": "Media",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Calendar integration",
+"product_area": "Integrations",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": [
+"teams",
+"microsoft",
+"feature-request"
+],
+"keywords": [
+"Microsoft Teams",
+"bot",
+"notifications"
+],
+"related_kb": [
+"KB-037"
+],
+"gold_requirements": [
+"Acknowledge the request",
+"Suggest Slack alternative or Webhooks"
+],
+"must_include": [
+"feature request",
+"Microsoft Teams",
+"webhooks"
+],
+"must_not_include": [
+"we are launching it tomorrow"
+],
+"incoming_email": "We use Microsoft Teams extensively. Does CloudSync have a Teams bot that can alert a channel whenever a new file is uploaded to a specific shared folder? I know you have a Slack app, but what about Teams?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! \n\nYou are correct that we currently have a native Slack integration, but at this time, we do not have a dedicated Microsoft Teams bot for folder notifications.\n\nI have added your vote to our product tracker for a native Teams integration, as we are actively looking to expand our Microsoft ecosystem offerings.\n\nIn the meantime, many of our Enterprise clients achieve this exact workflow by using our Webhooks feature in combination with Microsoft Power Automate. You can configure a CloudSync webhook to fire on file.created events, and have Power Automate push that notification directly into your desired Teams channel.\n\nLet me know if you'd like a link to our webhook documentation to get started!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000075",
+"conversation_id": "CONV-000075",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Logistics",
+"country": "Australia",
+"language": "English",
+"priority": "High",
+"intent": "Account Management",
+"sub_intent": "Locked account",
+"product_area": "Login",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"locked",
+"brute-force",
+"security"
+],
+"keywords": [
+"too many attempts",
+"locked out",
+"urgent"
+],
+"related_kb": [
+"KB-013"
+],
+"gold_requirements": [
+"Explain security lockout",
+"Unlock account or explain timeout"
+],
+"must_include": [
+"30 minutes",
+"security",
+"too many failed attempts"
+],
+"must_not_include": [
+"your account is hacked"
+],
+"incoming_email": "I forgot my password and guessed it wrong a few times. Now the screen says 'Account locked due to too many failed attempts'. I urgently need to get in to send a shipping manifest. Please unlock it immediately.",
+"ground_truth_reply": "Hi there,\n\nI understand you need immediate access to send that shipping manifest!\n\nWhen a password is entered incorrectly 5 times in a row, our system automatically locks the account for 30 minutes to protect against brute-force automated attacks.\n\nBecause this is an automated security measure, I cannot manually bypass the timer. However, if you trigger a password reset by clicking the "Forgot Password?" link on the login page, successfully resetting your password via email will automatically clear the lock and log you in immediately.\n\nIf you prefer to wait, the lock will expire 30 minutes after your last failed attempt. \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000076",
+"conversation_id": "CONV-000076",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Photography",
+"country": "France",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Version history missing",
+"product_area": "Web App",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"version-history",
+"file-formats",
+"pro"
+],
+"keywords": [
+"previous version",
+"RAW files",
+"not showing"
+],
+"related_kb": [
+"KB-028"
+],
+"gold_requirements": [
+"Clarify version history file support"
+],
+"must_include": [
+"exact same file name",
+"extension",
+"overwrite"
+],
+"must_not_include": [
+"we don't version images"
+],
+"incoming_email": "I uploaded an edited JPEG photo over an original RAW file. I thought CloudSync kept previous versions, but it just created a new file and I can't find the RAW file under the JPEG's version history.",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! This is a great question about how our Version History engine works.\n\nCloudSync only creates a "Version History" stack when a file is overwritten by another file with the exact same name and file extension.\n\nBecause you uploaded a .jpg over a .raw or .cr2 file, our system sees these as two completely distinct file types. Instead of stacking them as versions, it just uploads the JPEG as a new file. \n\nIf you dragged the JPEG into a folder and clicked "Replace" on a prompt, the original RAW file was likely sent to your CloudSync "Deleted Files" bin. You can easily recover the RAW file by going to the Web App, clicking "Deleted Files" on the left sidebar, and clicking Restore.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000077",
+"conversation_id": "CONV-000077",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Finance",
+"country": "Switzerland",
+"language": "English",
+"priority": "High",
+"intent": "Security & Compliance",
+"sub_intent": "Audit logs",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"audit-logs",
+"api",
+"missing-data"
+],
+"keywords": [
+"API",
+"audit log",
+"missing events",
+"download"
+],
+"related_kb": [
+"KB-094"
+],
+"gold_requirements": [
+"Acknowledge data inconsistency",
+"Escalate to engineering"
+],
+"must_include": [
+"ticket ID",
+"engineering",
+"event_type"
+],
+"must_not_include": [
+"logs are perfect"
+],
+"incoming_email": "We are pulling our audit logs via the API /v2/admin/audit_logs. However, we noticed that while 'file.upload' and 'file.delete' events are populating correctly, there is a complete absence of 'file.download' events over the last 48 hours. The web dashboard also doesn't show any download events. We know users are downloading files. This is a critical compliance gap.",
+"ground_truth_reply": "Hi there,\n\nI agree completelyâ€”accurate audit logging is critical for compliance, and missing download events is a severe issue.\n\nSince the events are missing from both the API response and the web dashboard, this indicates a failure in our event streaming pipeline dropping the file.download payloads before they reach the audit database.\n\nI have escalated this as a high-priority incident to our Data Engineering team under ticket ID ENG-5712.\n\nThey are currently investigating the event queue in our European data region to restore the logging of download events. I will reply to this thread the moment I have an update on the root cause and the restoration of the missing logs.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000078",
+"conversation_id": "CONV-000078",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Desktop Apps",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"sync",
+"storage-full",
+"quota"
+],
+"keywords": [
+"stopped syncing",
+"yellow warning",
+"quota"
+],
+"related_kb": [
+"KB-077"
+],
+"gold_requirements": [
+"Identify full storage quota",
+"Explain options (upgrade or delete)"
+],
+"must_include": [
+"storage limit",
+"5GB",
+"Free plan"
+],
+"must_not_include": [
+"your app is broken"
+],
+"incoming_email": "Hi, my CloudSync app on Windows has a yellow warning triangle on it. When I hover over it, it says 'Quota Exceeded'. It hasn't synced anything since yesterday. How do I fix this?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! That yellow triangle is just letting you know that your account has hit its storage limit.\n\nOn the Free plan, you have a maximum of 5GB of storage. When you reach that limit, the desktop app pauses syncing to prevent errors. \n\nTo get things syncing again, you have two options:\n1. Free up space by moving some files out of your CloudSync folder and onto your local hard drive, or deleting files you no longer need (don't forget to empty the "Deleted Files" bin on the web app!).\n2. Upgrade to our Pro plan, which gives you 2TB of space, via your web dashboard at Settings > Billing.\n\nAs soon as your account drops below 5GB, the app will automatically resume syncing.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000079",
+"conversation_id": "CONV-000079",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Share folders",
+"product_area": "File Sharing",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"sharing",
+"password-protect",
+"links"
+],
+"keywords": [
+"password",
+"secure link",
+"external client"
+],
+"related_kb": [
+"KB-024"
+],
+"gold_requirements": [
+"Provide steps for password protecting links",
+"Mention expiration dates"
+],
+"must_include": [
+"Link Settings",
+"Password",
+"Expiration"
+],
+"must_not_include": [
+"free accounts can do this"
+],
+"incoming_email": "We need to send a folder of draft assets to an external client. Can we put a password on the download link so random people can't see it if the email gets forwarded?",
+"ground_truth_reply": "Hi there,\n\nYes, absolutely! As a Business plan user, you have access to advanced link security features, including password protection and expiration dates.\n\nTo password-protect a folder link:\n1. Right-click the folder and select "Share".\n2. Click on "Link Settings".\n3. Toggle on "Require Password" and type a secure password.\n4. (Optional but recommended) Toggle on "Set Expiration Date" and choose a date for the link to self-destruct.\n5. Click "Save" and then "Copy Link".\n\nYou can now email the link to your client. You will need to provide them with the password separately (we recommend sending the password via a secure chat app or SMS for better security).\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000080",
+"conversation_id": "CONV-000080",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Technology",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Public API improvements",
+"product_area": "API",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Medium",
+"tags": [
+"api",
+"webhooks",
+"feature-request"
+],
+"keywords": [
+"webhook filtering",
+"specific folder",
+"firehose"
+],
+"related_kb": [
+"KB-041"
+],
+"gold_requirements": [
+"Acknowledge payload volume issue",
+"Log feature request for webhook filtering"
+],
+"must_include": [
+"feature request",
+"filter",
+"API"
+],
+"must_not_include": [
+"we can configure this manually"
+],
+"incoming_email": "Our engineering team uses CloudSync webhooks. Right now, it's a "firehose"â€”we get notified for every single file uploaded anywhere in our Enterprise account. Can you add webhook filtering so we only receive payloads for events inside a specific folder ID?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! I completely understand how dealing with a webhook "firehose" in a large Enterprise account can be a burden on your receiving servers.\n\nCurrently, CloudSync webhooks trigger on an account-wide basis for specific event types (like file.upload), and we do not support granular path or folder ID filtering at the webhook configuration level.\n\nI have officially logged this as a feature request with our Developer Platform team. Path-based webhook filtering is highly requested, and feedback from Enterprise teams helps prioritize it on the roadmap.\n\nFor now, the best practice is to accept the 200 OK webhook immediately to prevent timeouts, and filter the payloads on your backend by checking the parent_folder_id attribute inside the JSON body, dropping any events that don't match your target.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000081",
+"conversation_id": "CONV-000081",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Freelance",
+"country": "Spain",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Invoice",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Invoice Update",
+"difficulty": "Easy",
+"tags": [
+"invoice",
+"address-change",
+"billing"
+],
+"keywords": [
+"change address",
+"invoice",
+"receipt"
+],
+"related_kb": [
+"KB-051"
+],
+"gold_requirements": [
+"Manually update past invoice",
+"Explain how to update for future"
+],
+"must_include": [
+"updated invoice",
+"Billing page",
+"download"
+],
+"must_not_include": [
+"cannot alter past invoices"
+],
+"incoming_email": "Hello. I moved to a new office last month. The invoice I just received has my old address on it. I need the receipt to have my new address (Calle Mayor 12, Madrid) for my accountant. Can you regenerate it?",
+"ground_truth_reply": "Hi there,\n\nI can certainly help you get that sorted for your accountant!\n\nI have manually regenerated your latest invoice (#INV-9021) to reflect your new address at Calle Mayor 12, Madrid. You can download the updated PDF directly from your Billing Dashboard here: https://app.cloudsync.com/billing\n\nTo ensure all your future invoices automatically use the correct address, please click "Edit Billing Details" on that same page and update your company address there.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000082",
+"conversation_id": "CONV-000082",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Manufacturing",
+"country": "Germany",
+"language": "English",
+"priority": "High",
+"intent": "Technical Bugs",
+"sub_intent": "Desktop crash",
+"product_area": "Desktop Apps",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"antivirus",
+"windows",
+"crash"
+],
+"keywords": [
+"quarantine",
+"closes immediately",
+"Defender"
+],
+"related_kb": [
+"KB-079"
+],
+"gold_requirements": [
+"Identify antivirus interference",
+"Suggest whitelisting"
+],
+"must_include": [
+"antivirus",
+"whitelist",
+"Windows Defender"
+],
+"must_not_include": [
+"our app contains a virus"
+],
+"incoming_email": "We rolled out CloudSync to our engineering team today. On several Windows 11 machines, the app opens, runs for about 10 seconds, and then abruptly closes. One user said Windows Defender showed a notification about a blocked process. Why is this happening?",
+"ground_truth_reply": "Hi there,\n\nThanks for flagging this. It sounds like a classic case of overly aggressive antivirus software interrupting our sync engine.\n\nBecause the CloudSync desktop app monitors system file changes in real-time to sync them to the cloud, some enterprise endpoint protection tools (like Windows Defender, CrowdStrike, or Bitdefender) can falsely flag this behavior as suspicious "ransomware-like" activity and forcefully terminate the process.\n\nTo resolve this, your IT administrator needs to add the CloudSync executable path (C:\\Program Files\\CloudSync\\CloudSync.exe) to the global "Whitelist" or "Exclusions" policy in your antivirus console.\n\nOnce whitelisted, the app will run stably without being terminated. Let me know if you need specific documentation on the ports and paths required for our app!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000083",
+"conversation_id": "CONV-000083",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "United States",
+"language": "English",
+"priority": "Low",
+"intent": "Account Management",
+"sub_intent": "Email change",
+"product_area": "Account Settings",
+"customer_tone": "Polite",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"email",
+"typo",
+"verification"
+],
+"keywords": [
+"spelled wrong",
+"verification email",
+"fix email"
+],
+"related_kb": [
+"KB-016"
+],
+"gold_requirements": [
+"Fix typo in email",
+"Resend verification"
+],
+"must_include": [
+"updated",
+"typo",
+"verification link"
+],
+"must_not_include": [
+"delete account"
+],
+"incoming_email": "Hi, I just created an account but I realized I spelled my email wrong. I put john.doe@gmai.com (forgot the L). So I can't click the verification link. Can you fix it to gmail.com so I can verify?",
+"ground_truth_reply": "Hi John,\n\nGood catch! This happens all the time and is very easy to fix.\n\nI have manually corrected the typo on your account from gmai.com to gmail.com. I also re-triggered the welcome email, so you should see the verification link in your inbox right now.\n\nYou can now log in using the correct gmail.com address and your original password.\n\nWelcome to CloudSync!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000084",
+"conversation_id": "CONV-000084",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Healthcare",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Critical",
+"intent": "Technical Bugs",
+"sub_intent": "Permission bug",
+"product_area": "File Sharing",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": true,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"permissions",
+"data-leak",
+"escalation"
+],
+"keywords": [
+"public link",
+"cannot turn off",
+"exposed"
+],
+"related_kb": [
+"KB-087"
+],
+"gold_requirements": [
+"Acknowledge critical data exposure",
+"Provide engineering ticket ID",
+"Involve Account Manager"
+],
+"must_include": [
+"ticket ID",
+"engineering",
+"Account Manager",
+"Security"
+],
+"must_not_include": [
+"it's a user error"
+],
+"incoming_email": "URGENT. A folder containing patient records was accidentally set to 'Anyone with the link can view'. I am trying to turn link sharing OFF via the admin dashboard, but the toggle keeps snapping back to ON and gives a '500 Server Error'. This data is currently exposed. Disable this link immediately.",
+"ground_truth_reply": "Hi there,\n\nI am treating this with the absolute highest urgency. Data exposure is our top priority, and a 500 error preventing you from securing a link is a critical platform failure.\n\nI have escalated this directly to our Security Operations Center (SOC) and Engineering team under incident ID ENG-5899. They are manually intervening on the backend to forcefully revoke the public link for that specific folder and break any active external sessions.\n\nI have also alerted your Enterprise Account Manager, who will follow up with you regarding an incident report.\n\nPlease reply with the exact URL of the exposed link or the exact folder name so the engineers can target the database row immediately.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000085",
+"conversation_id": "CONV-000085",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Design",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "Dark mode",
+"product_area": "Mobile Apps",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": [
+"ios",
+"dark-mode",
+"feature-request"
+],
+"keywords": [
+"dark mode",
+"iPhone",
+"blinding"
+],
+"related_kb": [
+"KB-034"
+],
+"gold_requirements": [
+"Acknowledge feature request",
+"Confirm it is on the roadmap"
+],
+"must_include": [
+"Dark Mode",
+"iOS",
+"roadmap"
+],
+"must_not_include": [
+"we have no plans to do this"
+],
+"incoming_email": "Is there a way to turn on Dark Mode in the iOS app? The rest of my phone is dark but opening CloudSync at night is blinding. If it's not a feature, please add it.",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! I totally agree, opening a bright white app at night is definitely jarring.\n\nWhile our Desktop App supports Dark Mode, our iOS mobile app does not currently have a native Dark Mode setting.\n\nHowever, I have great news! A true Dark Mode for iOS is currently on our active product roadmap. I've added your vote to the feature request tracker to help our mobile engineering team prioritize it. Keep an eye out for updates in the App Store in the coming months!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000086",
+"conversation_id": "CONV-000086",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Software",
+"country": "Canada",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Password reset",
+"product_area": "Login",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"password",
+"spam",
+"email-delivery"
+],
+"keywords": [
+"not receiving",
+"password reset",
+"email"
+],
+"related_kb": [
+"KB-014"
+],
+"gold_requirements": [
+"Suggest checking spam",
+"Offer to manually trigger reset"
+],
+"must_include": [
+"Spam folder",
+"whitelist",
+"trigger"
+],
+"must_not_include": [
+"here is a temporary password"
+],
+"incoming_email": "I have been clicking 'Forgot Password' for an hour. I am not getting the reset email. Yes, I checked my spam folder. My email is admin@mycustomdomain.com. Fix this.",
+"ground_truth_reply": "Hi there,\n\nI apologize for the delay! Email delivery issues can be incredibly frustrating.\n\nSince you are using a custom domain (@mycustomdomain.com), it's highly likely that your domain's strict DMARC/spam filter is silently quarantining automated emails from our servers before they even reach your Spam folder.\n\nTo resolve this, please temporarily whitelist no-reply@cloudsync.com in your email provider's settings.\n\nI have just manually triggered another password reset email from my end, which sometimes routes differently than the automated web button. \n\nIf you still don't receive it, let me know, and we can explore alternative ways to verify your identity.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000087",
+"conversation_id": "CONV-000087",
+"customer_segment": "Enterprise",
+"company_size": "201-1000",
+"industry": "Finance",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Security & Compliance",
+"sub_intent": "SOC2",
+"product_area": "Compliance",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"soc3",
+"public-report",
+"compliance"
+],
+"keywords": [
+"SOC3",
+"public",
+"share with clients"
+],
+"related_kb": [
+"KB-110"
+],
+"gold_requirements": [
+"Provide public SOC3 report link",
+"Explain difference from SOC2"
+],
+"must_include": [
+"SOC3",
+"Trust Center",
+"publicly available"
+],
+"must_not_include": [
+"require NDA for SOC3"
+],
+"incoming_email": "We have clients asking for proof of our vendors' security. While we have your SOC2 Type II under NDA, we cannot share that with our clients. Do you have a general SOC3 report that is publicly shareable?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! You are absolutely rightâ€”our SOC2 Type II report contains sensitive infrastructure details and cannot be shared externally.\n\nFor this exact scenario, we provide a publicly shareable SOC3 report. This report is a general overview of our security controls and compliance posture, designed specifically for you to share with your clients and prospects without requiring an NDA.\n\nYou can download the latest CloudSync SOC3 report directly from our public Trust Center here: https://trust.cloudsync.com/soc3\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000088",
+"conversation_id": "CONV-000088",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Australia",
+"language": "English",
+"priority": "Low",
+"intent": "How-To",
+"sub_intent": "Restore files",
+"product_area": "Web App",
+"customer_tone": "Panicked",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"restore",
+"ransomware",
+"rewind"
+],
+"keywords": [
+"encrypted",
+"hacked",
+"ransomware",
+"restore all"
+],
+"related_kb": [
+"KB-032"
+],
+"gold_requirements": [
+"Reassure user",
+"Explain account rewind feature"
+],
+"must_include": [
+"ransomware",
+"Account Rewind",
+"restore"
+],
+"must_not_include": [
+"your files are gone"
+],
+"incoming_email": "HELP. My computer got a ransomware virus and encrypted all my local files. CloudSync immediately synced the encrypted files to the cloud, overwriting all my good files with .locked extensions. It's thousands of files. Can I roll my whole account back to yesterday?",
+"ground_truth_reply": "Hi there,\n\nPlease don't panic! Your files are safe and we can absolutely help you recover from this.\n\nBecause CloudSync retains the version history of all files, the encrypted files simply registered as "new versions" of your original data.\n\nInstead of restoring thousands of files one by one, you can use our "Account Rewind" feature to roll your entire account back to the exact minute before the ransomware attack started:\n1. Log in to the CloudSync Web App.\n2. Go to Settings > Account > Account Rewind.\n3. Select a date and time from yesterday, prior to the attack.\n4. Click "Rewind".\n\nBefore you do this, please ensure you have completely disconnected or wiped the infected computer, otherwise, the ransomware will just encrypt the clean files as soon as they sync down again.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000089",
+"conversation_id": "CONV-000089",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Marketing",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Billing",
+"sub_intent": "Upgrade",
+"product_area": "Billing",
+"customer_tone": "Polite",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"upgrade",
+"seats",
+"billing"
+],
+"keywords": [
+"add seats",
+"more users",
+"pro-rated"
+],
+"related_kb": [
+"KB-044"
+],
+"gold_requirements": [
+"Explain how to add seats",
+"Explain pro-rated billing"
+],
+"must_include": [
+"Admin Dashboard",
+"Invite Users",
+"pro-rated"
+],
+"must_not_include": [
+"you have to buy them upfront"
+],
+"incoming_email": "We are on the Business plan with 20 users. We just hired 5 more people. How do I upgrade our account to 25 users, and how does the billing work if we are in the middle of our annual contract?",
+"ground_truth_reply": "Hi there,\n\nCongratulations on the growing team! \n\nYou don't actually need to "upgrade" your entire plan; you can simply add new seats on the fly.\n\n1. Go to your Admin Dashboard > Users.\n2. Click "Invite Users" and send invitations to your 5 new hires.\n\nAs soon as you send the invites, your license count will automatically increase to 25. \n\nBecause you are in the middle of an annual contract, you will immediately be charged a pro-rated amount for those 5 new seats, covering only the exact number of days remaining until your next annual renewal date. Next year, all 25 seats will renew together on a single invoice.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000090",
+"conversation_id": "CONV-000090",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Technology",
+"country": "India",
+"language": "English",
+"priority": "High",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": false,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"api",
+"rate-limit",
+"bug"
+],
+"keywords": [
+"rate limit",
+"429",
+"Enterprise allowance"
+],
+"related_kb": [
+"KB-201"
+],
+"gold_requirements": [
+"Acknowledge incorrect rate limiting",
+"Escalate to engineering"
+],
+"must_include": [
+"Enterprise limits",
+"engineering",
+"ticket ID"
+],
+"must_not_include": [
+"implement backoff"
+],
+"incoming_email": "URGENT: Our Enterprise API key is suddenly receiving 429 Too Many Requests errors. Our Enterprise contract grants us 10,000 API calls per minute. Our logs show we are barely hitting 500 requests per minute. Your system is throttling us at the Free tier limits. Fix this routing error immediately, it's breaking our sync app.",
+"ground_truth_reply": "Hi there,\n\nI understand the urgency. If you are on an Enterprise contract with custom limits, you should absolutely not be hitting 429 errors at 500 requests per minute.\n\nThis indicates a caching error on our API Gateway, where your custom Enterprise rate-limit profile is failing to load, causing the gateway to fall back to the default tier limits.\n\nI have immediately escalated this to our API Infrastructure team under ticket ID ENG-5904 to manually flush your tenant's API cache and restore your 10,000 req/min allowance.\n\nThey are looking into it right now, and I will update you the moment the correct limits are applied.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000091",
+"conversation_id": "CONV-000091",
+"customer_segment": "Pro",
+"company_size": "11-50",
+"industry": "Media",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Performance Issues",
+"sub_intent": "Upload issue",
+"product_area": "Desktop Apps",
+"customer_tone": "Passive Aggressive",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"bandwidth",
+"throttling",
+"settings"
+],
+"keywords": [
+"uploading slowly",
+"capped",
+"preferences"
+],
+"related_kb": [
+"KB-070"
+],
+"gold_requirements": [
+"Identify desktop bandwidth limits",
+"Explain how to set to "Don't Limit""
+],
+"must_include": [
+"Preferences",
+"Network",
+"Don't Limit"
+],
+"must_not_include": [
+"blame ISP"
+],
+"incoming_email": "Why does the desktop app only upload at 2 MB/s? I have a 1 Gbps fiber connection. I checked Activity Monitor, and CloudSync seems artificially capped. I didn't pay for Pro just to get dial-up speeds.",
+"ground_truth_reply": "Hi there,\n\nI totally understand wanting to take full advantage of that fiber connection!\n\nBy default, the CloudSync desktop app artificially caps upload and download bandwidth to ensure it doesn't consume your entire network connection and slow down your web browsing or video calls.\n\nYou can easily remove this cap in the app settings:\n1. Click the CloudSync icon in your menu bar/system tray.\n2. Click the Gear icon and select "Preferences".\n3. Go to the "Network" tab.\n4. Under "Bandwidth", change both Upload and Download limits from "Auto" to "Don't Limit".\n\nOnce you apply that change, CloudSync will utilize as much of your gigabit bandwidth as possible.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000092",
+"conversation_id": "CONV-000092",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Education",
+"country": "Canada",
+"language": "English",
+"priority": "Medium",
+"intent": "Feature Requests",
+"sub_intent": "OCR",
+"product_area": "Web App",
+"customer_tone": "Curious",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Feature Request Logged",
+"difficulty": "Easy",
+"tags": [
+"ocr",
+"image-text",
+"feature-request"
+],
+"keywords": [
+"extract text",
+"images",
+"copy text"
+],
+"related_kb": [
+"KB-035"
+],
+"gold_requirements": [
+"Acknowledge OCR request",
+"Confirm current behavior"
+],
+"must_include": [
+"feature request",
+"OCR",
+"text extraction"
+],
+"must_not_include": [
+"we can do this now"
+],
+"incoming_email": "We upload a lot of whiteboard photos. Does CloudSync have a way to automatically pull the text out of those images so we can copy/paste it into documents?",
+"ground_truth_reply": "Hi there,\n\nThat is a great question. Extracting text from whiteboard photos would be a huge time-saver!\n\nCurrently, CloudSync acts as a secure storage platform for your images, but it does not have built-in OCR (Optical Character Recognition) capabilities to automatically read and extract text from image files.\n\nI have submitted this as a feature request to our Product team. Adding intelligent OCR tools is a popular request, and feedback like yours helps us understand how valuable it would be for educational workflows.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000093",
+"conversation_id": "CONV-000093",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Retail",
+"country": "United States",
+"language": "English",
+"priority": "High",
+"intent": "Enterprise Administration",
+"sub_intent": "Audit logs",
+"product_area": "Admin Dashboard",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"audit-logs",
+"export",
+"csv"
+],
+"keywords": [
+"CSV",
+"export failing",
+"too large"
+],
+"related_kb": [
+"KB-091"
+],
+"gold_requirements": [
+"Identify CSV row limit",
+"Suggest reducing date range or using API"
+],
+"must_include": [
+"100,000 rows",
+"date range",
+"API"
+],
+"must_not_include": [
+"it's your computer"
+],
+"incoming_email": "I am trying to export a CSV of our audit logs for the last 90 days. Every time I click 'Generate CSV', it thinks for 5 minutes and then fails with an error 'Export Exceeds Maximum Size'. We need these logs for an internal audit today.",
+"ground_truth_reply": "Hi there,\n\nI can absolutely help you get those logs exported for your audit.\n\nThe error you are seeing occurs because the web dashboard's CSV export tool has a hard limit of 100,000 rows per file to prevent browser timeouts. In a busy Enterprise account, 90 days of logs will easily exceed this limit.\n\nTo get your logs immediately via the dashboard, please break your export into smaller chunks. Try exporting 15-day or 30-day date ranges instead of the full 90 days at once.\n\nIf you have a massive volume of events, the most robust way to export bulk audit data is using our Audit Log API, which utilizes pagination and has no upper limit on event retrieval. You can find the API docs here: https://docs.cloudsync.com/api/admin/audit-logs\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000094",
+"conversation_id": "CONV-000094",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Personal",
+"country": "Brazil",
+"language": "English",
+"priority": "Medium",
+"intent": "Authentication",
+"sub_intent": "Google login",
+"product_area": "Login",
+"customer_tone": "Confused",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"sso",
+"google",
+"password"
+],
+"keywords": [
+"set a password",
+"Google sign in",
+"desktop app"
+],
+"related_kb": [
+"KB-018"
+],
+"gold_requirements": [
+"Explain how to create a password for SSO accounts"
+],
+"must_include": [
+"Forgot Password",
+"Google login",
+"standalone password"
+],
+"must_not_include": [
+"you cannot use a password"
+],
+"incoming_email": "I created my account using 'Sign in with Google'. But now I want to log into the desktop app, and it's asking for an email and password. I don't have a CloudSync password, just my Google one, and it's rejecting that. How do I log in?",
+"ground_truth_reply": "Hi there,\n\nThis is a great question! \n\nWhen you create an account exclusively using "Sign in with Google", CloudSync relies entirely on Google for authentication and never generates a standalone password for your account.\n\nTo set a specific CloudSync password so you can log into the desktop app:\n1. Go to the CloudSync login page on the web.\n2. Click the "Forgot Password?" link.\n3. Enter your Gmail address.\n4. We will send you an email with a link to create a new password.\n\nOnce you set this password, you can use it to log in to the desktop app. You will also still be able to use the "Sign in with Google" button on the web app whenever you prefer!\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000095",
+"conversation_id": "CONV-000095",
+"customer_segment": "Pro",
+"company_size": "1-10",
+"industry": "Photography",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Web App",
+"customer_tone": "Frustrated",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"file-size",
+"browser",
+"upload"
+],
+"keywords": [
+"fails at 100%",
+"large video",
+"browser limit"
+],
+"related_kb": [
+"KB-062"
+],
+"gold_requirements": [
+"Identify browser file size limit",
+"Suggest Desktop App"
+],
+"must_include": [
+"Desktop App",
+"browser limits",
+"chunking"
+],
+"must_not_include": [
+"our servers are full"
+],
+"incoming_email": "I'm trying to upload a 60GB 4K video file through Chrome. It takes four hours, gets to 100%, and then just says 'Upload Error'. I've wasted a whole day on this.",
+"ground_truth_reply": "Hi there,\n\nI am so sorry for the wasted time. It is incredibly frustrating to wait hours just for an upload to fail at the very end.\n\nThis failure is caused by a memory limitation within web browsers (like Chrome or Safari). Browsers struggle to handle individual files larger than roughly 10-15GB, and they often crash when trying to finalize the data blocks at the end of the upload.\n\nTo upload massive files like 60GB 4K videos, you must use the CloudSync Desktop App. \n\nThe desktop app bypasses the browser entirely and uses a multi-threaded chunking protocol, which means it uploads massive files much faster and is 100% reliable. You can download it here: https://cloudsync.com/download\n\nOnce installed, just drag the video file into your CloudSync folder, and it will handle the rest flawlessly.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000096",
+"conversation_id": "CONV-000096",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Consulting",
+"country": "United Kingdom",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Deleted account",
+"product_area": "Admin Dashboard",
+"customer_tone": "Professional",
+"requires_human": false,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Easy",
+"tags": [
+"offboarding",
+"transfer",
+"delete"
+],
+"keywords": [
+"delete user",
+"transfer files",
+"employee left"
+],
+"related_kb": [
+"KB-097"
+],
+"gold_requirements": [
+"Provide steps to delete user",
+"Explain file transfer during deletion"
+],
+"must_include": [
+"Admin Dashboard",
+"Transfer Data",
+"delete user"
+],
+"must_not_include": [
+"their files will be permanently lost"
+],
+"incoming_email": "One of our consultants is leaving the firm on Friday. We need to delete her CloudSync account, but we want to make sure we keep all the client files she has in her folders. How do we do this?",
+"ground_truth_reply": "Hi there,\n\nThanks for reaching out! Offboarding an employee without losing their work is a seamless process in CloudSync.\n\nWhen you delete a user from your Business plan, the system will prompt you to transfer their files to another active user. \n\nHere are the steps:\n1. Go to Admin Dashboard > Users.\n2. Click the three dots next to the departing consultant's name and select "Delete User".\n3. A prompt will appear asking what to do with their files. Select "Transfer Data to Another User".\n4. Type in your email address (or the manager's email).\n5. Confirm the deletion.\n\nThe consultant's account will be immediately deleted, and a new folder titled "[Consultant Name]'s Files" will magically appear in your CloudSync account containing all their work.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000097",
+"conversation_id": "CONV-000097",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Technology",
+"country": "Germany",
+"language": "English",
+"priority": "Low",
+"intent": "API & Developer Support",
+"sub_intent": "Use API",
+"product_area": "API",
+"customer_tone": "Curious",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Documentation",
+"difficulty": "Medium",
+"tags": [
+"api",
+"metadata",
+"developer"
+],
+"keywords": [
+"custom metadata",
+"tags",
+"API"
+],
+"related_kb": [
+"KB-205"
+],
+"gold_requirements": [
+"Confirm custom metadata capability",
+"Explain key-value pairs"
+],
+"must_include": [
+"custom metadata",
+"key-value",
+"file properties"
+],
+"must_not_include": [
+"you cannot attach data"
+],
+"incoming_email": "Hey folks, we are migrating documents into CloudSync via API. Can we attach our internal custom database IDs to the files in CloudSync? Does your API support injecting custom metadata key-value pairs into a file property?",
+"ground_truth_reply": "Hi there,\n\nYes, absolutely! We fully support custom metadata injection via the API, which is perfect for linking files to your internal database IDs.\n\nWhen making a POST request to /v2/files/upload (or /v2/files/update), you can include a properties object in the JSON request body. This object accepts a dictionary of custom key-value string pairs.\n\nFor example:\njson\n\"properties\": {\n  \"internal_db_id\": \"984210\",\n  \"client_status\": \"active\"\n}\n\n\nThese custom properties will be silently attached to the file. You can then use the /v2/files/search endpoint to query and retrieve files specifically based on these custom property values.\n\nYou can find full documentation on file properties here: https://docs.cloudsync.com/api/files/properties\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000098",
+"conversation_id": "CONV-000098",
+"customer_segment": "Free",
+"company_size": "1-10",
+"industry": "Student",
+"country": "United States",
+"language": "English",
+"priority": "Medium",
+"intent": "Account Management",
+"sub_intent": "Deleted account",
+"product_area": "Account Settings",
+"customer_tone": "Urgent",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Easy",
+"tags": [
+"deleted-account",
+"recovery",
+"free-tier"
+],
+"keywords": [
+"deleted yesterday",
+"change my mind",
+"restore account"
+],
+"related_kb": [
+"KB-099"
+],
+"gold_requirements": [
+"Explain Free tier deletion policy",
+"Confirm permanent data loss"
+],
+"must_include": [
+"permanently deleted",
+"Free tier",
+"cannot be recovered"
+],
+"must_not_include": [
+"I will restore it"
+],
+"incoming_email": "I permanently deleted my free account yesterday because I thought I didn't need it. But I just realized my only copy of my thesis rough draft was in there! Can you please restore my account? It's only been 24 hours.",
+"ground_truth_reply": "Hi there,\n\nI am so sorry, but I have some difficult news regarding your account.\n\nWhen a user clicks "Delete Account" on our Free tier, the account and all associated files are instantly and permanently purged from our active databases and servers. Unlike our Business plans, the Free tier does not have a 30-day grace period for account recovery.\n\nBecause the data is completely wiped to comply with privacy regulations, it is mathematically impossible for us to retrieve or restore your thesis draft, even after just 24 hours.\n\nI wish I had better news for you. \n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000099",
+"conversation_id": "CONV-000099",
+"customer_segment": "Business",
+"company_size": "51-200",
+"industry": "Real Estate",
+"country": "Australia",
+"language": "English",
+"priority": "High",
+"intent": "Security & Compliance",
+"sub_intent": "Audit logs",
+"product_area": "File Sharing",
+"customer_tone": "Suspicious",
+"requires_human": true,
+"requires_engineering": false,
+"requires_manager": false,
+"resolution_type": "Troubleshooting",
+"difficulty": "Medium",
+"tags": [
+"audit",
+"anonymous",
+"link-sharing"
+],
+"keywords": [
+"Anonymous User",
+"viewed file",
+"who is this"
+],
+"related_kb": [
+"KB-095"
+],
+"gold_requirements": [
+"Explain 'Anonymous User' behavior",
+"Link to public sharing settings"
+],
+"must_include": [
+"public link",
+"Anonymous User",
+"not logged in"
+],
+"must_not_include": [
+"your account was hacked"
+],
+"incoming_email": "I was checking the activity on a confidential property document. The log says 'Anonymous User viewed this file' 14 times yesterday. We didn't share this with anyone outside the company. Who is Anonymous User and how did they get in?",
+"ground_truth_reply": "Hi there,\n\nI completely understand why seeing "Anonymous User" on a confidential document would raise alarm bells.\n\nIn CloudSync, an "Anonymous User" event occurs when a file is accessed via a Public Link by someone who is not logged into a CloudSync account. Because they are not logged in, our system cannot capture their name or email address.\n\nIf this document was only meant for internal employees, it means someone on your team accidentally generated a "Public Link" instead of an "Internal Only" link, and that link was likely clicked (or crawled by an email scanner) multiple times.\n\nTo secure the document immediately:\n1. Right-click the file and select "Manage Access".\n2. Look for the active Public Link and click "Remove Link".\n\nTo prevent this in the future, you can go to your Admin Dashboard > Security and disable the ability for employees to create Public Links company-wide.\n\nBest,\nAlex\nSupport Specialist"
+},
+{
+"id": "CS-000100",
+"conversation_id": "CONV-000100",
+"customer_segment": "Enterprise",
+"company_size": "1000+",
+"industry": "Media",
+"country": "United States",
+"language": "English",
+"priority": "Critical",
+"intent": "Technical Bugs",
+"sub_intent": "Sync failure",
+"product_area": "Desktop Apps",
+"customer_tone": "Furious",
+"requires_human": true,
+"requires_engineering": true,
+"requires_manager": true,
+"resolution_type": "Bug Escalation",
+"difficulty": "Hard",
+"tags": [
+"sync",
+"m1-mac",
+"data-loss"
+],
+"keywords": [
+"deleting files",
+"macOS Sonoma",
+"sync wiping"
+],
+"related_kb": [
+"KB-082"
+],
+"gold_requirements": [
+"Acknowledge critical data loss risk",
+"Instruct user to stop app immediately",
+"Escalate to engineering and management"
+],
+"must_include": [
+"quit the app",
+"engineering",
+"ticket ID",
+"escalated"
+],
+"must_not_include": [
+"it's just moving them to trash"
+],
+"incoming_email": "STOP EVERYTHING. The latest Mac update (v4.2) is deleting files. When our editors move a file from their local drive into the CloudSync folder on macOS Sonoma, it uploads 10%, stops, and then deletes the file from BOTH the CloudSync folder and the original location. We have lost raw footage. We are shutting down the app company-wide.",
+"ground_truth_reply": "Hi there,\n\nI am escalating this to our highest critical severity level immediately. Data loss is completely unacceptable, and you made the absolute right call in instructing your team to shut down the desktop app company-wide.\n\nI have mobilized our Mac OS File Provider Engineering team and our Data Recovery unit under emergency ticket ID ENG-6001. \n\nWe are urgently investigating a known conflict between our v4.2 client and Apple's new File Provider API in macOS Sonoma that can cause rapid file-moving operations to drop the data pointer, resulting in deletion.\n\nPlease keep the desktop app QUIT on all machines. \n\nI have alerted your Account Manager and our VP of Engineering. We will run a backend script to locate the orphaned binary chunks of the lost raw footage to reconstruct them. We will reply to this thread momentarily with the recovery plan and a rollback version of the Mac client.\n\nBest,\nAlex\nSupport Specialist"
+}]

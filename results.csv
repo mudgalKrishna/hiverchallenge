@@ -1,0 +1,1138 @@
+id,source,intent,incoming_email,ground_truth_reply,gold_requirements,must_include,must_not_include,generated_reply,retrieved_examples,intent_fulfillment_score,intent_fulfillment_reasoning,constraint_adherence_score,constraint_adherence_reasoning,missing_must_include,present_must_not_include,overall_score
+CS-000007,copilot,How-To,"How do I share one folder with my client so they can only view, not edit?","Hi Nia,
+
+Great question. To share as view-only:
+
+1) Open the folder
+2) Click Share
+3) Add your client’s email (recommended) or create a link
+4) Set permission to Viewer (not Editor)
+5) Send invite
+
+Viewer can open/download files but can’t modify folder contents.
+
+Guide: https://docs.cloudsync.com/sharing/folder-permissions
+
+If you want, I can also show how to disable downloads for sensitive review workflows.
+
+Best,
+Alex
+Support Specialist","[""Give clear steps"", ""Explain permission levels"", ""Warn about public links"", ""Include docs link""]","[""Viewer"", ""Editor""]","[""say anyone can edit by default""]","Hi there,
+
+When sharing a folder, click the ""Share"" button, add your client's email, and set their permission level to ""Viewer"" instead of ""Editor"". Viewers can open and download files but can't edit, move, or delete anything.
+
+If you want to allow comments without full editing, there's also a ""Commenter"" role that sits in between.
+
+You can find a full walkthrough with screenshots here: https://docs.cloudsync.com/sharing/permission-levels
+
+Let me know if you run into any trouble setting it up!
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""hey! quick q - how do i share a folder with my students so they can only view the files, not edit or delete anything? i teach high school history and don't want anyone accidentally deleting stuff lol. thanks!"", ""similarity"": 0.6824094653129578, ""intent"": ""How-To""}, {""incoming_email"": ""Two line email:\nHow do I change teammate from Editor to Viewer on one folder only?\nNot whole workspace."", ""similarity"": 0.5426340699195862, ""intent"": ""How-To""}, {""incoming_email"": ""Where do I set default sharing settings for new folders?"", ""similarity"": 0.527091383934021, ""intent"": ""How-To""}]",4,"The reply provides clear steps and explains permission levels, but it does not warn about public links and the provided documentation link is not the same as the one in the ground-truth reply.",4,"The reply includes all MUST INCLUDE items, but it includes a MUST NOT INCLUDE item ('say anyone can edit by default') is not present, but the reply does mention a 'Commenter' role which is not in the MUST INCLUDE list, but it does not directly imply anyone can edit by default.","[""Warn about public links""]","[""Commenter role""]",4.0
+CS-000010,copilot,Enterprise Administration,"We’re moving from manual provisioning to Azure AD SCIM this quarter. Need CloudSync endpoint format, token location, and deprovision timing expectations.","Hi Dana,
+
+Great initiative—SCIM will simplify lifecycle management.
+
+Setup overview:
+1) Admin Dashboard → Identity → SCIM
+2) Generate SCIM bearer token (store securely)
+3) Copy tenant SCIM base URL shown there
+4) Configure Azure AD provisioning mappings
+5) Run pilot group before full rollout
+
+Deprovisioning timing depends on IdP push cadence, but CloudSync applies changes shortly after receiving SCIM calls.
+
+Docs:
+https://docs.cloudsync.com/enterprise/scim-setup
+https://docs.cloudsync.com/enterprise/scim-mappings
+
+If helpful, I can coordinate a guided validation session with our enterprise onboarding team.
+
+Best,
+Alex
+Support Specialist","[""Confirm support scope"", ""Provide setup sequence"", ""Mention token security"", ""Offer implementation call""]","[""SCIM"", ""Admin Dashboard""]","[""claim unsupported IdP behavior""]","Hi there,
+
+Thanks for reaching out as you plan your Azure AD SCIM integration with CloudSync. 
+
+To get you started, here are the details you requested:
+
+- CloudSync endpoint format: `https://yourcompany.cloudsync.com/scim/v2`
+- Token location: You can obtain an access token via OAuth 2.0 or an API key from the CloudSync dashboard (Settings > API Keys)
+- Deprovision timing expectations: CloudSync will sync deprovision events from Azure AD SCIM within 15 minutes, but this may vary depending on network and load.
+
+For more detailed setup and troubleshooting guides, I recommend checking out our SCIM documentation: https://docs.cloudsync.com/enterprise/scim-configuration
+
+If you have any questions or need further assistance, feel free to ask.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""SCIM deprovision from Azure AD sent yesterday but user still active in CloudSync."", ""similarity"": 0.6184570789337158, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Our legal counsel requires an executed Data Processing Agreement (DPA) with CloudSync before we can continue using it to store client documents subject to GDPR. Could you send the current DPA and, if available, a list of your sub-processors? We'd like to move quickly on this - our compliance review is due next Friday.\n\nElena Vasquez, Legal Counsel, Brightwell & Cole LLP"", ""similarity"": 0.4230332374572754, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""Quick one: does CloudSync integrate with Slack/Teams/Google Workspace?"", ""similarity"": 0.4136064052581787, ""intent"": ""Random Miscellaneous""}]",4,"The reply effectively addresses the customer's questions and provides necessary information, but lacks a clear setup sequence and implementation call offer.",4,"The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items, but does not explicitly mention token security.","[""setup sequence"", ""implementation call offer"", ""token security""]",[],4.0
+CS-000014,copilot,Security & Compliance,Legal for CityBridge Transit: please provide your DPA and confirm if we can request custom data residency language in our contract.,"Hi Ms. Patel,
+
+Thank you for your compliance request.
+
+For Enterprise customers, custom contract terms can be requested, including DPA review and negotiated language where applicable. I’ve routed this to our contracts manager for formal handling.
+
+Next steps:
+- We’ll share the current DPA template via secure channel
+- Your requested clauses will be reviewed by our legal team
+- You’ll receive follow-up from contracts with timeline and redline process
+
+Reference:
+https://docs.cloudsync.com/compliance/dpa
+
+I’m keeping this ticket monitored until handoff is complete.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge legal request"", ""Confirm process path"", ""Set expectation for review"", ""Offer secure exchange""]","[""custom contracts"", ""Enterprise""]","[""provide legal advice beyond scope""]","Hi Rachel,
+
+Thank you for reaching out. CloudSync does provide a standard Data Processing Agreement covering various requirements, including data residency.
+
+Since executing a DPA involves our legal team rather than general support, I'll connect you with them directly to get this moving. They'll send over the DPA template and can also address any custom data residency requests or contract modifications from there.
+
+In the meantime, our general privacy and compliance practices are documented at https://cloudsync.com/legal/privacy if that's useful background for your review.
+
+I've flagged this as a priority so our legal team reaches out today.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Need compliance packet + confirmation we can negotiate DPA annex before signature."", ""similarity"": 0.44621047377586365, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Our legal counsel requires an executed Data Processing Agreement (DPA) with CloudSync before we can continue using it to store client documents subject to GDPR. Could you send the current DPA and, if available, a list of your sub-processors? We'd like to move quickly on this - our compliance review is due next Friday.\n\nElena Vasquez, Legal Counsel, Brightwell & Cole LLP"", ""similarity"": 0.35105961561203003, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""Can I get invoice from 2025 and also where do I find API docs and also why my login failed once yesterday?"", ""similarity"": 0.20366306602954865, ""intent"": ""Random Miscellaneous""}]",4,"The reply acknowledges the legal request, confirms the process path, sets expectation for review, and offers secure exchange, but does not explicitly mention 'custom contracts' or 'Enterprise'.",3,"The reply includes some of the MUST INCLUDE items, but misses 'custom contracts' and 'Enterprise'. It also includes a link to general privacy and compliance practices, which is not necessary and could be seen as providing legal advice beyond scope.","[""custom contracts"", ""Enterprise""]","[""https://cloudsync.com/legal/privacy""]",3.5
+CS-000018,copilot,Authentication,"ALL CAPS: YOUR SSO BROKE OUR MORNING. Everyone gets ""SAML validation failed"" after Okta cert rollover at 08:10 ET. 3,200 users blocked.","Hi Brendan,
+
+I’m very sorry for the disruption. This is a critical access incident and has been escalated immediately under INC-SSO-2217.
+
+Given impact (3,200 users blocked), please execute temporary access continuity if available in your policy (for example, emergency break-glass admin account), while we validate SAML signing cert alignment.
+
+Please send:
+- New IdP certificate fingerprint
+- Recent SAML response sample (redacted)
+- Exact CloudSync SSO config entity ID
+
+We’re engaging engineering now and will provide updates every 30 minutes until resolved.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge severity"", ""Immediate escalation"", ""Provide safe rollback option"", ""Request key SAML fields"", ""set update cadence""]","[""critical outages escalated immediately"", ""ticket ID""]","[""ask users to disable security controls globally""]","Hi [Customer],
+
+I'm so sorry to hear that your SSO broke this morning due to the Okta cert rollover. I'm here to help resolve this ASAP.
+
+First, please confirm that your Okta SAML settings haven't changed since the rollover. If you've updated anything, please share the new settings and I'll verify them against our expected values.
+
+In the meantime, I recommend temporarily switching to password-based login for your users to regain access to CloudSync. This will allow you to get back up and running while I investigate the SAML issue.
+
+To enable password login, go to Admin Dashboard → Identity → SSO/SAML, toggle ""Allow password login"" to ON, and then save. This will allow users to log in with their passwords until we resolve the SAML issue.
+
+I'll work with our engineering team to identify the root cause and provide a fix as soon as possible. I'll also reach out to Okta to confirm their cert rollover process and ensure our SAML configuration is compatible.
+
+Your prompt assistance in verifying the Okta SAML settings will greatly help me expedite the resolution.
+
+Please let me know if you have any questions or concerns, and I'll be here to support you.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Setting up SAML with Okta. Need ACS URL confirmation and whether signed assertions are required."", ""similarity"": 0.6122384667396545, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""We configured SCIM provisioning between Okta and CloudSync last week. New users are being created correctly, but when we deactivate a user in Okta, their CloudSync account remains active instead of being deprovisioned. This is a security gap for us since offboarded employees can still access company files. Our Okta SCIM logs show 200 OK responses for the deactivation calls, so the issue appears to be on CloudSync's side.\n\nJordan Blake, IT Security, Meridian Systems"", ""similarity"": 0.4098762273788452, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Can we enable SSO on Pro? We only have 18 users but need centralized auth."", ""similarity"": 0.3289232850074768, ""intent"": ""Authentication""}]",3,"The reply acknowledges severity, but does not provide a safe rollback option or immediate escalation, and the update cadence is not set.",4,"The reply does not include the MUST NOT INCLUDE item 'ask users to disable security controls globally', but it does not include the MUST INCLUDE item 'ticket ID'.","[""ticket ID""]","[""ask users to disable security controls globally""]",3.5
+CS-000021,copilot,Technical Bugs,"Our proposal.docx shows only 1 version now, but yesterday it had 12. Need audit trail back ASAP.","Hi Ben,
+
+I understand how concerning this is—thanks for flagging it quickly.
+
+I opened engineering case CS-ENG-48426 for missing version history entries.
+
+Please send:
+- File path and file ID (if visible)
+- Approx time versions were last seen
+- Any recent move/rename activity
+
+We’ll investigate indexing and metadata timelines. I can’t promise full restoration until analysis completes, but we’ll prioritize this due to audit impact.
+
+Best,
+Alex
+Support Specialist","[""Empathize"", ""Acknowledge data concern"", ""open engineering ticket"", ""request file identifiers"", ""avoid unsupported recovery promises""]","[""ticket ID"", ""version history""]","[""guarantee full recovery""]","Hi,
+
+I understand the urgency of restoring your audit trail given the multiple versions of your proposal document. I've escalated this to engineering under ticket ENG-51603 with high priority, and I've also looped in my manager to ensure we're treating this as a high-priority issue.
+
+Could you confirm the exact date when you last confirmed the 12 versions of proposal.docx were intact, and also confirm if you've made any changes to the document since then? That will help engineering narrow down whether this is a display issue or an actual data problem.
+
+I want to be transparent: I can't guarantee the older versions will be recoverable until engineering completes their investigation, but this has been flagged as urgent and we're treating it accordingly.
+
+My manager or I will follow up with you directly within the next few hours.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""I need someone senior to look at this NOW. Our shared /Finance/Budgets folder has completely lost its version history - files that had 40+ revisions yesterday now show ONLY the current version. We rely on version history for our audit trail. If this data is gone, we have a serious compliance problem. I want a manager on this today."", ""similarity"": 0.4608690142631531, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""For an internal security review, I need to export the full audit log for our organization covering the last 90 days, including login events, file deletions, and permission changes. Where can I download this, and how far back does CloudSync retain audit data for Enterprise accounts?"", ""similarity"": 0.4306690990924835, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Regulator audit next month. Need evidence package for access controls + incident response."", ""similarity"": 0.42320454120635986, ""intent"": ""Security & Compliance""}]",4,"The reply empathizes with the customer, acknowledges the data concern, and opens an engineering ticket, but does not explicitly request file identifiers.",4,"The reply includes everything in MUST INCLUDE, but does not guarantee full recovery, which is in MUST NOT INCLUDE.","[""ticket ID"", ""version history""]","[""guarantee full recovery""]",4.0
+CS-000023,copilot,Security & Compliance,We received an EU data subject deletion request for former employee Ana Kovac. Need confirmation of CloudSync deletion SLA.,"Hi Martin,
+
+Thanks for raising this promptly.
+
+CloudSync processes GDPR deletion requests through our privacy workflow, and deletion is completed within 30 days after verification.
+
+Please submit the request details through your admin privacy channel so our privacy team can validate identity and scope, then issue a tracking reference.
+
+Reference:
+https://docs.cloudsync.com/compliance/gdpr-deletion
+
+Once submitted, I can monitor progress on this ticket for you.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge legal timeline"", ""State 30-day completion policy"", ""Clarify identity verification"", ""Provide tracking expectation""]","[""GDPR deletion completed within 30 days"", ""privacy team""]","[""promise instant deletion""]","Hi,
+
+Thank you for reaching out regarding the deletion request for Ana Kovac. Under our GDPR-compliant deletion process, we'll permanently remove Ana's account and associated data within 30 days of your request. Please note this is irreversible - once complete, we won't be able to recover any files or account information.
+
+As Ana was on our Free plan, there are no charges to worry about, but I want to confirm either way: no further billing will occur regardless.
+
+To proceed, please reply ""confirm deletion"" so I have it in writing, and I'll initiate the process right away. You'll receive a final confirmation email once deletion is complete.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""I'd like my CloudSync account and all associated data permanently deleted. I no longer use the service and want to exercise my right to erasure under GDPR. Please confirm once done, and confirm I won't be charged again."", ""similarity"": 0.6177738308906555, ""intent"": ""Account Management""}, {""incoming_email"": ""We configured SCIM provisioning between Okta and CloudSync last week. New users are being created correctly, but when we deactivate a user in Okta, their CloudSync account remains active instead of being deprovisioned. This is a security gap for us since offboarded employees can still access company files. Our Okta SCIM logs show 200 OK responses for the deactivation calls, so the issue appears to be on CloudSync's side.\n\nJordan Blake, IT Security, Meridian Systems"", ""similarity"": 0.5246050953865051, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Our legal counsel requires an executed Data Processing Agreement (DPA) with CloudSync before we can continue using it to store client documents subject to GDPR. Could you send the current DPA and, if available, a list of your sub-processors? We'd like to move quickly on this - our compliance review is due next Friday.\n\nElena Vasquez, Legal Counsel, Brightwell & Cole LLP"", ""similarity"": 0.5097731351852417, ""intent"": ""Security & Compliance""}]",4,"The reply acknowledges the 30-day completion policy, clarifies identity verification, and provides a tracking expectation, but does not explicitly mention the privacy team.",4,"The reply includes all MUST INCLUDE items, but does not explicitly mention the privacy team, and includes a promise of instant deletion (albeit in a different context).","[""privacy team""]","[""promise of instant deletion (albeit in a different context)""]",4.0
+CS-000025,copilot,Authentication,"New phone, old authenticator gone, no backup codes (my bad). Need MFA reset ASAP before client demo.","Hi Noah,
+
+I know this is stressful before a demo.
+
+We can help with MFA reset, but we must complete identity verification first for account security. If you still have any backup codes, try those immediately.
+
+If not, please reply from the account email and include requested verification details from this form:
+https://docs.cloudsync.com/security/mfa-recovery
+
+Once verified, we can process a reset and you can re-enroll MFA on the new device.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge urgency"", ""explain verification requirement"", ""provide secure recovery path"", ""avoid insecure shortcuts""]","[""identity verification"", ""backup codes""]","[""disable MFA without verification""]","Hi,
+
+I'm sorry about your old authenticator app. For security reasons, I can't reset MFA without verifying it's really you first - this protects your account from anyone else trying the same request.
+
+To verify your identity, could you reply with:
+1. The email address on the account
+2. The last 4 digits of the payment method on file
+3. A recent invoice number or file name from your account
+
+Once verified, I can help you reset MFA and regain access, typically within 30 minutes during business hours. If you have any questions or concerns, please let me know.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""help i cant login, changed phones, 2fa code not working and i dont have backups"", ""similarity"": 0.6681586503982544, ""intent"": ""Authentication""}, {""incoming_email"": ""CEO lost MFA device before board meeting. Need immediate reset now."", ""similarity"": 0.6358926892280579, ""intent"": ""Authentication""}, {""incoming_email"": ""i lost my phone yesterday and cant get into my cloudsync account because it wants a code from my authenticator app which was ON that phone. i have a deadline in 2 hours for a client video that's sitting in my account. please just turn off 2fa for me so i can log in!!"", ""similarity"": 0.619023859500885, ""intent"": ""Authentication""}]",4,"The reply acknowledges urgency, explains verification requirement, and provides a secure recovery path, but lacks the specific mention of backup codes as an alternative solution.",4,"The reply avoids insecure shortcuts like disabling MFA without verification, but does not explicitly mention the use of backup codes as an alternative solution.","[""backup codes""]","[""disable MFA without verification""]",4.0
+CS-000027,copilot,Billing,Any student discount for Pro? I’m freelancing and budget is super tight.,"Hi Emmett,
+
+Thanks for asking—totally understand budget constraints.
+
+I can’t apply ad-hoc discounts directly from support, but you can review current plan pricing/options in Billing and on our pricing docs.
+
+https://docs.cloudsync.com/billing/plan-options
+
+If you share your expected storage and collaborator count, I can suggest the most cost-efficient setup.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge request"", ""state current policy neutrally"", ""offer plan comparison"", ""avoid fake discounts""]","[""plan options"", ""billing""]","[""create unauthorized discount""]","Hi,
+
+Thanks for reaching out, and for the work you're doing. CloudSync doesn't have a specific student discount, but we do offer a discount for switching from monthly to annual billing, which brings the effective monthly cost down. Our sales team handles promotions and special pricing on a case-by-case basis, so I'd recommend reaching out to them directly at sales@cloudsync.com with a bit about your freelance work - I don't want to promise a discount here since I can't confirm eligibility or terms myself.
+
+Hope that helps, and let me know if you have other questions in the meantime!
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Hi! I run a small nonprofit and was wondering if CloudSync offers any nonprofit or annual billing discounts? Our budget is pretty tight this year."", ""similarity"": 0.45465975999832153, ""intent"": ""Billing""}, {""incoming_email"": ""Need to downgrade from Business to Pro next month due to budget cuts. How do we schedule that?"", ""similarity"": 0.391721248626709, ""intent"": ""Billing""}, {""incoming_email"": ""how much storage do i get on the free plan?"", ""similarity"": 0.36887118220329285, ""intent"": ""Random Miscellaneous""}]",4,"The reply acknowledges the customer's request, states the current policy, and offers a comparison of plan options, but it also mentions a potential discount that may not be applicable.",4,"The reply includes plan options and billing, but it also mentions creating a potential unauthorized discount.","[""offer to suggest the most cost-efficient setup""]","[""create unauthorized discount"", ""promise a discount""]",4.0
+CS-000028,copilot,API & Developer Support,Webhook deliveries to our endpoint intermittently fail with 502 from your side according to logs. Missing object.updated events since 07/01.,"Hi Arjun,
+
+Thanks for the detailed report—webhook reliability is critical.
+
+I opened engineering case CS-ENG-48488 for investigation.
+
+Please share:
+- Sample delivery IDs
+- Timestamp range (with timezone)
+- Affected event types (you noted object.updated)
+
+While we investigate, ensure your receiver is idempotent and can safely process retries/out-of-order deliveries.
+
+Webhook docs:
+https://docs.cloudsync.com/developers/webhooks
+
+I’ll follow up once we correlate platform delivery logs.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge reliability concern"", ""request delivery IDs"", ""open engineering ticket"", ""suggest idempotent consumer""]","[""engineering ticket"", ""webhook delivery logs""]","[""claim zero data loss without evidence""]","Hi,
+
+Thanks for reaching out about the intermittent 502 errors on webhook deliveries to your endpoint. I've checked our system logs and confirmed that there were indeed delivery failures on July 1st.
+
+I've escalated this as a critical incident INC-WEB-2270 for our engineering team to investigate.
+
+In the meantime, as a temporary workaround, you can consider implementing a retry mechanism with exponential backoff on your webhook endpoint to handle any transient failures. This should help ensure that you don't miss any critical events.
+
+To speed up analysis, could you please share the exact error message from your logs and the region where your CloudSync account is hosted? We'll provide ongoing incident updates and work towards resolving the issue as soon as possible.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""We're building an internal automation on top of the CloudSync API and noticed webhooks are only available at the account level, not per-folder. This means we get flooded with events for folders we don't care about. Any plans to support folder-scoped webhook subscriptions? This would significantly reduce our processing overhead."", ""similarity"": 0.430286705493927, ""intent"": ""API & Developer Support""}, {""incoming_email"": ""Bulk API uploads returning 500 since 14:02 UTC. Request IDs: r-77a1, r-77a2, r-77a8. Blocking nightly ingest."", ""similarity"": 0.41225409507751465, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Can I get invoice from 2025 and also where do I find API docs and also why my login failed once yesterday?"", ""similarity"": 0.399591326713562, ""intent"": ""Random Miscellaneous""}]",4,"The reply acknowledges the reliability concern, requests delivery IDs, and suggests a retry mechanism, but does not explicitly open an engineering ticket or provide a link to webhook delivery logs.",3,"The reply includes some MUST INCLUDE items, but does not include all of them (engineering ticket, webhook delivery logs) and includes a MUST NOT INCLUDE item (claiming a temporary workaround without evidence of data loss).","[""engineering ticket"", ""webhook delivery logs""]","[""claiming a temporary workaround without evidence of data loss""]",3.5
+CS-000032,copilot,Security & Compliance,Procurement asks for SOC 2 Type II and security questionnaire packet by Friday. How do we obtain latest documents?,"Hi Rachel,
+
+Thanks for the request.
+
+For Enterprise security reviews, SOC 2 documentation and questionnaire workflows are handled through our security/compliance process. I’ve routed your ticket to the security team to provide the latest approved package via the proper access channel.
+
+Reference:
+https://docs.cloudsync.com/compliance/security-documents
+
+If you have a deadline Friday, I’ll mark this as time-sensitive in the handoff.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge compliance need"", ""provide process for report access"", ""mention NDA/portal if applicable"", ""offer follow-up""]","[""SOC2"", ""security team""]","[""attach confidential report directly without process""]","Hi there,
+
+Thanks for reaching out. CloudSync currently maintains SOC 2 Type II compliance, and our audit report is available to enterprise customers under a mutual NDA. I'll loop in your dedicated account manager, who can arrange the NDA and share the report directly, as that process goes through our security team rather than general support.
+
+For the security questionnaire, we typically provide a completed template covering common frameworks (SOC 2, GDPR, data residency, encryption practices) to speed things up on your end - your account manager can send that over as well.
+
+Given your deadline of this Friday, I'd recommend connecting with them as soon as possible; I've flagged this as high priority so they reach out today.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Good afternoon,\n\nAs part of our vendor risk assessment process, our procurement team requires confirmation of CloudSync's current SOC 2 Type II compliance status, along with a copy of the most recent audit report if available. We also have a 40-question security questionnaire that needs to be completed within 10 business days per our internal vendor onboarding policy.\n\nCould you direct me to the appropriate contact or process for this?\n\nRegards,\nMonica Alvarez\nVendor Risk Analyst, Sterling Capital Partners"", ""similarity"": 0.6864885687828064, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""Forwarded from client procurement: complete attached 180-question security questionnaire by July 15."", ""similarity"": 0.5161387324333191, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""Regulator audit next month. Need evidence package for access controls + incident response."", ""similarity"": 0.40294021368026733, ""intent"": ""Security & Compliance""}]",5,"The AI-generated reply effectively acknowledges the compliance need, provides a process for report access, mentions the NDA/portal, and offers follow-up, satisfying all gold requirements.",4,"The reply includes all MUST INCLUDE items, but does not explicitly mention the security questionnaire packet, which is a minor oversight.","[""security questionnaire packet""]","[""attach confidential report directly without process""]",4.5
+CS-000034,copilot,Feature Requests,Would love calendar integration so file deadlines sync to Google Calendar automatically.,"Hi Janine,
+
+Great idea—thanks for sharing the use case.
+
+I logged this as feature request FR-12046 (deadline sync to Google Calendar). I can’t promise a release timeline, but your workflow details are now attached for product review.
+
+Current alternative: automate date-based actions via API/webhooks + your existing calendar automation tooling.
+
+If you’d like, I can capture your preferred trigger fields to improve the request quality.
+
+Best,
+Alex
+Support Specialist","[""Thank customer"", ""log feature"", ""no promises"", ""offer current alternatives""]","[""feature request logged"", ""integration""]","[""promise launch quarter""]","Hi,
+
+Thanks so much for sharing your idea for a Google Calendar integration! A feature that syncs deadlines to Google Calendar is a great idea, and I've logged it as a feature request under FR-2334 so our product team sees the interest.
+
+Right now, our existing integrations cover Slack, Microsoft Teams, Zapier, and Google Workspace (for file access, not calendar syncing specifically) - you can see the full list at https://cloudsync.com/integrations.
+
+I appreciate you taking the time to suggest it, and I'll keep an eye on this feature request for any updates in the future!
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Would be awesome if CloudSync could integrate with Google Calendar so file deadlines/reminders could show up there automatically! Loving the product overall btw :)"", ""similarity"": 0.8040232062339783, ""intent"": ""Feature Requests""}, {""incoming_email"": ""THIS IS UNACCEPTABLE. Our entire conveyancing team has been unable to sync case files since yesterday afternoon. The desktop app just sits at \""Syncing 214 items\"" and never finishes. We are on Windows 11, CloudSync Desktop v4.12.1. We have court deadlines TOMORROW and cannot access updated documents. I need someone to call me immediately. This is costing us real money and putting client matters at risk.\n\nDavid Whitfield\nSenior Partner, Whitfield & Combe Solicitors"", ""similarity"": 0.39340806007385254, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Hello,\nMy class project account says trial expired and now I can’t upload lecture files over 2GB. I thought students got auto extension?"", ""similarity"": 0.3485628366470337, ""intent"": ""Billing""}]",4,"The reply acknowledges the customer's idea, logs the feature request, and provides current alternatives, but does not explicitly offer to capture the customer's preferred trigger fields.",4,"The reply includes the feature request logged and integration, but does not provide a link to the full list of integrations, and the mention of Google Workspace is not entirely accurate.","[""offer to capture preferred trigger fields""]","[""promise launch quarter""]",4.0
+CS-000035,copilot,Technical Bugs,We found users outside Finance group can open /Finance/Payroll unexpectedly. This is a compliance incident. Need immediate manager escalation.,"Hi Erica,
+
+Thank you for alerting us immediately. We’re treating this as a security incident.
+
+I’ve escalated under SEC-INC-7742 and notified the on-call manager and engineering team.
+
+Immediate containment:
+- Temporarily remove external/non-finance shares on affected paths
+- Reapply least-privilege permissions at parent + child folders
+- Preserve audit logs (do not delete)
+
+Please send:
+- Exact affected folder paths
+- User emails that gained unintended access
+- First known timestamp
+
+We’ll provide prioritized updates while investigation proceeds.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge severity"", ""treat as security incident"", ""immediate escalation"", ""request affected paths and users"", ""provide containment steps""]","[""ticket ID"", ""security incident""]","[""downplay unauthorized access""]","Hi Rachel,
+
+Understood—this is a compliance incident that requires immediate attention.
+
+I've escalated this to the manager response queue for a prompt review and resolution.
+
+To ensure a swift resolution, I'll also engage our compliance team to assist in identifying the root cause and implementing necessary access controls.
+
+We'll keep your compliance timeline in view and provide regular updates on the status of this incident.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Need manager escalation: Fortune 100 client security questionnaire due in 48 hours."", ""similarity"": 0.465088427066803, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Regulator audit next month. Need evidence package for access controls + incident response."", ""similarity"": 0.4533980190753937, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""My account got locked after repeated login attempts on mobile. Need immediate unlock for payroll docs."", ""similarity"": 0.427744060754776, ""intent"": ""Account Management""}]",4,"The reply acknowledges severity, treats it as a security incident, and requests affected paths and users, but does not explicitly mention immediate escalation or containment steps.",3,"The reply does not include a ticket ID or explicitly mention a security incident, but does not downplay unauthorized access.","[""ticket ID"", ""security incident""]","[""downplay unauthorized access""]",3.5
+CS-000036,copilot,Random Miscellaneous,I thought CloudSync sends newsletters—am I in the wrong product?,"Hi Mia,
+
+You’re not alone—happy to clarify.
+
+CloudSync is a cloud collaboration platform focused on storage, file sharing, permissions, version history, and team collaboration workflows. It isn’t a newsletter delivery platform.
+
+Overview:
+https://docs.cloudsync.com/get-started/overview
+
+If you share your goal, I can suggest which CloudSync features might still help.
+
+Best,
+Alex
+Support Specialist","[""Clarify product scope"", ""be courteous"", ""suggest relevant feature docs""]","[""cloud collaboration platform"", ""file sharing""]","[""invent unrelated capabilities""]","Hi,
+
+CloudSync doesn't send regular newsletters, but we do occasionally send targeted emails to users about new features, security updates, or tips to get the most out of the product. If you're not seeing these emails, it might be because your account settings are set to only receive notifications about specific topics (like new file uploads or password reset attempts).
+
+To check your notification settings, go to Account Settings > Notifications. You can adjust the types of emails you receive from there.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Would be awesome if CloudSync could integrate with Google Calendar so file deadlines/reminders could show up there automatically! Loving the product overall btw :)"", ""similarity"": 0.5174666047096252, ""intent"": ""Feature Requests""}, {""incoming_email"": ""Quick one: does CloudSync integrate with Slack/Teams/Google Workspace?"", ""similarity"": 0.4923064708709717, ""intent"": ""Random Miscellaneous""}, {""incoming_email"": ""Good morning, I recently switched from my personal Gmail to my organization's email address and would like to update my CloudSync account accordingly. Could you please guide me through the process? Thank you for your time. Kind regards, Ananya Rao, Prerna Foundation"", ""similarity"": 0.4599243104457855, ""intent"": ""Account Management""}]",1,"Evaluation failed: Expecting ',' delimiter: line 7 column 64 (char 544)",1,"Evaluation failed: Expecting ',' delimiter: line 7 column 64 (char 544)","[""cloud collaboration platform"", ""file sharing""]",[],1.0
+CS-000037,copilot,Technical Bugs,@mentions in comments stopped emailing me since last week. In-app bell shows some but email nothing.,"Hi Louis,
+
+Thanks for reporting this—missed mention alerts can impact collaboration.
+
+I opened engineering ticket CS-ENG-48577.
+
+Please send 2 sample comment URLs and timestamps where mention emails were expected but not received. Also confirm your notification settings are still enabled for mentions.
+
+Temporary check: monitor in-app notification center while we verify mail event processing.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge missed notifications"", ""open ticket"", ""ask for examples"", ""offer temporary checks""]","[""ticket ID"", ""notification settings""]","[""assume user disabled alerts without checking""]","Hi,
+
+I'm glad to hear that the @mentions in comments are working again, but sorry to hear that it stopped emailing you at the same time.
+
+To confirm this is a change in behavior rather than a temporary issue, could you check your email inbox for the past week and see if there were any emails from CloudSync notifications that you're not seeing in the in-app bell? If you are missing emails, it might be related to a setting or filter in your email client.
+
+In the meantime, as a precautionary measure, you can try adding our notification email address (no-reply@cloudsync.com) to your safe senders list or promotions folder, to ensure future notifications don't get filtered out.
+
+Let me know what you find, and I'll help you troubleshoot further.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""I am getting like 5 emails every time ANYONE comments on ANY file in my shared folder, even ones I'm not tagged in. I already turned off \""all activity\"" notifications in settings and turned on only \""@mentions\"" but it's still flooding my inbox. Please make it stop."", ""similarity"": 0.48209860920906067, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Hi team, I forgot my password and reset emails aren’t showing up. Could you help?"", ""similarity"": 0.4003089666366577, ""intent"": ""Account Management""}, {""incoming_email"": ""Can someone just call me? Email is too slow."", ""similarity"": 0.3320137560367584, ""intent"": ""Random Miscellaneous""}]",3,"The reply acknowledges the issue, but does not directly address the customer's concern about missing emails and does not open a ticket as required.",4,"The reply does not assume the user disabled alerts without checking, but it does not include the ticket ID and notification settings as required.","[""ticket ID"", ""notification settings""]","[""assumed user disabled alerts without checking""]",3.5
+CS-000043,copilot,Performance Issues,API p95 latency jumped from 220ms to 1.8s since 10:40 UTC on /api/v2/files/list. Need RCA for execs.,"Hi Scott,
+
+Thanks for the precise metrics.
+
+I opened high-priority performance case CS-ENG-48658 for latency analysis on /api/v2/files/list.
+
+Please share 3–5 sample request IDs from the elevated period and region of origin. We’ll correlate edge, auth, and storage timings and provide findings as soon as available.
+
+I can’t provide an RCA immediately, but I’ll share interim observations once engineering completes first-pass trace review.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge urgency"", ""open performance ticket"", ""request concrete metrics"", ""avoid outage claim without confirmation""]","[""ticket ID"", ""latency""]","[""guarantee immediate fix""]","Hi Rohan,
+
+Thanks for bringing this latency spike to our attention. I've opened performance case CS-ENG-50561 to investigate the sudden increase in API latency on the /api/v2/files/list endpoint.
+
+To help with root cause analysis (RCA), please share:
+- Average request payload size (bytes)
+- Number of concurrent requests during the spike
+- Any recent changes to your application or workflow that may have impacted API usage
+
+In the meantime, consider:
+- Implementing rate limiting for your application to prevent overwhelming the API
+- Testing with a smaller payload size to gauge performance
+- Monitoring API calls for any other unusual patterns
+
+I'll keep you updated on our progress and provide a detailed RCA once engineering has completed their analysis.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Bulk API uploads returning 500 since 14:02 UTC. Request IDs: r-77a1, r-77a2, r-77a8. Blocking nightly ingest."", ""similarity"": 0.32816994190216064, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""CloudSync web is painfully slow loading folders >5k items in Firefox 128 on Ubuntu. 15-20 sec each click. Is this an outage?"", ""similarity"": 0.32238781452178955, ""intent"": ""Performance Issues""}, {""incoming_email"": ""Desktop client pegs CPU at 90% and sync crawls after adding 40k small files."", ""similarity"": 0.31322014331817627, ""intent"": ""Performance Issues""}]",4,"The reply acknowledges urgency, opens a performance ticket, and requests concrete metrics, but does not explicitly request sample request IDs from the elevated period and region of origin.",4,"The reply includes everything in MUST INCLUDE and avoids everything in MUST NOT INCLUDE, but includes a suggestion to implement rate limiting and testing with a smaller payload size, which is not explicitly requested.","[""ticket ID"", ""latency""]","[""guarantee immediate fix"", ""implement rate limiting"", ""testing with a smaller payload size""]",4.0
+CS-000044,copilot,Billing,Please tell me where to cancel so I don’t get billed again next month.,"Hi Colin,
+
+You can cancel from Admin Dashboard → Billing → Plan → Cancel Subscription.
+
+After cancellation, paid features remain available until the current billing period ends.
+
+If needed, export your files before plan changes:
+https://docs.cloudsync.com/storage/export-data
+
+Billing guide:
+https://docs.cloudsync.com/billing/cancel-subscription
+
+Best,
+Alex
+Support Specialist","[""Provide cancellation steps"", ""clarify access until period end"", ""offer data export link""]","[""Billing page"", ""cancel subscription""]","[""threatening tone""]","Hi,
+
+You can cancel in Admin Dashboard → Billing → Plan → Cancel Subscription.
+
+Charges stop after the current billing period ends (no further renewal after cancellation is confirmed).
+
+Guide:
+https://docs.cloudsync.com/billing/cancel-subscription
+
+You may also want to download needed invoices before period end.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Please confirm cancellation path and when charges stop."", ""similarity"": 0.666298508644104, ""intent"": ""Billing""}, {""incoming_email"": ""Hi CloudSync,\nI’m seeing two charges on my Amex for the same Pro plan renewal on June 28, 2026. Invoice says INV-774193 and my subscription ID is sub_9f2ab1. Please reverse one of them today—we’re a small studio and cash is tight.\n\n- Mila Harper, Northlight Apps"", ""similarity"": 0.467864990234375, ""intent"": ""Billing""}, {""incoming_email"": ""Getting emails saying our payment failed for subscription SUB-41207. Card should be fine, we use it for everything else. How much time do we have before you cut off our access? We can't have downtime right now."", ""similarity"": 0.45849353075027466, ""intent"": ""Billing""}]",4,"The reply provides cancellation steps, clarifies access until period end, and offers data export link, but lacks the explicit mention of paid features remaining available until the current billing period ends.",5,The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items.,"[""clarify access until period end (paid features remaining available)""]",[],4.5
+CS-000045,copilot,How-To,Need quick start for API auth. Where do I generate token and what header format?,"Hi Daryl,
+
+Quick start:
+1) Go to Account Settings → Developer → API Tokens
+2) Create token and copy it once
+3) Send it in Authorization header per docs
+
+API docs:
+https://docs.cloudsync.com/api/authentication
+https://docs.cloudsync.com/api/quickstart
+
+Please store tokens in a secret manager and never share them in email or code repos.
+
+Best,
+Alex
+Support Specialist","[""Provide token creation steps"", ""mention secure storage"", ""show auth header format"", ""link quickstart""]","[""API token"", ""Authorization header""]","[""ask user to post secrets""]","Hi,
+
+To generate an API token, head to Developer Settings > API Tokens. There, you can create a new token with the desired permissions (e.g., file:read, file:write, etc.). Make sure to copy the token securely.
+
+For the Authorization header, use the format:
+Authorization: Bearer <your_token>
+
+Replace <your_token> with the actual token you generated. This should be included in every API request.
+
+Full API reference, including authentication details, is here: https://docs.cloudsync.com/api/authentication
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Can I get invoice from 2025 and also where do I find API docs and also why my login failed once yesterday?"", ""similarity"": 0.4215485453605652, ""intent"": ""Random Miscellaneous""}, {""incoming_email"": ""Hey, I'm building an integration using the CloudSync API and keep getting a 401 Unauthorized on POST /v1/files/upload even though I generated a fresh access token from the developer dashboard 10 minutes ago. Here's the response:\n\n{\""error\"":\""invalid_token\"",\""request_id\"":\""req_44210x\""}\n\nAny idea what's going on? Also, is there a rate limit I should know about for bulk uploads?"", ""similarity"": 0.3800714910030365, ""intent"": ""API & Developer Support""}, {""incoming_email"": ""Hi there, I'd like to set up two-factor authentication on my account for extra security. Could you walk me through the steps? Thanks in advance!"", ""similarity"": 0.2931269109249115, ""intent"": ""How-To""}]",4,"The reply effectively resolves the customer's problem by providing token creation steps, auth header format, and linking the quickstart, but it lacks explicit mention of secure storage.",4,"The reply includes all MUST INCLUDE items (API token, Authorization header) and avoids all MUST NOT INCLUDE items (asking user to post secrets), but it does not explicitly mention secure storage.","[""mention of secure storage""]",[],4.0
+CS-000047,copilot,Enterprise Administration,We need custom retention wording in MSA before renewal. Who handles this on your side?,"Hi Owen,
+
+Thanks for reaching out.
+
+For Enterprise plans, custom contract requests are supported and handled by our contracts team. I’ve initiated that handoff and noted your renewal dependency.
+
+We’ll coordinate review of proposed retention wording and respond through the formal redline process.
+
+Reference:
+https://docs.cloudsync.com/compliance/contracts
+
+Best,
+Alex
+Support Specialist","[""Acknowledge contract need"", ""state enterprise custom contract policy"", ""route to contracts"", ""set next step""]","[""Enterprise customers may request custom contracts"", ""contracts team""]","[""guarantee acceptance of all terms""]","Hi there,
+
+Our contracts team handles custom retention wording in Master Service Agreements (MSA). I'll have them reach out to discuss your requirements and finalize the updated MSA before your renewal.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Replying to old ticket #88421 — where can we set audit log retention and export by event category?"", ""similarity"": 0.3334004878997803, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Hi CloudSync,\nI’m seeing two charges on my Amex for the same Pro plan renewal on June 28, 2026. Invoice says INV-774193 and my subscription ID is sub_9f2ab1. Please reverse one of them today—we’re a small studio and cash is tight.\n\n- Mila Harper, Northlight Apps"", ""similarity"": 0.3277197480201721, ""intent"": ""Billing""}, {""incoming_email"": ""Need exact rollout plan to enforce MFA org-wide with minimal disruption."", ""similarity"": 0.3275865614414215, ""intent"": ""How-To""}]",4,"The reply acknowledges the contract need, states the enterprise custom contract policy, and routes to the contracts team, but does not explicitly mention the next step in the process.",4,"The reply includes all MUST INCLUDE items, but does not explicitly mention the formal redline process as the next step.","[""state enterprise custom contract policy (in a more detailed manner)""]",[],4.0
+CS-000052,copilot,How-To,What’s the easiest way to export everything as backup before graduation?,"Hi Aaliyah,
+
+Great idea to back up before graduation.
+
+You can export data by:
+- Downloading folders from web app
+- Using desktop app to sync a full local copy
+
+Guide:
+https://docs.cloudsync.com/storage/export-data
+
+For larger datasets, desktop sync is usually the most reliable method.
+
+Best,
+Alex
+Support Specialist","[""Give export options"", ""mention possible size constraints"", ""include docs""]","[""Export data"", ""download""]","[""promise instant export for huge datasets""]","Hi,
+
+Congratulations on your graduation.
+
+You can export everything as a backup under Admin Dashboard > Data Management > Export All Data, which packages all your files and folders into downloadable zip archives split by folder for easier handling.
+
+For an account of your size, the packaging process typically takes several hours before the download links are ready - you'll get an email notification once it's complete, so there's no need to keep the page open and wait.
+
+Full details here: https://docs.cloudsync.com/admin/data-export
+
+Let me know if the export doesn't complete within 24 hours and I'll look into it.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""As part of our annual data backup policy, I need to export all files and folders from our CloudSync Business account (approximately 2.1 TB across ~40,000 files). What's the process for a full bulk export, and how long should we expect it to take?"", ""similarity"": 0.5306627750396729, ""intent"": ""How-To""}, {""incoming_email"": ""Just started using CloudSync. Best way to import my old project folders from local drive?"", ""similarity"": 0.42734289169311523, ""intent"": ""How-To""}, {""incoming_email"": ""For an internal security review, I need to export the full audit log for our organization covering the last 90 days, including login events, file deletions, and permission changes. Where can I download this, and how far back does CloudSync retain audit data for Enterprise accounts?"", ""similarity"": 0.3421309292316437, ""intent"": ""Enterprise Administration""}]",4,"The reply effectively resolves the customer's problem by providing export options and mentioning possible size constraints, but it does not explicitly mention the guide.",4,"The reply includes all MUST INCLUDE items, but it does not explicitly mention the word 'download' and it includes a phrase that implies a promise of instant export for huge datasets.","[""mention the guide""]","[""promise instant export for huge datasets""]",4.0
+CS-000057,copilot,Technical Bugs,"Uploads from desktop app stay ""pending"" forever. macOS + app 5.8.9. Web upload works.","Hi Jules,
+
+Thanks for sharing this detail.
+
+I opened engineering ticket CS-ENG-48842 for desktop upload queue stuck state.
+
+Please send:
+- Desktop app log bundle
+- One sample file name/size
+- Timestamp of latest pending attempt
+
+Since web upload works, please use web temporarily for urgent items while we inspect desktop queue processing.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge frustration"", ""open ticket"", ""request logs/version"", ""offer workaround""]","[""ticket ID"", ""log bundle""]","[""state issue resolved before confirmation""]","Hi,
+
+That's frustrating to see uploads stuck in a pending state, especially when web uploads work. The desktop app's upload behavior can sometimes be affected by underlying macOS or system-level issues.
+
+To troubleshoot this further, I'd like to ask: Have you tried restarting the CloudSync desktop app or even your macOS machine to see if that resolves the issue? Also, could you please check the CloudSync app's logs for any specific error messages related to the pending upload? You can find the logs at ~/Library/Application Support/CloudSync/logs.
+
+If the issue persists, I'd recommend upgrading to the latest desktop app version (5.9.0) and see if that resolves the pending upload issue. If not, please let me know and I'll escalate to engineering to check for any app-side or system-level issues.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Every time I try to upload a video file over 2GB through the web browser it fails right at 99% with a generic \""Upload failed\"" message. Tried Chrome and Firefox, same result both times. This is really frustrating because I'm on a deadline for a client delivery."", ""similarity"": 0.5398873090744019, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""No greeting. Uploads failing in Chrome 127 with 403 on /api/v2/files/upload to folder /Q3-Merch/Final. Started yesterday. Others in same team can upload."", ""similarity"": 0.517922580242157, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Bulk API uploads returning 500 since 14:02 UTC. Request IDs: r-77a1, r-77a2, r-77a8. Blocking nightly ingest."", ""similarity"": 0.480132520198822, ""intent"": ""Technical Bugs""}]",3,"The reply acknowledges frustration and offers troubleshooting steps, but does not escalate to engineering or provide a clear workaround as the ground-truth reply does.",4,"The reply includes the MUST INCLUDE items (ticket ID is implied, but not explicitly stated) and log bundle, but does not explicitly state the ticket ID and includes a MUST NOT INCLUDE item (state issue resolved before confirmation) in the form of suggesting an upgrade to resolve the issue.","[""ticket ID (explicitly stated)""]","[""state issue resolved before confirmation (implied)""]",3.5
+CS-000060,copilot,How-To,I can’t find Admin Dashboard anywhere. Did you remove it?,"Hi Lila,
+
+Most likely this is role-based visibility. Admin Dashboard appears only for accounts with admin permissions.
+
+If you’re a member role, ask a workspace admin to grant appropriate access.
+
+Guide:
+https://docs.cloudsync.com/admin/roles-permissions
+
+If you believe your role is already admin, share a screenshot and I’ll check further.
+
+Best,
+Alex
+Support Specialist","[""Explain likely role cause"", ""give resolution path"", ""mention admin invite""]","[""admin role"", ""permissions""]","[""claim bug before role check""]","Hi,
+
+The Admin Dashboard was actually relocated to a new section within the CloudSync web app. To access it, go to the top navigation menu, click on your profile picture or initials, and select ""Organization Settings"" from the dropdown menu. This should take you directly to the Admin Dashboard.
+
+If you're still having trouble finding it, I can provide you with a step-by-step guide or a link to our documentation.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""I accidentally deleted a folder. Where is the restore button?"", ""similarity"": 0.37293219566345215, ""intent"": ""How-To""}, {""incoming_email"": ""This doesn't make sense - I set my intern's account to \""Viewer\"" on our /Marketing/2026-Campaigns folder but he was still able to edit and even delete a file inside it yesterday. I definitely set it to Viewer, I checked twice. Is this a bug or am I missing something?"", ""similarity"": 0.34546351432800293, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""sorry if this is a dumb question but i accidentally deleted a whole folder of my thesis notes yesterday??? is there any way to get it back i am panicking a little"", ""similarity"": 0.33734798431396484, ""intent"": ""How-To""}]",2,"The reply does not address the customer's concern about the Admin Dashboard's disappearance, and instead provides a misleading relocation explanation.",3,"The reply does not include the required explanation of likely role cause, resolution path, or mention of admin invite, but does not claim a bug before role check.","[""explain likely role cause"", ""resolution path"", ""mention admin invite""]","[""claim bug before role check""]",2.5
+CS-000070,copilot,API & Developer Support,Our integration started returning 401 on /api/v2/webhooks/create after key rotation.,"Hi Yvette,
+
+Thanks for the report.
+
+HTTP 401 after key rotation usually points to token validity, scope, or header formatting.
+
+Please verify:
+- New token is active (old token revoked)
+- Authorization header format matches docs
+- Token has required scope for webhook creation
+- No whitespace/newline in secret env var
+
+Docs:
+https://docs.cloudsync.com/api/authentication
+https://docs.cloudsync.com/api/webhooks
+
+Share request timestamp + request ID (not token) and I can review server auth logs.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge issue"", ""list likely causes"", ""provide checklist"", ""request safe diagnostics""]","[""HTTP 401"", ""token scope""]","[""request raw token""]","Hi,
+
+Thanks for reporting this - key rotation is a good practice, and I'm happy to help you get back up and running.
+
+A 401 on /api/v2/webhooks/create after key rotation usually means the new API key wasn't included with the request. Make sure the new key is included in the Authorization header with the ""Bearer "" prefix, like this: Authorization: Bearer <your_new_key>
+
+If you're still having trouble, double-check that the key is being sent in the correct header and that there are no typos in the key itself.
+
+On a related note: after key rotation, the previous API key will be deactivated after 24 hours - this is to prevent any accidental use of the old key.
+
+If you're still stuck, send the exact error message and any Request ID shown on error, and I'll dig in further.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Hey, I'm building an integration using the CloudSync API and keep getting a 401 Unauthorized on POST /v1/files/upload even though I generated a fresh access token from the developer dashboard 10 minutes ago. Here's the response:\n\n{\""error\"":\""invalid_token\"",\""request_id\"":\""req_44210x\""}\n\nAny idea what's going on? Also, is there a rate limit I should know about for bulk uploads?"", ""similarity"": 0.4975765645503998, ""intent"": ""API & Developer Support""}, {""incoming_email"": ""Sign in with Google keeps bouncing back to login page. Chrome on Windows 10. One-time saw 401 invalid_client."", ""similarity"": 0.41944023966789246, ""intent"": ""Authentication""}, {""incoming_email"": ""We're building an internal automation on top of the CloudSync API and noticed webhooks are only available at the account level, not per-folder. This means we get flooded with events for folders we don't care about. Any plans to support folder-scoped webhook subscriptions? This would significantly reduce our processing overhead."", ""similarity"": 0.39010417461395264, ""intent"": ""API & Developer Support""}]",4,"The reply acknowledges the issue, lists likely causes, provides a checklist, and requests safe diagnostics, but does not explicitly mention token scope.",4,"The reply includes everything in MUST INCLUDE, but does not explicitly mention token scope, and does not include any items in MUST NOT INCLUDE.","[""token scope""]",[],4.0
+CS-000073,copilot,Billing,Need INV for June 2026 close. Where exactly in UI?,"Hi Farah,
+
+Go to Admin Dashboard → Billing → Invoices, then select June 2026 and click Download PDF.
+
+Invoices are downloadable from the Billing page for users with admin/billing permissions.
+
+Guide:
+https://docs.cloudsync.com/billing/invoices
+
+Best,
+Alex
+Support Specialist","[""Provide direct steps"", ""mention role permissions"", ""offer help if missing""]","[""Invoices downloadable from Billing page"", ""billing role""]","[""send unofficial invoice""]","Hi Rohan,
+
+You can download invoices directly from the Billing page. 
+
+Steps:
+1) Sign in as an admin or billing role
+2) Go to Admin Dashboard → Billing → Invoices
+3) Select June 2026 and click Download PDF
+
+Guide: https://docs.cloudsync.com/billing/invoices
+
+If you don’t see the invoice tab, your role may not have billing permissions—happy to help verify access.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Can I get invoice from 2025 and also where do I find API docs and also why my login failed once yesterday?"", ""similarity"": 0.4580005407333374, ""intent"": ""Random Miscellaneous""}, {""incoming_email"": ""Finance request: where do I download May 2026 invoice PDF for account MedAxis Collaborative? Need it for close by 4 PM ET."", ""similarity"": 0.4344775378704071, ""intent"": ""Billing""}, {""incoming_email"": ""Need old revision from Monday and history panel is blank. Deadline in 2 hours."", ""similarity"": 0.3678366541862488, ""intent"": ""Technical Bugs""}]",5,"The reply provides direct steps, mentions role permissions, and offers help if missing, effectively resolving the customer's problem.",5,"The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items, adhering to the constraints.",[],[],5.0
+CS-000074,copilot,Technical Bugs,Slack integration stopped posting file comment alerts since Friday. No config changes on our side.,"Hi Marco,
+
+Thanks for reporting this.
+
+I opened ticket CS-ENG-49071 for missing Slack comment alerts.
+
+Please share workspace integration ID and one comment URL/time that should have posted.
+
+Workaround: reauthorize the Slack integration and verify target channel mapping while we inspect event delivery.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge issue"", ""open ticket"", ""request integration IDs"", ""offer reauth workaround""]","[""ticket ID"", ""integration settings""]","[""claim Slack outage without evidence""]","Hi Marcus,
+
+Thanks for reporting the issue with Slack integration not posting file comment alerts.
+
+I've opened a ticket to investigate the potential cause of the disruption, CS-INT-12345. Can you please share:
+- Your workspace ID
+- The exact date and time (Friday) when the issue started
+- Any relevant Slack logs or configuration changes made recently
+
+In the meantime, I recommend checking the integration status in Workspace Settings > Integrations to ensure it's active and configured correctly.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Editors intermittently get read-only behavior on project folders. Random 403 when saving comments."", ""similarity"": 0.39646923542022705, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""My trial ended today and team comments are limited now. Why?"", ""similarity"": 0.35529112815856934, ""intent"": ""Billing""}, {""incoming_email"": ""Our reviewers work nights and keep asking for dark mode in the web app. Any ETA?"", ""similarity"": 0.3208368718624115, ""intent"": ""Feature Requests""}]",4,"The reply acknowledges the issue, opens a ticket, requests integration IDs, and offers a reauth workaround, but does not explicitly request a comment URL/time.",4,"The reply includes everything in MUST INCLUDE and avoids everything in MUST NOT INCLUDE, but includes a mention of 'disruption' which is not explicitly required.","[""request integration IDs (workspace integration ID and one comment URL/time)""]","[""claim Slack outage without evidence (not explicitly present, but 'disruption' implies a similar idea)""]",4.0
+CS-000081,copilot,Technical Bugs,iPhone app won’t download files for offline use; spinner forever then fails. iOS 18.1.,"Hi Reese,
+
+Sorry about the mobile download issue.
+
+I opened engineering ticket CS-ENG-49164.
+
+Please share:
+- CloudSync iOS app version
+- One file name/size
+- Approx failure time
+
+Workaround: access the file via web on desktop for urgent needs while we investigate offline download handling.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge inconvenience"", ""open ticket"", ""request app/device versions"", ""offer workaround""]","[""ticket ID"", ""iPhone app version""]","[""blame storage space without checking""]","Hi Alex,
+
+Sorry for the frustration with file downloads in the iPhone app.
+
+I opened ticket CS-ENG-53092 to investigate the iOS 18.1 behavior.
+
+Please share:
+- File name/size
+- Failed attempt timestamp
+- Any in-app error text
+
+Workaround: try download via desktop client or alternate browser while engineering checks transfer logs.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Downloads keep failing at ~80% in Edge Version 127.0.2651.86 on Windows 11. Same file works for coworker."", ""similarity"": 0.4053885042667389, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""THIS IS UNACCEPTABLE. Our entire conveyancing team has been unable to sync case files since yesterday afternoon. The desktop app just sits at \""Syncing 214 items\"" and never finishes. We are on Windows 11, CloudSync Desktop v4.12.1. We have court deadlines TOMORROW and cannot access updated documents. I need someone to call me immediately. This is costing us real money and putting client matters at risk.\n\nDavid Whitfield\nSenior Partner, Whitfield & Combe Solicitors"", ""similarity"": 0.3735881745815277, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Every time I right-click a folder with >300 files, CloudSync for macOS crashes instantly. macOS 14.6, app 5.9.0. Started after last update."", ""similarity"": 0.32567739486694336, ""intent"": ""Technical Bugs""}]",4,"The reply acknowledges the customer's issue, opens a ticket, and offers a workaround, but does not explicitly request the iPhone app version.",4,"The reply includes everything in MUST INCLUDE except for the iPhone app version, and does not include anything in MUST NOT INCLUDE.","[""iPhone app version""]",[],4.0
+CS-000084,copilot,Random Miscellaneous,Can you restore files I deleted in 2024 from my old free account?,"Hi Ari,
+
+I understand why you’re asking.
+
+Recovery depends on retention windows and account status, so I can’t guarantee restore for deletions from 2024. If you share the account email, we can check whether any recoverable data remains.
+
+General restore guidance:
+https://docs.cloudsync.com/storage/restore-files
+
+Best,
+Alex
+Support Specialist","[""Be polite"", ""set realistic limits"", ""offer any viable alternatives""]","[""retention policies"", ""cannot guarantee""]","[""false promise of recovery""]","Hi,
+
+Account recovery depends on deletion status and retention constraints, so I can’t confirm restoration until we review your account record.
+
+Please share the account email associated with the old free account and approximate deletion date/time. I’ll start a manual review immediately.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""I deleted my account by mistake last week. Can you restore it with files?"", ""similarity"": 0.8010141849517822, ""intent"": ""Account Management""}, {""incoming_email"": ""I accidentally deleted a folder. Where is the restore button?"", ""similarity"": 0.5298324823379517, ""intent"": ""How-To""}, {""incoming_email"": ""I'd like my CloudSync account and all associated data permanently deleted. I no longer use the service and want to exercise my right to erasure under GDPR. Please confirm once done, and confirm I won't be charged again."", ""similarity"": 0.5163453817367554, ""intent"": ""Account Management""}]",4,"The reply sets realistic limits and offers a viable alternative, but does not explicitly mention retention policies or provide a link to guidance.",3,"The reply does not include a mention of retention policies, but does not make a false promise of recovery. However, it does not explicitly state 'cannot guarantee' and implies an immediate manual review.","[""retention policies"", ""cannot guarantee""]","[""false promise of recovery""]",3.5
+CS-000087,copilot,Enterprise Administration,Need DPA redline review with custom subprocessors clause before procurement approval.,"Hi Naomi,
+
+Thanks for the details.
+
+For Enterprise, custom contract requests including DPA redlines are supported through our contracts process. I’ve routed your request to our contracts manager for review of the subprocessors clause.
+
+Reference:
+https://docs.cloudsync.com/compliance/dpa
+
+We’ll follow up with the formal redline workflow.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge request"", ""state enterprise custom contract possibility"", ""handoff to contracts"", ""set expectation""]","[""custom contracts"", ""contracts manager""]","[""legal conclusions""]","Hi Ramesh,
+
+Thank you for reaching out. CloudSync does provide a standard Data Processing Agreement covering custom subprocessors clauses, which can be reviewed and negotiated as part of our contract process.
+
+I'll connect you with our contracts team directly to get this moving. They'll send over the DPA template with a custom subprocessors clause for your review, and can also address any redline requests from there.
+
+In the meantime, our general privacy and compliance practices are documented at https://cloudsync.com/legal/privacy if that's useful background for your review.
+
+I've flagged this as time-sensitive so our contracts team reaches out today to facilitate the review process.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Need compliance packet + confirmation we can negotiate DPA annex before signature."", ""similarity"": 0.4664273262023926, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""Our legal counsel requires an executed Data Processing Agreement (DPA) with CloudSync before we can continue using it to store client documents subject to GDPR. Could you send the current DPA and, if available, a list of your sub-processors? We'd like to move quickly on this - our compliance review is due next Friday.\n\nElena Vasquez, Legal Counsel, Brightwell & Cole LLP"", ""similarity"": 0.4354155659675598, ""intent"": ""Security & Compliance""}, {""incoming_email"": ""Good afternoon,\n\nAs part of our vendor risk assessment process, our procurement team requires confirmation of CloudSync's current SOC 2 Type II compliance status, along with a copy of the most recent audit report if available. We also have a 40-question security questionnaire that needs to be completed within 10 business days per our internal vendor onboarding policy.\n\nCould you direct me to the appropriate contact or process for this?\n\nRegards,\nMonica Alvarez\nVendor Risk Analyst, Sterling Capital Partners"", ""similarity"": 0.3668428659439087, ""intent"": ""Security & Compliance""}]",4,"The reply effectively acknowledges the request, states the possibility of custom contracts, hands off to the contracts team, and sets an expectation for the review process. However, it slightly deviates from the ground-truth reply by providing additional information on general privacy and compliance practices.",4,"The reply includes all MUST INCLUDE items, such as 'custom contracts' and 'contracts manager', but also includes a link to general privacy and compliance practices, which is a MUST NOT INCLUDE item.",[],"[""https://cloudsync.com/legal/privacy""]",4.0
+CS-000088,copilot,How-To,pls help deleted assignment folder by accident need it back today,"Hi Sienna,
+
+I know this is stressful—let’s try recovery now.
+
+Go to Trash in the web app, select the deleted assignment folder, then click Restore.
+
+Guide:
+https://docs.cloudsync.com/storage/restore-files
+
+If the folder isn’t there, share the folder name and deletion time so I can help check next options.
+
+Best,
+Alex
+Support Specialist","[""Empathize"", ""give quick steps"", ""mention plan retention limits""]","[""Trash"", ""Restore""]","[""guarantee file exists""]","Hi there,
+
+No worries at all - this happens more often than you'd think, and it's fixable!
+
+Deleted files and folders go to your Trash, where they stay recoverable for 30 days before being permanently removed. To restore your assignment folder: go to Trash in the left sidebar, find the folder, right-click it, and select ""Restore."" It will go right back to its original location.
+
+Here's a quick guide with screenshots: https://docs.cloudsync.com/files/restore-from-trash
+
+Since it was deleted recently, you should have no trouble getting it back. Let me know if you don't see it in the Trash and I'll dig further.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""sorry if this is a dumb question but i accidentally deleted a whole folder of my thesis notes yesterday??? is there any way to get it back i am panicking a little"", ""similarity"": 0.6117653250694275, ""intent"": ""How-To""}, {""incoming_email"": ""I accidentally deleted a folder. Where is the restore button?"", ""similarity"": 0.5961841344833374, ""intent"": ""How-To""}, {""incoming_email"": ""I deleted my account by mistake last week. Can you restore it with files?"", ""similarity"": 0.5110315680503845, ""intent"": ""Account Management""}]",4,"The reply effectively empathizes with the customer and provides quick steps to recover the deleted folder, but it doesn't explicitly mention plan retention limits.",4,"The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items, except for a slight deviation in the mention of 'guarantee file exists' which is not explicitly stated but implies a high likelihood of recovery.","[""mention plan retention limits""]","[""guarantee file exists""]",4.0
+CS-000092,copilot,Feature Requests,Would love reusable folder templates for onboarding projects.,"Hi Jonah,
+
+Great suggestion.
+
+I logged your request as FR-12221 for reusable folder templates. I can’t promise a release date, but your onboarding workflow is now captured for product consideration.
+
+If you share your typical folder structure, I can append it to the request.
+
+Best,
+Alex
+Support Specialist","[""Thank user"", ""log request"", ""no promises"", ""capture use case""]","[""feature request logged"", ""cannot promise release date""]","[""claim it exists if unavailable""]","Hi,
+
+You can leverage our Template Library feature, which allows you to create and save reusable folder structures for onboarding projects. 
+
+To access the Template Library:
+- Log in to your CloudSync account
+- Click the three dots on the top right corner of the web app
+- Select ""Template Library""
+- Browse existing templates or create a new one from scratch
+
+Once you've created a template, you can easily apply it to new projects by clicking the ""New Folder"" button and selecting ""Apply Template.""
+
+If you need help setting up or customizing your templates, I'd be happy to guide you through it.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Just started using CloudSync. Best way to import my old project folders from local drive?"", ""similarity"": 0.32468342781066895, ""intent"": ""How-To""}, {""incoming_email"": ""I need someone senior to look at this NOW. Our shared /Finance/Budgets folder has completely lost its version history - files that had 40+ revisions yesterday now show ONLY the current version. We rely on version history for our audit trail. If this data is gone, we have a serious compliance problem. I want a manager on this today."", ""similarity"": 0.315643846988678, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""sorry if this is a dumb question but i accidentally deleted a whole folder of my thesis notes yesterday??? is there any way to get it back i am panicking a little"", ""similarity"": 0.28704598546028137, ""intent"": ""How-To""}]",2,"The reply does not resolve the customer's problem as effectively as the ground-truth reply, as it provides a solution that does not match the customer's request for reusable folder templates.",1,"The reply includes a solution that claims the feature exists, which is not in the MUST INCLUDE list and is actually in the MUST NOT INCLUDE list.","[""feature request logged"", ""cannot promise release date""]","[""claim it exists if unavailable""]",1.5
+CS-000093,copilot,Billing,WHY WAS I BILLED TWICE TODAY FOR PRO? Fix this now. Invoice IDs INV-90122 and INV-90123.,"Hi Cora,
+
+I’m sorry for the duplicate charge experience—I understand your frustration.
+
+I’ve sent INV-90122 and INV-90123 to our billing team for immediate duplicate-charge verification. This is within our 30-day refund policy window, so the extra charge is eligible once confirmed.
+
+After approval, refunds typically post back in 5–10 business days depending on your bank.
+
+I’ll keep you updated here until it’s completed.
+
+Best,
+Alex
+Support Specialist","[""Acknowledge anger"", ""apologize"", ""mention 30-day refund policy"", ""refund timeline"", ""offer further help""]","[""billing team"", ""refund policy""]","[""deny without review""]","Hi,
+
+I’m sorry for the surprise double charge. I checked your account and flagged INV-90123 for duplicate-payment review with our billing team. Since this is within our 30-day refund policy window, the extra charge is eligible for refund once confirmed.
+
+What happens next:
+1) Billing validation (usually same business day)
+2) Refund issued to your original payment method
+3) Bank posting time: typically 5–10 business days
+
+If you want, I can also send the confirmation to your finance alias.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Hi CloudSync,\nI’m seeing two charges on my Amex for the same Pro plan renewal on June 28, 2026. Invoice says INV-774193 and my subscription ID is sub_9f2ab1. Please reverse one of them today—we’re a small studio and cash is tight.\n\n- Mila Harper, Northlight Apps"", ""similarity"": 0.593422532081604, ""intent"": ""Billing""}, {""incoming_email"": ""I’m on free plan but need invoice for accounting. Nothing shows in billing."", ""similarity"": 0.5197733044624329, ""intent"": ""Billing""}, {""incoming_email"": ""Can I get invoice from 2025 and also where do I find API docs and also why my login failed once yesterday?"", ""similarity"": 0.5131067633628845, ""intent"": ""Random Miscellaneous""}]",4,"The reply effectively acknowledges the customer's frustration, apologizes, and explains the refund process, but lacks a clear statement of refund eligibility confirmation from the billing team.",4,"The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items, but could be improved by explicitly mentioning the billing team's confirmation of refund eligibility.","[""refund policy mention by the billing team""]",[],4.0
+CS-000096,copilot,Account Management,I graduated and my school email expires soon. How to switch login email?,"Hi Macy,
+
+You can update this in Account Settings → Profile → Email.
+
+After entering the new email, confirm via verification message to complete the change.
+
+Guide:
+https://docs.cloudsync.com/account/change-email
+
+If you can’t access your old mailbox, reply and I’ll guide you through recovery options.
+
+Best,
+Alex
+Support Specialist","[""Provide simple steps"", ""mention verification"", ""offer help if old email inaccessible""]","[""Account Settings"", ""verification""]","[""change without confirmation""]","Hi,
+
+Since your school email is expiring, we recommend updating your primary email to a more permanent address. You can do this by going to Account Settings → Profile → Email. After entering the new address, we’ll send a verification email to confirm ownership before the change is applied.
+
+If your workspace uses SSO-managed identities, email updates may need to happen in your IdP first. If you want, I can verify whether your account is locally managed or SSO-managed.
+
+Guide: https://docs.cloudsync.com/account/change-email
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""We rebranded and I need to change my login from old domain to new one. How do I update primary email?"", ""similarity"": 0.6135361790657043, ""intent"": ""Account Management""}, {""incoming_email"": ""Hi team, I forgot my password and reset emails aren’t showing up. Could you help?"", ""similarity"": 0.4239354729652405, ""intent"": ""Account Management""}, {""incoming_email"": ""when i click \""sign in with google\"" it logs me into a totally different cloudsync account than the one i normally use with my email and password. how do i fix this so google login goes to my main account?"", ""similarity"": 0.4021397829055786, ""intent"": ""Authentication""}]",4,"The reply effectively resolves the customer's problem by providing steps to update their email, mentioning verification, and offering help if the old email is inaccessible. However, it slightly deviates from the ground-truth reply by providing additional information about SSO-managed identities.",4,The reply includes all MUST INCLUDE items (Account Settings and verification) but also includes a MUST NOT INCLUDE item (change without confirmation) in the form of 'before the change is applied'.,[],"[""change without confirmation""]",4.0
+CS-000001,claude,Billing,"Hi, I just looked at my card statement and CloudSync charged me TWICE this month for my Pro plan - once on the 1st and again on the 3rd. Invoice numbers are INV-88213 and INV-88240. I need this fixed and my money back. This is really frustrating, I use this card for other business expenses too. - Priya Nair, Bramble Design Co.","Hi Priya,
+
+I'm sorry for the frustration this has caused, especially since it affects your business card. I looked into invoices INV-88213 and INV-88240 and I can confirm you were billed twice for the same billing cycle due to a processing error on our end.
+
+I've submitted a refund for the duplicate charge (INV-88240) to our billing team. You should see the credit back on your card within 5-7 business days, depending on your bank's processing time.
+
+I've also flagged your account to prevent this from happening again next cycle. You'll receive an email confirmation once the refund is processed.
+
+Please let me know if you don't see the credit by next week or if there's anything else I can help with.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge frustration"", ""Apologize for the error"", ""Confirm duplicate charge will be investigated"", ""Mention 30-day refund policy"", ""Provide refund timeline"", ""Offer further help""]","[""refund"", ""billing team"", ""5-7 business days""]","[""promise instant refund"", ""blame the bank""]","Hi Priya,
+
+I'm sorry to hear about the duplicate charge and the inconvenience it's caused for your business. I've checked your account and flagged INV-88213 for duplicate-payment review with our billing team. Since this is within our 30-day refund policy window, the extra charge is eligible for refund once confirmed.
+
+What happens next:
+1) Billing validation (usually same business day)
+2) Refund issued to your original card method
+3) Bank posting time: typically 5–10 business days
+
+If you want, I can also send the confirmation to your finance alias. Please let me know if there's anything else I can assist you with.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Hi CloudSync,\nI’m seeing two charges on my Amex for the same Pro plan renewal on June 28, 2026. Invoice says INV-774193 and my subscription ID is sub_9f2ab1. Please reverse one of them today—we’re a small studio and cash is tight.\n\n- Mila Harper, Northlight Apps"", ""similarity"": 0.5636293888092041, ""intent"": ""Billing""}, {""incoming_email"": ""Hello, our finance department noticed that our last three invoices (INV-77102, INV-77340, INV-77581) do not show our VAT number (DE291837465), so we cannot properly file for reverse charge. Could you correct these invoices and confirm the VAT number is stored on our account going forward? Thank you, Lukas Herrmann, Finance, Nordkette Retail GmbH"", ""similarity"": 0.5460524559020996, ""intent"": ""Billing""}, {""incoming_email"": ""I’m on free plan but need invoice for accounting. Nothing shows in billing."", ""similarity"": 0.5280837416648865, ""intent"": ""Billing""}]",4,"The reply acknowledges frustration, apologizes for the error, and provides a clear refund process, but does not explicitly mention the refund timeline as '5-7 business days' and does not offer a confirmation email for the refund.",4,"The reply includes all MUST INCLUDE items except for the exact refund timeline, and does not include any MUST NOT INCLUDE items except for a minor deviation in the refund timeline range.","[""refund timeline (5-7 business days)"", ""email confirmation for the refund""]","[""promise of instant refund"", ""blame the bank""]",4.0
+CS-000007,claude,Technical Bugs,Our quarterly-report-final.docx file is showing as 0 KB and won't open in Word anymore. It worked fine yesterday. This is genuinely disappointing given we pay for the Pro plan expecting reliability. Is there any way to recover this? We have a board meeting in 2 days.,"Hi,
+
+I'm sorry to hear about quarterly-report-final.docx - I understand how stressful this is with your board meeting coming up.
+
+Before anything else, please check the file's version history: right-click the file, select ""Version History,"" and look for a version from before it showed as 0 KB. In most cases, this lets you restore a working copy in seconds, and I'd recommend trying this first at https://docs.cloudsync.com/files/version-history.
+
+If no earlier version is available or the file is corrupted across all versions, please let me know right away and I'll open an engineering ticket (I'll share the ticket number here) so our team can investigate whether the file can be recovered from backup. I can't guarantee full recovery in that case, but we'll do everything possible.
+
+Let me know what you find in version history and we'll go from there.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge the data concern"", ""Apologize"", ""Suggest checking version history first"", ""Provide engineering ticket if unresolved"", ""Avoid guaranteeing full recovery""]","[""version history"", ""ticket""]","[""guarantee data recovery""]","Hi there,
+
+I'm very sorry to hear that your quarterly-report-final.docx file is now showing as 0 KB and won't open in Word. This can be frustrating, especially with a board meeting in 2 days.
+
+First, let's check if the file was moved to your Trash. Go to Trash in the left sidebar, find the file, right-click it, and select ""Restore."" This will bring it back to its original location.
+
+If that doesn't work, I'll need to dig deeper. Could you please try the following steps:
+
+- Check your file's version history on cloudsync.com to see if there are any previous versions available.
+- Try downloading the file from cloudsync.com in your browser to see if it's corrupted or missing there.
+- If you've made any recent changes to your CloudSync settings or have any third-party apps installed, it's possible they're interfering with your file.
+
+To help me investigate further, could you please share the file's path and any error messages you're seeing when trying to open it in Word?
+
+I'll do my best to get your file back in working order and ensure you're not missing any critical data.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""sorry if this is a dumb question but i accidentally deleted a whole folder of my thesis notes yesterday??? is there any way to get it back i am panicking a little"", ""similarity"": 0.3637443780899048, ""intent"": ""How-To""}, {""incoming_email"": ""After sync yesterday, several PDFs are now unreadable (Acrobat says file damaged). This is unacceptable."", ""similarity"": 0.34146201610565186, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""THIS IS UNACCEPTABLE. Our entire conveyancing team has been unable to sync case files since yesterday afternoon. The desktop app just sits at \""Syncing 214 items\"" and never finishes. We are on Windows 11, CloudSync Desktop v4.12.1. We have court deadlines TOMORROW and cannot access updated documents. I need someone to call me immediately. This is costing us real money and putting client matters at risk.\n\nDavid Whitfield\nSenior Partner, Whitfield & Combe Solicitors"", ""similarity"": 0.3318178653717041, ""intent"": ""Technical Bugs""}]",3,"The reply acknowledges the customer's concern, apologizes, and suggests checking the file's version history, but it also introduces additional steps that may not be necessary and does not guarantee full recovery as required.",4,"The reply includes everything in MUST INCLUDE, but it also includes a phrase that implies a guarantee of recovery, which is in MUST NOT INCLUDE.",[],"[""get your file back in working order and ensure you're not missing any critical data""]",3.5
+CS-000010,claude,Feature Requests,Love CloudSync so far! One small request though - any chance of a dark mode for the desktop app? I work late a lot and the bright white interface is rough on the eyes at midnight :) Thanks!,"Hi,
+
+Thanks so much for the kind words, and for the suggestion - you're definitely not the first night owl to ask for this! I've logged your request for dark mode with our product team under our feature request tracker (reference FR-2291).
+
+I can't promise a timeline since I don't want to overpromise on something still under consideration, but customer feedback like yours genuinely helps shape what we prioritize next.
+
+In the meantime, some users find that adjusting their OS-level display settings (like macOS Night Shift or Windows Night Light) helps reduce eye strain when using CloudSync late at night.
+
+Thanks again for taking the time to share this!
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Thank for feedback"", ""Confirm request is logged"", ""Avoid promising a release date"", ""Friendly tone""]","[""logged"", ""product team""]","[""promise a release date"", ""confirm it's on the roadmap""]","Hi,
+
+Thanks for the request—I've logged your dark mode request for the desktop app as FR-12345 with your use case noted (late-night work / eye strain).
+
+I can’t promise a release date, but your feedback is now attached to the request and helps our product team prioritize.
+
+Current workaround: OS-level dark mode settings and third-party apps can help adjust the desktop app’s appearance short-term.
+
+If you'd like, I can add the number of users impacted from your team to strengthen the request.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Our reviewers work nights and keep asking for dark mode in the web app. Any ETA?"", ""similarity"": 0.6543686389923096, ""intent"": ""Feature Requests""}, {""incoming_email"": ""Would be awesome if CloudSync could integrate with Google Calendar so file deadlines/reminders could show up there automatically! Loving the product overall btw :)"", ""similarity"": 0.5081697106361389, ""intent"": ""Feature Requests""}, {""incoming_email"": ""Any chance of a native Linux desktop app? We’re on Ubuntu 24.04 across the team."", ""similarity"": 0.5030364990234375, ""intent"": ""Feature Requests""}]",4,"The reply effectively acknowledges the customer's feedback, logs the request, and provides a workaround, but slightly deviates from the ground-truth reply's tone and phrasing.",4,"The reply includes all MUST INCLUDE items and avoids all MUST NOT INCLUDE items, but could be improved by removing the mention of a release date.",[],"[""promise a release date""]",4.0
+CS-000013,claude,Performance Issues,"URGENT - our clinic staff across 6 locations cannot load patient intake documents through CloudSync web app right now. Pages are timing out or returning 502 errors. This has been going on for 25 minutes. We have patients waiting. Request ID from one attempt: req_9f83ab21. Please advise immediately, this is a patient care issue.
+
+Dr. Samuel Okoye, Clinical Operations Director, Riverside Health Group","Dr. Okoye,
+
+I understand the seriousness of this given the impact on patient care, and I'm sorry for the disruption. I've escalated this immediately as critical priority under ticket ENG-51522, referencing request ID req_9f83ab21.
+
+Could you also confirm the approximate time the issue started and whether this affects all 6 locations or specific ones? That will help engineering narrow down the cause faster.
+
+You can monitor real-time updates on our system status page at https://status.cloudsync.com, which we update as soon as we have more information.
+
+I've also notified my manager given the severity, and someone from our team will follow up directly with you as this progresses. I know every minute matters here.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge urgency"", ""Apologize for impact"", ""Ask for request IDs or timestamps"", ""Escalate with ticket"", ""Mention status page""]","[""status page"", ""ticket"", ""engineering team""]","[""deny there is an issue"", ""promise a specific fix ETA""]","Hi Dr. Okoye,
+
+I'm sorry for the disruption this is causing your clinic staff and the impact on patient care. I've raised this as a high-priority issue with our engineering team under ticket ENG-51501 so it gets immediate attention.
+
+To help them diagnose the issue quickly, could you send over the request ID (req_9f83ab21) and the timestamp of the failed load attempt? This will let us pinpoint whether it's a server-side issue or a browser-specific problem.
+
+In the meantime, your staff can try accessing the patient intake documents through the CloudSync mobile app, which might bypass the current web app issue. If you need to access the documents urgently, you can also try using a different browser or clearing your browser cache to see if that resolves the issue.
+
+I'll follow up as soon as I have an update from engineering, and will treat this as top priority given the urgency of the situation.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""CloudSync web is painfully slow loading folders >5k items in Firefox 128 on Ubuntu. 15-20 sec each click. Is this an outage?"", ""similarity"": 0.5885586738586426, ""intent"": ""Performance Issues""}, {""incoming_email"": ""THIS IS UNACCEPTABLE. Our entire conveyancing team has been unable to sync case files since yesterday afternoon. The desktop app just sits at \""Syncing 214 items\"" and never finishes. We are on Windows 11, CloudSync Desktop v4.12.1. We have court deadlines TOMORROW and cannot access updated documents. I need someone to call me immediately. This is costing us real money and putting client matters at risk.\n\nDavid Whitfield\nSenior Partner, Whitfield & Combe Solicitors"", ""similarity"": 0.5734968185424805, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""The CloudSync desktop app crashes within 10 seconds of opening on every machine in our design department (12 machines, all macOS Sonoma 14.5). This started right after the app auto-updated to version 5.2.0 last night. We cannot access any of our CAD files right now. Fix this today.\n\nRegional IT Manager - Torque Fabrication Inc."", ""similarity"": 0.5375279784202576, ""intent"": ""Technical Bugs""}]",4,"The reply acknowledges urgency, apologizes for the impact, and escalates the issue with a ticket, but it doesn't explicitly mention the status page.",4,"The reply includes everything in MUST INCLUDE and avoids everything in MUST NOT INCLUDE, except for a minor deviation in not explicitly mentioning the status page.","[""status page""]",[],4.0
+CS-000015,claude,Billing,"Well, I guess it's time to cancel. We've been ""evaluating our options"" for a while now (your words, not mine, from every marketing email) and honestly a competitor just does more for less. Please process the cancellation for our Business plan, subscription ID SUB-30215. Thanks for nothing new in the last year.","Hi,
+
+Thanks for letting us know, and I'm sorry CloudSync hasn't kept up with what you need - that's honest feedback and I'll pass it along internally.
+
+I can process the cancellation for subscription SUB-30215. Before I do, one quick note: I'd recommend exporting any files or data you want to keep, since access ends at the close of your current billing period. You can export everything under Account Settings > Export Data, or I'm happy to confirm your renewal date first if that's helpful.
+
+If a lower-tier plan would ever cover your needs instead of a full cancellation, that's an option too, but I won't push it if you've already made up your mind.
+
+Just reply ""confirm"" and I'll process the cancellation right away, effective at the end of your current billing cycle.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge decision without being pushy"", ""Confirm cancellation steps"", ""Mention data retention/export before cancellation"", ""Offer downgrade as alternative once"", ""Avoid being manipulative""]","[""export your data"", ""cancellation""]","[""repeatedly pressure to stay"", ""guilt the customer""]","Hi,
+
+I'm sorry to see you're considering canceling your Business plan, and I appreciate your feedback on our service.
+
+To process the cancellation, please go to Admin Dashboard → Billing → Plan → Cancel Subscription. Charges will stop after the current billing period ends, and you won't be charged again.
+
+Before you go, I'd like to offer a chance to discuss your concerns and see if there's anything we can improve to meet your needs better. If not, I'll ensure your cancellation is completed promptly.
+
+You can also download any needed invoices or data from your account before the cancellation takes effect.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Please confirm cancellation path and when charges stop."", ""similarity"": 0.5317614674568176, ""intent"": ""Billing""}, {""incoming_email"": ""Hi CloudSync,\nI’m seeing two charges on my Amex for the same Pro plan renewal on June 28, 2026. Invoice says INV-774193 and my subscription ID is sub_9f2ab1. Please reverse one of them today—we’re a small studio and cash is tight.\n\n- Mila Harper, Northlight Apps"", ""similarity"": 0.5219517946243286, ""intent"": ""Billing""}, {""incoming_email"": ""Getting emails saying our payment failed for subscription SUB-41207. Card should be fine, we use it for everything else. How much time do we have before you cut off our access? We can't have downtime right now."", ""similarity"": 0.42986348271369934, ""intent"": ""Billing""}]",3,"The reply acknowledges the customer's decision and provides cancellation steps, but fails to explicitly mention data retention/export before cancellation and does not offer a downgrade as an alternative in a non-manipulative way.",4,"The reply includes all MUST INCLUDE items except for explicitly mentioning data retention/export, and does not include any MUST NOT INCLUDE items that could be considered manipulative or guilt-inducing.","[""export your data""]",[],3.5
+CS-000017,claude,Authentication,"We rotated our SAML signing certificate in Azure AD yesterday as part of routine maintenance and updated the metadata in CloudSync's SSO settings accordingly. Now all users get ""SAML assertion validation failed"" when trying to log in via SSO. We've double-checked the metadata URL is correct and current. Can someone look into this from CloudSync's side? We have 3,000 users unable to log in.
+
+Rachel Kim, Identity & Access Management, Halden Financial Group","Hi Rachel,
+
+Thank you for the clear write-up - a certificate rotation causing assertion validation failures across 3,000 users is high impact, and I want to get this resolved quickly. I've opened engineering ticket ENG-51547 with high priority.
+
+A common cause after certificate rotation is a caching delay on our side where the old certificate fingerprint is still being used to validate assertions, even though your new metadata is correctly published. Could you confirm the exact time you updated the metadata in CloudSync, and send over the SAML response from one failed login attempt (with sensitive fields redacted) if possible?
+
+Our SSO/SAML documentation is here for reference: https://docs.cloudsync.com/enterprise/saml-configuration
+
+I'll keep you updated as engineering investigates, and will treat this as a priority given the number of users affected.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge SSO issue"", ""Request metadata/certificate details"", ""Escalate with ticket"", ""Reference SSO documentation""]","[""SAML"", ""ticket"", ""certificate""]","[""guess without evidence"", ""promise immediate resolution""]","Hi Rachel,
+
+Thanks for reaching out – I'm happy to help resolve the SAML assertion validation issue.
+
+Given your recent certificate rotation, I'll investigate further. Can you please provide the exact error message, including any timestamps or details from the CloudSync logs? Additionally, I'll need to verify the SAML metadata you've uploaded in our system. If you could share the metadata URL or provide a redacted copy of it, I can review and sanity-check the configuration.
+
+In the meantime, I recommend temporarily disabling SAML for your users to prevent further login issues. Once I've investigated, I'll work with you to get SAML up and running smoothly.
+
+Docs:
+https://docs.cloudsync.com/enterprise/saml-troubleshooting
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Setting up SAML with Okta. Need ACS URL confirmation and whether signed assertions are required."", ""similarity"": 0.5417481660842896, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""SCIM deprovision from Azure AD sent yesterday but user still active in CloudSync."", ""similarity"": 0.5184405446052551, ""intent"": ""Enterprise Administration""}, {""incoming_email"": ""when i click \""sign in with google\"" it logs me into a totally different cloudsync account than the one i normally use with my email and password. how do i fix this so google login goes to my main account?"", ""similarity"": 0.4696533679962158, ""intent"": ""Authentication""}]",4,"The reply acknowledges the SSO issue, requests metadata/certificate details, and escalates with a ticket, but does not explicitly reference the SSO documentation.",4,"The reply includes all MUST INCLUDE items, but does not include the exact time of metadata update, and the SSO documentation reference is not as clear as in the ground-truth reply.","[""exact time of metadata update""]","[""guess without evidence: none"", ""promise immediate resolution: none""]",4.0
+CS-000020,claude,Account Management,"my account got locked after i typed my password wrong a bunch of times trying to remember it, how long do i have to wait?? i need to get a file for a meeting in 20 min","Hi,
+
+I understand the time pressure - accounts lock automatically after multiple failed attempts as a security measure, and normally that lasts 30 minutes before you can try again.
+
+To unlock it sooner, I can verify your identity and remove the lock manually. Could you reply with:
+1. The email address on the account
+2. The last 4 digits of the payment method on file (if Pro is on a card) or your billing zip code
+
+Once I verify these, I can unlock your account right away rather than making you wait out the full 30 minutes.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Explain why account was locked"", ""Request identity verification"", ""Provide next steps"", ""Avoid unlocking without verification""]","[""identity verification"", ""security""]","[""unlock without verification"", ""share details about the failed login attempts' origin without checking""]","Hi,
+
+I understand the urgency. Your account lock is a security protection after repeated failed login attempts. To unlock safely, please complete identity verification via your registered email, then follow the unlock prompt. If you're unable to access the email, you can also try unlocking via the account settings page.
+
+If your workspace has admins, they can also assist with account access checks.
+
+Guide: https://docs.cloudsync.com/account/locked-account
+
+Reply with your last successful login time if you want me to review security events on this ticket.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""My account got locked after repeated login attempts on mobile. Need immediate unlock for payroll docs."", ""similarity"": 0.6112284064292908, ""intent"": ""Account Management""}, {""incoming_email"": ""Hi team, I forgot my password and reset emails aren’t showing up. Could you help?"", ""similarity"": 0.5272096395492554, ""intent"": ""Account Management""}, {""incoming_email"": ""I deleted my account by mistake last week. Can you restore it with files?"", ""similarity"": 0.4245220720767975, ""intent"": ""Account Management""}]",4,"The reply effectively explains the account lock and provides a clear path for the customer to resolve the issue, but it does not explicitly request the last 4 digits of the payment method or billing zip code for verification.",3,"The reply includes some of the MUST INCLUDE items, but it also includes a MUST NOT INCLUDE item (unlock without verification) and does not explicitly request identity verification via the required method.","[""identity verification via email or payment method/billing zip code""]","[""unlock without verification""]",3.5
+CS-000025,claude,Billing,why cant i access my files anymore? it just says my trial ended. i didnt even realize it was time limited,"Hi,
+
+Good question - CloudSync's free trial runs for 14 days, and once it ends, the account switches to a limited state where you can log in but can't access files until you subscribe to a paid plan.
+
+The good news: your files aren't deleted, they're just paused. To get everything back, simply choose a plan under Account Settings > Billing > Choose a Plan, and your files will be immediately accessible again.
+
+You can compare plans here: https://cloudsync.com/pricing
+
+Let me know if you have questions about which plan fits your needs.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Explain trial expiration"", ""Provide reactivation steps"", ""Mention data is not deleted immediately""]","[""trial"", ""subscribe""]","[""claim data is deleted immediately after trial ends""]","Hi there,
+
+I know it’s frustrating when limits change unexpectedly.
+
+Your trial has ended, which is why you can’t access your files right now. CloudSync Free has lower storage and file-size limits than paid plans, and trials do have a limited time frame before they expire.
+
+To continue accessing your files, you can upgrade from Settings → Billing. Plan details are here:
+https://docs.cloudsync.com/billing/plan-options
+
+If you’re unsure about which plan is right for you, I can help compare our options based on your storage needs.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Hello,\nMy class project account says trial expired and now I can’t upload lecture files over 2GB. I thought students got auto extension?"", ""similarity"": 0.5801652669906616, ""intent"": ""Billing""}, {""incoming_email"": ""My trial ended today and team comments are limited now. Why?"", ""similarity"": 0.562246561050415, ""intent"": ""Billing""}, {""incoming_email"": ""I deleted my account by mistake last week. Can you restore it with files?"", ""similarity"": 0.41081205010414124, ""intent"": ""Account Management""}]",4,"The reply effectively explains trial expiration and provides reactivation steps, but does not explicitly mention that data is not deleted immediately.",4,"The reply includes all MUST INCLUDE items, but does not explicitly mention that data is not deleted immediately, which is a MUST NOT INCLUDE item.",[],"[""claim data is deleted immediately after trial ends""]",4.0
+CS-000028,claude,How-To,"We just moved 15 new consultants onto our team. What's the fastest way to invite all of them to our CloudSync Business account, and will this affect our seat count/billing right away?","Hi,
+
+Congrats on the team growth! You can invite multiple people at once under Admin Dashboard > Team > Invite Members - just paste in all 15 email addresses separated by commas and CloudSync will send invitations to each.
+
+On billing: adding seats does update your seat count immediately, and you'll be charged a prorated amount for the remaining days in your current billing cycle for each new seat, with the full rate applying from your next billing date.
+
+Full steps here: https://docs.cloudsync.com/team/invite-members
+
+Let me know if any of the invites don't go through and I'll help troubleshoot.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Explain invite process"", ""Mention seat limits if relevant"", ""Link documentation""]","[""invite"", ""seats""]","[""invent a bulk-invite feature that doesn't exist if not confirmed""]","Hi,
+
+Thanks for reaching out, and welcome to the team. The fastest way to invite all 15 new consultants is by using our Bulk Invite feature under Team > Manage Team > Invite Users. 
+
+When inviting, you'll have the option to set their role and permissions within your CloudSync Business account. This won't affect your seat count or billing immediately, as the invites are pending until the new users accept them. You can review your current seat count and billing details under Billing > Plan Details.
+
+Once invited, the new users will receive an email with a link to join your CloudSync account, and they'll be added to your team's user list once they accept the invite.
+
+If you have any questions or need help with the invite process, feel free to reply.
+
+Best,
+Alex
+Support Specialist, CloudSync","[{""incoming_email"": ""Good morning, I recently switched from my personal Gmail to my organization's email address and would like to update my CloudSync account accordingly. Could you please guide me through the process? Thank you for your time. Kind regards, Ananya Rao, Prerna Foundation"", ""similarity"": 0.48241859674453735, ""intent"": ""Account Management""}, {""incoming_email"": ""Hi! I run a small nonprofit and was wondering if CloudSync offers any nonprofit or annual billing discounts? Our budget is pretty tight this year."", ""similarity"": 0.45673301815986633, ""intent"": ""Billing""}, {""incoming_email"": ""I accidentally created two CloudSync accounts with two work emails. Can support merge them?"", ""similarity"": 0.4479489326477051, ""intent"": ""Account Management""}]",4,"The reply effectively explains the invite process, mentions seat limits, and links documentation, but slightly misrepresents the billing update timing.",4,"The reply includes all MUST INCLUDE items, but invents a Bulk Invite feature that doesn't exist, violating the MUST NOT INCLUDE constraint.",[],"[""Bulk Invite feature""]",4.0
+CS-000030,claude,Technical Bugs,"Search has been basically useless for the past 2 days. I search for file names I KNOW exist, word for word, and get zero results. Then 10 minutes later the same search sometimes works. This is really slowing my team down.","Hi,
+
+I'm sorry search has been unreliable - that inconsistency (working, then not, then working again) does point to an indexing delay issue on our backend rather than anything wrong with your search terms.
+
+Could you share one specific file name that failed to appear, along with roughly when you searched for it? That will help our engineering team trace the indexing gap.
+
+I've opened ticket ENG-51578 to investigate the delay pattern you're describing. In the meantime, browsing directly through folders rather than search should still reliably show all your files while we sort this out.
+
+I'll follow up once I hear back from engineering.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Acknowledge issue"", ""Explain possible indexing delay"", ""Escalate if persistent"", ""Provide ticket ID""]","[""indexing"", ""ticket""]","[""blame customer for typos without checking""]","Hi Ryan,
+
+I'm sorry to hear that search has been inconsistent for your team. That's frustrating and impacts productivity.
+
+I've opened case CS-ENG-50412 to investigate the search index behavior. Please send 2-3 example file names with full paths and approximate upload/edit times. That helps us compare metadata vs index state.
+
+Temporary workaround: access via folder navigation or recent activity while we validate indexing.
+
+I'll update you as soon as engineering has findings.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""Search can’t find files that definitely exist unless I browse manually. Happens with exact names too."", ""similarity"": 0.7436702847480774, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Exact filename search returns nothing unless quotes removed, then too many results. Regression?"", ""similarity"": 0.6134370565414429, ""intent"": ""Technical Bugs""}, {""incoming_email"": ""Does CloudSync have any kind of AI-powered search where I could type something like 'the contract with the termination clause about 60 days notice' and it would find the right file, instead of me having to remember the exact file name?"", ""similarity"": 0.445827841758728, ""intent"": ""Feature Requests""}]",4,"The reply acknowledges the issue, explains possible indexing delay, escalates if persistent, and provides a ticket ID, but does not explicitly mention the indexing delay being on the backend.",5,"The reply includes all MUST INCLUDE items (indexing, ticket) and avoids all MUST NOT INCLUDE items (blame customer for typos without checking).",[],[],4.5
+CS-000039,claude,Account Management,I accidentally signed up twice with two different emails and now have files split across both accounts. Is there a way to merge them into one account so everything is in the same place?,"Hi,
+
+Thanks for explaining - this is a common mix-up. I want to be upfront: CloudSync doesn't currently support fully merging two accounts into one, since they're treated as entirely separate storage systems.
+
+What I can do is help you consolidate manually: you can share folders from one account to the other (using both email addresses) and then copy the files over, or export from one account and re-upload into the other. If one of the accounts is Free and the other is Pro, I can also help make sure you're not paying for two subscriptions - let me know both emails (or the one you'd like to keep as primary) and I'll check with our billing team.
+
+Let me know how you'd like to proceed and I'll guide you through it.
+
+Best,
+Alex
+Support Specialist, CloudSync","[""Clarify that merging isn't self-service"", ""Explain manual process/limitations"", ""Avoid promising full merge if unsupported""]","[""separate accounts"", ""billing team""]","[""claim automatic merging is possible if it isn't""]","Hi Samantha,
+
+Yes, we can review this. Account merges require manual verification to protect ownership and content access.
+
+Please provide:
+- Both account emails
+- Which account should remain primary
+- Confirmation from workspace admin (if team-managed)
+
+After verification, we’ll confirm what data can be consolidated and any limitations before proceeding.
+
+Best,
+Alex
+Support Specialist","[{""incoming_email"": ""I accidentally created two CloudSync accounts with two work emails. Can support merge them?"", ""similarity"": 0.7163688540458679, ""intent"": ""Account Management""}, {""incoming_email"": ""I deleted my account by mistake last week. Can you restore it with files?"", ""similarity"": 0.4791480004787445, ""intent"": ""Account Management""}, {""incoming_email"": ""We rebranded and I need to change my login from old domain to new one. How do I update primary email?"", ""similarity"": 0.4294779896736145, ""intent"": ""Account Management""}]",4,"The reply clarifies that merging isn't self-service, explains the manual process, and avoids promising full merge if unsupported, but doesn't explicitly mention limitations or the billing team.",4,"The reply includes all MUST INCLUDE items except for mentioning the billing team, and doesn't include any MUST NOT INCLUDE items.","[""billing team""]",[],4.0
